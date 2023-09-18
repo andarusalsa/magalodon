@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../components/assets/Poppins/Poppins-Light.ttf');
+    src:url('../../components/assets/Poppins/Poppins-Medium.ttf');
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Poppins';
+}
+
+.bannerSatu{
+    background-image: url('../../components/elements/bannerKontak.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding : 6rem;
+}
+
+.text{
+    font-size: 30px;
+}
+
+.bannerDua{
+    background-color: #F1F9F7;
+    background-size: cover;
+    background-position: center;
+    padding : 3rem;
+}
+
+.isian{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.isian1, .isian2{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.isian3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.wrapper {
+    width: 800px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper input {
+    width:1000px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.wrapper1 input{
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius: 10px;
+}
+
+.bannerTiga{
+    background-color: #385C4E;
+    color: #fff;
+    text-align: center;
+}
+
+.button{
+    background-color: #FF9500;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 18px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: 'Poppins';
+}

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../assets/Poppins/Poppins-Light.ttf');
+    src:url('../../assets/Poppins/Poppins-Medium.ttf');
+}
+
+.placeholder{
+    font-family: 'Poppins';
+}
+
+.inputContainer{
+    border: none;
+    border-radius: 5px;
+    background-color: #Fff;
+}
+
+.icon{
+    border: none;
+    color: #FF9500;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.placeholder:focus{
+    outline: none;
+}

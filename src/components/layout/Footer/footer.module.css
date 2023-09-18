@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column; /* Mengatur konten dalam bentuk kolom */
+  align-items: center;
+  text-align: center;
+}
+
+.imageContainer {
+  display: flex;
+  margin-top: 10px; /* Memberi jarak antara teks dan gambar */
+}
+
+.image {
+  margin: 0 10px; /* Memberi jarak antara gambar */
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}

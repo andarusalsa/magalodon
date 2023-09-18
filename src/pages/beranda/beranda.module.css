@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../components/assets/Poppins/Poppins-Light.ttf');
+    src:url('../../components/assets/Poppins/Poppins-Medium.ttf');
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.banner {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 3rem;
+    background-image: url("../../components/elements/banner.png");
+}
+    
+@media (max-width: 768px) {
+.banner {
+    padding: 3rem; /* Mengurangi padding pada ukuran layar kecil */
+}
+}
+    
+.bannerButton{
+    margin-top: 0;
+    margin-bottom: 20px;
+    background-color: #FF9500;
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+    
+.banner h1{
+    color: #FFF;
+    font-family: Poppins, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+    
+.bannerContent{
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Atur sesuai kebutuhan Anda */
+    margin: 0 auto; /* Untuk tengah secara horizontal */
+    background-size: cover;
+    background-position: center;
+    padding-top: 3rem;
+}
+    
+.solusi{
+    display: flex;
+    align-items: flex-start; /* Membuat card berada di samping teks */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 4rem;
+    background-color: #ffffff;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap; /* Menggunakan wrap untuk memindahkan card ke baris baru pada ukuran layar kecil */
+    justify-content: space-between;
+    background-color: #f1f9f7;
+    padding: 50px;
+}
+    
+.solusiContent h2{
+    flex: 1; /* Menyebarkan sisa lebar konten */
+    padding-right: 5rem; /* Memberi jarak antara teks dan card */
+    color: var(--green-2, #385C4E);
+    font-family: Poppins, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+    
+.solusiContent p {
+    flex: 1;
+    padding-right: 5rem;
+    color: #000;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+    
+
+    
+.card {
+    flex: 1;
+    width: calc(50% - 20px); /* Mengatur lebar card agar tiga card berada dalam satu baris */
+    margin-bottom: 20px; /* Memberi jarak antar card */
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+    
+.card p{
+    text-align: left;
+    font-size: 12px;
+}
+    
+.card:hover {
+    transform: scale(1.05);
+}
+    
+.card h3 {
+    margin-top: 10px;
+    color: #7A9791;
+}
+    
+.card p {
+    margin-top: 5px;
+    color: #666;
+}
+    
+@media (max-width: 768px) {
+.card {
+    width: calc(50% - 20px); /* Mengatur lebar card agar dua card berada dalam satu baris pada layar kecil */
+}
+}
+    
+.cardButton{
+    width: 87px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FF9500;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    border: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 5px;
+}
+    
+.promosi{
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 4rem;
+    background-image: url("../../components/elements/banner2.png");
+}
+
+.promosi p{
+    color: #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.colorText{
+    color: #385C4E;
+}

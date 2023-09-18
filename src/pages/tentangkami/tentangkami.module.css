@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../components/assets/Poppins/Poppins-Light.ttf');
+  src:url('../../components/assets/Poppins/Poppins-Medium.ttf');
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.bannerSatu{
+    background-image: url('../../components/elements/Produk1.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding : 6rem;
+    flex-shrink: 0;
+    
+}
+
+.bannerSatu h2{
+    color: #FFF;
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+}
+
+.bannerContent{
+    position: relative;
+    display: flex;
+    padding-top : 3.125rem;
+}
+
+.bannerDua {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: #fff;
+  
+}
+
+.imageContainer {
+  flex: 1;
+  padding-left: 7rem;
+}
+
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Additional styling for the paragraph */
+.text p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  text-align: right;
+  font-family: 'Poppins', sans-serif;
+  padding-right: 7rem;
+}
+
+.text1{
+  text-align: left;
+  padding-left: 7rem;
+  font-family: 'poppins', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.produk3{
+  padding-left: 7rem;
+}
