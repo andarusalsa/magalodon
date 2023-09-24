@@ -11,7 +11,7 @@ import ReactModal from 'react-modal'
 const Produk = () => {
   const [email, setEmail] = useState("")
   const [katasandi, setKataSandi] = useState("")
-  const [nowa, setNoWa] = useState("")
+  const [noWa, setNoWa] = useState("")
   const [nama, setnama] = useState("")
   const [alamat, setalamat] = useState("")
   const [isLoginActive, setIsLoginActive] = useState(true)
