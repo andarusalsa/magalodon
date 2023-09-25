@@ -1,8 +1,8 @@
 import styles from './produk.module.css'
-import { Tab } from '@headlessui/react';
-import classNames from 'classnames';
-import TextInput from "@/components/fragments/inputText/inputText";
-import React, { useState } from "react";
+import { Tab } from '@headlessui/react'
+import classNames from 'classnames'
+import TextInput from "@/components/fragments/inputText/inputText"
+import React, { useState } from "react"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ReactModal from 'react-modal'
@@ -17,8 +17,8 @@ const Produk = () => {
   const [isLoginActive, setIsLoginActive] = useState(true)
   const [error, setError] = useState("")
   const router = useRouter()
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
   const users = [
     { email: 'salsa@gmail.com', password: 'Salsabila26' }
@@ -91,6 +91,18 @@ const Produk = () => {
         setIsModalVisible(true);
       }
     }
+  };
+
+    const handleDaftar1 = () => {
+      setError('Form harus terisi dengan lengkap.');
+      if (!emailRegex.test(email)) {
+        setError('Format email tidak valid. Masukkan alamat email yang benar.');
+      } else if (!/^[0-9]+$/.test(noWa)) { 
+        setError('Nomor WhatsApp harus terdiri dari angka.');
+      } else {
+        console.log('Pendaftaran berhasil');
+        setIsModalVisible(true);
+      }
   };
 
 
@@ -402,20 +414,32 @@ const Produk = () => {
                   <div className={styles.tabContent2}>
                     <div className={styles.LoginContainer}>
                       <div className={styles.Login}>Daftar</div>
+                      {error && <div className={styles.error}>{error}</div>}
                         <div className={styles.isian1}>
                           <h2>Masukkan Email</h2>
                           <div className={styles.form}>
-                            <TextInput placeholder="Masukkan Email" onInputChange={handleEmailChange} />
+                            <TextInput placeholder="Masukkan Email" value={email} onInputChange={handleEmailChange} />
                           </div>
                         </div>
                         <div className={styles.isian2}>
                           <h2>Nomor Whatsapp</h2>
                           <div className={styles.form}>
-                            <TextInput placeholder="Masukkan Nomor Whatsapp" onInputChange={handlenoWaChange} />
+                            <TextInput placeholder="Masukkan Nomor Whatsapp" value={noWa} onInputChange={handlenoWaChange} />
                           </div>
                         </div>
                         <div className={styles.buttonContainer}>
-                          <button className={styles.button}>Daftar</button>
+                          <button className={styles.button} onClick={handleDaftar1}>Daftar</button>
+                          <ReactModal
+                            isOpen={isModalVisible}
+                            contentLabel="Daftar Berhasil"
+                            className={styles.ModalOverlay}
+                          >
+                            <div className={styles.ModalContent}>
+                              <h4>Terimakasih telah berkenan bekerjasama bersama kami</h4>
+                              <p>Tim kami akan segera menghubungi anda ke kontak yang sudah didaftarkan, untuk proses selanjutnya</p>
+                              <button onClick={() => setIsModalVisible(false)}>OK</button>
+                            </div>
+                          </ReactModal>
                         </div>
                     </div>
                   </div>

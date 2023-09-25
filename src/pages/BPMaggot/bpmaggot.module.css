@@ -218,6 +218,10 @@
     width: 90px;
 }
 
+.buatstatus{
+    margin-left: 50px;
+}
+
 .kiriman{
     margin-top: 30px;
     margin-left: 50px;
@@ -410,5 +414,50 @@
     font-style: italic;
     margin-top: 30px;
     color: #FF9500;
+}
+
+.colAtas{
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.menu1a{
+    margin-right: 20px;
+    color: #9d9d9d;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.iconmenu1{
+    color: #9d9d9d;
+    cursor: pointer;
+    margin-left: 10px;
+    height: 15px;
+    width: 15px;
+    justify-content: center;
+}
+
+.kiri1{
+    display: flex;
+    align-items: center;
+}
+
+.kanan1{
+    display: flex;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.menu2a{
+    color: #9d9d9d;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    width: 90px;
 }
 

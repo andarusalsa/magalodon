@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
 import {LogOut} from 'react-feather'
+import {ChevronLeft} from 'react-feather'
 
 const BPMaggot = () => {
     const [status, setStatus] = useState<string>("")
@@ -24,6 +25,7 @@ const BPMaggot = () => {
     const [harga, setharga] = useState<number>(0)
     const [inputValue, setInputValue] = useState<string>('');
     const [error, setError] = useState<string>('');
+    const [isStatusActive, setIsStatusActive] = useState(true)
 
     const handleStatusChange = (newStatus: string) => {
         setStatus(newStatus);
@@ -87,8 +89,9 @@ const BPMaggot = () => {
 
                     <Tab.Panels className={styles.tabPanels}>
                         <Tab.Panel>
-                            <div className={styles.containerTab}>
-                                <div className={styles.tabContent1}>
+                        <div className={styles.containerTab1}>
+                                {isStatusActive?(
+                                <>
                                     <div className={styles.buatstatus}>
                                         <div className={styles.profilsmall}>
                                             <Link href='#'>
@@ -111,7 +114,11 @@ const BPMaggot = () => {
                                         </div>
                                         
                                         <div className={styles.menusmall}>
-                                            <Link href='#' className={styles.menu1}>Kirimanmu</Link>
+                                            <Link href='/kirimanmu' className={styles.menu1}
+                                            onClick={(e) =>{
+                                            e.preventDefault();
+                                            setIsStatusActive(!isStatusActive);
+                                            }}>{isStatusActive? 'Kirimanmu' : 'Kirimanmu'} </Link>
                                             <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className={styles.menu2}>
                                                 <option value="Pilih Kategori">Urutkan</option>
                                                 <option value="Pilih Kategori">Kiriman Terbaru</option>
@@ -120,92 +127,116 @@ const BPMaggot = () => {
                                             </select>
                                         </div>
                                     </div>
-                                </div>
 
-                                <hr className={styles.line}/>
+                                    <hr className={styles.line}/>
 
-                                <div className={styles.kiriman}>
-                                    <div className={styles.akun}>
-                                        <Image src={profil1} alt="profil1" className={styles.profil} />
-                                        <p>Ivanna Putri</p>
-                                    </div>
-                                    <div className={styles.isikiriman}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
-                                        </p>
-                                        <div className={styles.interaksi}>
-                                            <div className={styles.like}>
-                                                <FontAwesomeIcon 
-                                                    icon={liked? faHeart : faHeartOutline}
-                                                    className={styles.icon2}
-                                                    onClick={handleLiked}
-                                                />
-                                                <p className={styles.ket}>2 disukai</p>
-                                            </div>
-                                            <div className={styles.comment}>
-                                                <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
-                                                <p className={styles.ket}>1 komentar</p>
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.akun}>
+                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <p>Ivanna Putri</p>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <hr className={styles.line}/>
+                                    <hr className={styles.line}/>
 
-                                <div className={styles.kiriman}>
-                                    <div className={styles.akun}>
-                                        <Image src={profil1} alt="profil1" className={styles.profil} />
-                                        <p>Ivanna Putri</p>
-                                    </div>
-                                    <div className={styles.isikiriman}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
-                                        </p>
-                                        <div className={styles.interaksi}>
-                                            <div className={styles.like}>
-                                                <FontAwesomeIcon 
-                                                    icon={liked? faHeart : faHeartOutline}
-                                                    className={styles.icon2}
-                                                    onClick={handleLiked}
-                                                />
-                                                <p className={styles.ket}>2 disukai</p>
-                                            </div>
-                                            <div className={styles.comment}>
-                                                <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
-                                                <p className={styles.ket}>1 komentar</p>
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.akun}>
+                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <p>Ivanna Putri</p>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <hr className={styles.line}/>
+                                    <hr className={styles.line}/>
 
-                                <div className={styles.kiriman}>
-                                    <div className={styles.akun}>
-                                        <Image src={profil1} alt="profil1" className={styles.profil} />
-                                        <p>Ivanna Putri</p>
-                                    </div>
-                                    <div className={styles.isikiriman}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
-                                        </p>
-                                        <div className={styles.interaksi}>
-                                            <div className={styles.like}>
-                                                <FontAwesomeIcon 
-                                                    icon={liked? faHeart : faHeartOutline}
-                                                    className={styles.icon2}
-                                                    onClick={handleLiked}
-                                                />
-                                                <p className={styles.ket}>2 disukai</p>
-                                            </div>
-                                            <div className={styles.comment}>
-                                                <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
-                                                <p className={styles.ket}>1 komentar</p>
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.akun}>
+                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <p>Ivanna Putri</p>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </>
+                                ):
+                                <>
+                                    <div className={styles.colAtas}>
+                                        <div className={styles.kiri1}>
+                                            <Link
+                                                href="#"
+                                                className={styles.menu1a}
+                                                onClick={(e) => {
+                                                e.preventDefault();
+                                                setIsStatusActive(!isStatusActive);}}>
+                                                <ChevronLeft className={styles.iconmenu1} />
+                                                Kirimanmu
+                                            </Link>
+                                        </div>
+                                        <div className={styles.kanan1}>
+                                            <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className={styles.menu2a}>
+                                                <option value="Pilih Kategori">Urutkan</option>
+                                                <option value="Pilih Kategori">Kiriman Terbaru</option>
+                                                <option value="Pilih Kategori">Kiriman Terpopuler</option>
+                                                <option value="Pilih Kategori">Magalodon Official</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </>}
+                        </div>
                         </Tab.Panel>
 
                         <Tab.Panel>
