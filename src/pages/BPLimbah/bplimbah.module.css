@@ -17,7 +17,7 @@
 }
 
 .bannerSatu{
-    background-image: url('../../components/elements/bannerBPL.png');
+    background-image: url('../../components/elements/bannerBPM.png');
     background-size: cover;
     color: #fff;
     padding : 6rem;
@@ -94,8 +94,8 @@
 .tab{
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 145px;
-    padding-right: 145px;
+    padding-left: 152px;
+    padding-right: 152px;
     border: none;
     font-family: 'Poppins';
     cursor: pointer;

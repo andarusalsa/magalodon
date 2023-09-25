@@ -51,15 +51,25 @@ const Produk = () => {
       const user = users.find(u => u.email === email && u.password === katasandi)
   
       if (user) {
-        // Berhasil masuk
         console.log('Login berhasil')
-        // Lakukan apa yang diperlukan saat login berhasil
-        // Misalnya, arahkan pengguna ke halaman BPMaggot
-        router.push('/BPMaggot') // Ini akan mengarahkan ke halaman BPMaggot
+        router.push('/BPMaggot') 
       } else {
-        // Gagal masuk
         setError("Email atau kata sandi tidak valid.")
-        // Tampilkan pesan kesalahan atau tindakan lainnya
+      }
+    }
+  };
+
+  const handleLogin1 = () => {
+    if (email.trim() === "" || katasandi.trim() === "") {
+      setError("Silakan isi email dan kata sandi Anda.")
+    } else {
+      const user = users.find(u => u.email === email && u.password === katasandi)
+  
+      if (user) {
+        console.log('Login berhasil')
+        router.push('/BPLimbah') 
+      } else {
+        setError("Email atau kata sandi tidak valid.")
       }
     }
   };
@@ -71,14 +81,12 @@ const Produk = () => {
       } else if (!emailRegex.test(email)) {
         setError('Format email tidak valid. Masukkan alamat email yang benar.');
       } else {
-      // Periksa apakah kata sandi memenuhi kriteria
       const isKataSandiValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,12}$/.test(katasandi);
 
 
       if (!isKataSandiValid) {
         setError("Kata sandi harus sesuai dengan panduan yang tertera.");
       } else {
-        // Lanjutkan dengan proses pendaftaran jika semua kondisi terpenuhi
         console.log('Pendaftaran berhasil');
         setIsModalVisible(true);
       }
@@ -283,24 +291,96 @@ const Produk = () => {
                     </div>
                   </div>
                   <div className={styles.tabContent2}>
-                    <div className={styles.LoginContainer}>
-                      <div className={styles.Login}>Masuk</div>
+                  <div className={styles.LoginContainer}>
+                      {isLoginActive?(
+                        <>
+                        <div className={styles.Login}>Masuk</div>
+                        {error && <div className={styles.error}>{error}</div>}
                         <div className={styles.isian1}>
                           <h2>Masukkan Email</h2>
                           <div className={styles.form}>
-                            <TextInput placeholder="Masukkan Email" onInputChange={handleEmailChange} />
+                            <TextInput placeholder="Masukkan Email" value={email} onInputChange={handleEmailChange} />
                           </div>
                         </div>
                         <div className={styles.isian2}>
                           <h2>Kata Sandi</h2>
                           <div className={styles.form1}>
-                            <TextInput type="password" placeholder="Masukkan Kata Sandi" onInputChange={handleKataSandiChange} />
+                            <TextInput type="password" placeholder="Masukkan Kata Sandi" value={katasandi} onInputChange={handleKataSandiChange} />
                           </div>
                         </div>
                         <div className={styles.buttonContainer}>
-                          <button className={styles.button}>Masuk</button>
-                          <p> Belum memiliki akun? <Link href="/daftar" className={styles.daftar}>Daftar</Link></p>
+                          <button className={styles.button} onClick={handleLogin1}>Masuk</button>
+                          <p> Belum memiliki akun? 
+                            <Link href="/daftar" className={styles.daftar} 
+                            onClick={(e) =>{
+                              e.preventDefault();
+                              setIsLoginActive(!isLoginActive);
+                            }}
+                            >
+                              {isLoginActive? 'Daftar' : 'Kembali ke Masuk'}
+                            </Link>
+                          </p>
                         </div>
+                        </>
+                      ):(
+                        <>
+                        <div className={styles.Login}>Daftar</div>
+                        {error && <div className={styles.error}>{error}</div>}
+                        <div className={styles.isian1}>
+                          <h2>Email</h2>
+                          <div className={styles.form}>
+                            <TextInput placeholder="Masukkan Email" value={email} onInputChange={handleEmailChange} />
+                          </div>
+                        </div>
+                        <div className={styles.isian1}>
+                          <h2>Nama Lengkap</h2>
+                          <div className={styles.form}>
+                            <TextInput placeholder="Masukkan Nama Lengkap" value={nama} onInputChange={handleNamaChange} />
+                          </div>
+                        </div>
+                        <div className={styles.isian1}>
+                          <h2>Alamat</h2>
+                          <div className={styles.form}>
+                            <TextInput placeholder="Masukkan Alamat" value={alamat} onInputChange={handleAlamatChange} />
+                          </div>
+                        </div>
+                        <div className={styles.isian2}>
+                          <h2>Kata Sandi</h2>
+                          <div className={styles.form1}>
+                            <TextInput type="password" placeholder="Masukkan Kata Sandi" value={katasandi} onInputChange={handleKataSandiChange} />
+                            <p className={styles.ketSandi}>*Kata sandi harus terdiri dari 8 - 12 karakter dan mengandung kombinasi huruf besar, huruf kecil, dan angka.</p>
+                          </div>
+                        </div>
+                        <div className={styles.buttonContainer}>
+                          <button className={styles.button} onClick={handleDaftar}>Daftar</button>
+                          <ReactModal
+                            isOpen={isModalVisible}
+                            contentLabel="Daftar Berhasil"
+                            className={styles.ModalOverlay}
+                          >
+                            <div className={styles.ModalContent}>
+                              <h2>Daftar Berhasil</h2>
+                              <p>Selamat, Anda telah berhasil mendaftar!</p>
+                              <button onClick={() => setIsModalVisible(false)}>Tutup</button>
+                              <button onClick={() => setIsLoginActive(true)}>Masuk</button>
+                            </div>
+                          </ReactModal>
+                          <p>
+                            Sudah memiliki akun? {''}
+                            <Link
+                              href="#"
+                              className={styles.daftar}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setIsLoginActive(!isLoginActive);
+                              }}
+                            >
+                              Masuk
+                            </Link>
+                          </p>
+                        </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
