@@ -11,8 +11,8 @@ import profil1 from '@/components/elements/profil1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
-import {LogOut} from 'react-feather'
-import {ChevronLeft} from 'react-feather'
+import {LogOut, ChevronLeft, MoreVertical} from 'react-feather'
+import MoreButton from '@/components/fragments/moreButton/moreButton'
 
 const BPMaggot = () => {
     const [status, setStatus] = useState<string>("")
@@ -60,13 +60,15 @@ const BPMaggot = () => {
         }
       }
 
+    const options = ['Hapus', 'Edit']
+
     return (
         <div className={styles.container}>
             <section className={styles.bannerSatu}>
                 <div className={styles.kiri}>
                     <Link href='/profil' className={styles.ContentProfil}>
                         <Image src={profil} alt="profil" className={styles.profil} />
-                        <p> Andaru Putri Salsabila</p>
+                        Andaru Putri Salsabila
                     </Link>
                 </div>
                 <div className={styles.kanan}>
@@ -89,7 +91,7 @@ const BPMaggot = () => {
 
                     <Tab.Panels className={styles.tabPanels}>
                         <Tab.Panel>
-                        <div className={styles.containerTab1}>
+                            <div className={styles.containerTab1}>
                                 {isStatusActive?(
                                 <>
                                     <div className={styles.buatstatus}>
@@ -235,8 +237,42 @@ const BPMaggot = () => {
                                             </select>
                                         </div>
                                     </div>
+
+                                    <hr className={styles.line}/>
+
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.kirimanUp}>
+                                            <div className={styles.akunUp}>
+                                                <Image src={profil1} alt="profil1" className={styles.profilUp} />
+                                                <p>Andaru Putri Salsabila</p>
+                                            </div>
+                                            <div className={styles.more}>
+                                                <MoreButton options={options}/>
+                                            </div>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className={styles.line}/>
                                 </>}
-                        </div>
+                            </div>
                         </Tab.Panel>
 
                         <Tab.Panel>
