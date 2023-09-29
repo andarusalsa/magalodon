@@ -485,3 +485,22 @@
     margin-right: 30px;
     color: #000;
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: #fff; /* Warna latar belakang */
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}

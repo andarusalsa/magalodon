@@ -13,6 +13,22 @@ import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
 import {LogOut, ChevronLeft, MoreVertical} from 'react-feather'
 import MoreButton from '@/components/fragments/moreButton/moreButton'
+import Modal from 'react-modal';
+
+interface ModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+}  
+
+function OpenModal({ isOpen, onClose }: ModalProps) {
+    return (
+        <div>
+            {/* Isi modal di sini */}
+            <p>Konten Modal</p>
+            <button onClick={onClose}>Tutup Modal</button>
+        </div>
+    );
+}
 
 const BPMaggot = () => {
     const [status, setStatus] = useState<string>("")
@@ -23,9 +39,11 @@ const BPMaggot = () => {
     const [liked, setLiked] = useState(false);
     const [jumlah, setjumlah] = useState<number>(0)
     const [harga, setharga] = useState<number>(0)
-    const [inputValue, setInputValue] = useState<string>('');
-    const [error, setError] = useState<string>('');
+    const [inputValue, setInputValue] = useState<string>('')
+    const [error, setError] = useState<string>('')
     const [isStatusActive, setIsStatusActive] = useState(true)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [modalType, setModalType] = useState('')
 
     const handleStatusChange = (newStatus: string) => {
         setStatus(newStatus);
@@ -49,18 +67,35 @@ const BPMaggot = () => {
 
     const handlejumlahChange = (newjumlah: string) => {
         if (isNaN(parseInt(newjumlah))) {
-          setharga(0);
-          setjumlah(0);
-          setError('');
+            setharga(0);
+            setjumlah(0);
+            setError('');
         } else {
-          const parsedValue = parseInt(newjumlah);
-          const Total = parsedValue * 10000;
-          setharga(Total);
-          setjumlah(parsedValue);
+            const parsedValue = parseInt(newjumlah);
+            const Total = parsedValue * 10000;
+            setharga(Total);
+            setjumlah(parsedValue);
         }
-      }
+    }
 
     const options = ['Hapus', 'Edit']
+
+
+    function handleOptionClick(option: string) {
+        if (option === 'Hapus') {
+            setModalType('hapus')
+            setIsModalOpen(true)
+        } else if (option === 'Edit') {
+            setModalType('edit')
+            setIsModalOpen(true)
+        }
+    }
+
+    function handleDeleteItem() {
+        // Lakukan tindakan penghapusan yang sesuai di sini
+        // Setelah penghapusan selesai, tutup modal
+        setIsModalOpen(false);
+    }
 
     return (
         <div className={styles.container}>
@@ -247,7 +282,40 @@ const BPMaggot = () => {
                                                 <p>Andaru Putri Salsabila</p>
                                             </div>
                                             <div className={styles.more}>
-                                                <MoreButton options={options}/>
+                                                <MoreButton options={options} />
+                                                {isModalOpen && (
+                                                    <Modal
+                                                        isOpen={isModalOpen}
+                                                        onRequestClose={() => setIsModalOpen(false)}
+                                                        contentLabel="Konfirmasi Hapus"
+                                                        className={styles.modal}
+                                                        overlayClassName={styles.overlay}
+                                                    >
+                                                        {modalType === 'hapus' && (
+                                                            <>
+                                                                <div className={styles.modalContent}>
+                                                                    <h2>Konfirmasi Hapus</h2>
+                                                                    <p>Yakin ingin menghapus?</p>
+                                                                    <div className={styles.modalButtons}>
+                                                                        <button onClick={handleDeleteItem} className={styles.yesButton}>Ya</button>
+                                                                        <button onClick={() => setIsModalOpen(false)} className={styles.noButton}>Tidak</button>
+                                                                    </div>
+                                                                </div>
+                                                            </>
+                                                        )}
+                                                        {modalType === 'edit' && (
+                                                            <>
+                                                                <div className={styles.modalContent}>
+                                                                    <h2>Edit</h2>
+                                                                    <p>Isi modal untuk opsi Edit di sini</p>
+                                                                    <div className={styles.modalButtons}>
+                                                                        <button onClick={() => setIsModalOpen(false)} className={styles.closeButton}>Tutup</button>
+                                                                    </div>
+                                                                </div>
+                                                            </>
+                                                        )}
+                                                    </Modal>
+                                                )}
                                             </div>
                                         </div>
                                         <div className={styles.isikiriman}>
