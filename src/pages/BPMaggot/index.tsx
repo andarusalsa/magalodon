@@ -11,9 +11,9 @@ import profil1 from '@/components/elements/profil1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
-import {LogOut, ChevronLeft, MoreVertical} from 'react-feather'
+import {LogOut, ChevronLeft} from 'react-feather'
 import MoreButton from '@/components/fragments/moreButton/moreButton'
-import Modal from 'react-modal';
+import Modal from 'react-modal'
 
 interface ModalProps {
     isOpen: boolean;
@@ -43,7 +43,8 @@ const BPMaggot = () => {
     const [error, setError] = useState<string>('')
     const [isStatusActive, setIsStatusActive] = useState(true)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [modalType, setModalType] = useState('')
+    const [ModalType, setModalType] = useState('')
+    const [isBPMActive , setIsBPMActive] = useState(true)
 
     const handleStatusChange = (newStatus: string) => {
         setStatus(newStatus);
@@ -282,7 +283,7 @@ const BPMaggot = () => {
                                                 <p>Andaru Putri Salsabila</p>
                                             </div>
                                             <div className={styles.more}>
-                                                <MoreButton options={options} />
+                                                <MoreButton options={options}/>
                                                 {isModalOpen && (
                                                     <Modal
                                                         isOpen={isModalOpen}
@@ -291,7 +292,7 @@ const BPMaggot = () => {
                                                         className={styles.modal}
                                                         overlayClassName={styles.overlay}
                                                     >
-                                                        {modalType === 'hapus' && (
+                                                        {ModalType === 'hapus' && (
                                                             <>
                                                                 <div className={styles.modalContent}>
                                                                     <h2>Konfirmasi Hapus</h2>
@@ -303,7 +304,7 @@ const BPMaggot = () => {
                                                                 </div>
                                                             </>
                                                         )}
-                                                        {modalType === 'edit' && (
+                                                        {ModalType === 'edit' && (
                                                             <>
                                                                 <div className={styles.modalContent}>
                                                                     <h2>Edit</h2>

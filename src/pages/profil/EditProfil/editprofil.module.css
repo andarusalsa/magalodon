@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../components/assets/Poppins/Poppins-Light.ttf');
+    src: url('../../../components/assets/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Gaston';
+    src: url('../../../components/assets/Gaston\ Linear\ Bold.woff.ttf');
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to bottom, #7A9791 50%, #F1F9F7 50%);
+}
+
+.bannerSatu{
+    color: #fff;
+    padding-top : 5rem;
+    margin-left: 3rem;
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Link{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Link p{
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.containerProfile{
+    display: flex;
+    min-height: 50vh;
+    position: relative;
+    font-family: 'Poppins';
+    align-items: center;
+    justify-content: center;
+}
+
+.profilWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    background-color: #fff;
+    min-height: 50vh;
+    width: 80%;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.foto{
+    width: 70px;
+    height: 70px;
+    margin-top: 20px;
+}
+
+.profil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.editFoto{
+    margin-top: 5px;
+    border: none;
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.menuUp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menuUp1{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    margin-left: 30px;
+    align-items: center;
+    color: #000;
+}
+
+.menuUp1 p{
+    margin-left: 20px;
+}
+
+.backUp{
+    align-items: center;
+}
+
+.menuUp2{
+    margin-left: auto;
+    margin-right: 30px;
+    color: #FF9500;
+    text-decoration: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+
+.form p{
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.form input{
+    border: #d9d9d9 solid 1px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    width: 750px;
+}
+

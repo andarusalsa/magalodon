@@ -1,4 +1,3 @@
-import { Poppins } from 'next/font/google'
 import styles from './beranda.module.css'
 
 export default function Home() {
