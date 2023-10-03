@@ -5,12 +5,17 @@ import Link from 'next/link'
 import {ChevronLeft, FileText, Edit, HelpCircle, LogOut} from 'react-feather'
 import React, { useState } from "react"
 import TextInput from '@/components/fragments/inputText/inputText'
+import Modal from 'react-modal'
+import { useRouter } from 'next/router'
 
 const EditProfil = () => {
     const [nama, setNama] = useState('')
     const [email, setEmail] = useState('')
     const [alamat, setAlamat] = useState('')
     const [norek, setNorek] = useState('')
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+    const router = useRouter()
 
     const handleNamaChange = (newNama: string) => {
         setNama(newNama);
@@ -26,6 +31,18 @@ const EditProfil = () => {
 
     const handleNorekChange = (newNorek: string) => {
         setNorek(newNorek);
+    }
+
+    const handleSimpanClick = () => {
+        setIsModalVisible(true);
+    }
+
+    const handleSimpan = () => {
+        setTimeout(() => {
+            setIsModalVisible(false);
+            setShowSuccessMessage(false);
+            router.push('/profil'); // Gunakan router dari 'next/router' di sini
+        }, 3000);
     }
 
     return (
@@ -44,9 +61,21 @@ const EditProfil = () => {
                             <ChevronLeft className={styles.backUp} />
                             <p>Edit Profil</p>
                         </Link>
-                        <Link href='#' className={styles.menuUp2}>
+                        <button className={styles.menuUp2} onClick={handleSimpanClick}>
                             <p>Simpan</p>
-                        </Link>
+                        </button>
+                        <Modal
+                            isOpen={isModalVisible}
+                            onRequestClose={() => setIsModalVisible(false)}
+                            shouldCloseOnEsc={true}
+                            className={styles.ModalOverlay}
+                        >
+                            <div className={styles.ModalContent}>
+                                <h2>Anda yakin ingin menyimpan perubahan?</h2>
+                                <button onClick={() => setIsModalVisible(false)}>Batal</button>
+                                <button onClick={handleSimpan}>Simpan</button>
+                            </div>
+                        </Modal>
                     </div>
 
                     <div className={styles.profil}>
@@ -69,11 +98,13 @@ const EditProfil = () => {
                         </div>
                         <div className={styles.form1}>
                             <p>Nama Bank</p>
-                            <select>
+                            <div className={styles.selectWrapper}>
+                            <select className={styles.select}>
                                 <option>BCA</option>
                                 <option>BNI</option>
                                 <option>BRI</option>
                             </select>
+                            </div>
                         </div>
                         <div className={styles.form1}>
                             <p>Nomor Rekening</p>

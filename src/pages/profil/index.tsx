@@ -24,7 +24,7 @@ const profil = () => {
                     <hr className={styles.line} />
 
                     <div className={styles.opsi}>
-                        <Link href='#' className={styles.opsi1}>
+                        <Link href='/profil/StatusPenjualan' className={styles.opsi1}>
                             <FileText className={styles.iconOption}/>
                             <p>Status Penjualan</p>
                         </Link>
@@ -32,7 +32,7 @@ const profil = () => {
                             <Edit className={styles.iconOption}/>
                             <p>Edit Profil</p>
                         </Link>
-                        <Link href='#' className={styles.opsi1}>
+                        <Link href='/profil/FAQ' className={styles.opsi1}>
                             <HelpCircle className={styles.iconOption}/>
                             <p>FAQ</p>
                         </Link>

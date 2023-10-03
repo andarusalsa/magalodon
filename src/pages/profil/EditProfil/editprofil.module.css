@@ -82,7 +82,7 @@
     font-family: 'Poppins';
     font-size: 12px;
     cursor: pointer;
-    text-decoration: underline;
+    color:#FF9500;
 }
 
 .menuUp{
@@ -112,7 +112,55 @@
     margin-left: auto;
     margin-right: 30px;
     color: #FF9500;
-    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.ModalOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ModalContent {
+    background-color: #fff; /* Warna latar belakang modal */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 400px; /* Lebar maksimum modal */
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+
+.ModalContent button {
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    border: #FF9500 1px solid;
+    width: 100px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+
+.ModalContent button:last-child {
+    background-color: #FF9500; /* Warna latar belakang tombol Kembali ke Masuk */
+    color:#fff;
+    margin-left: 20px;
+    border:none
 }
 
 .form{
@@ -137,5 +185,23 @@
     padding: 10px;
     padding-left: 20px;
     width: 750px;
+}
+
+.selectWrapper{
+    border: #d9d9d9 solid 1px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    width: 750px;
+}
+
+.select{
+    border: none;
+    background-color: transparent;
+    width: 750px;
+    color: #333;
+    font-family: 'Poppins';
+    outline: none;
 }
 
