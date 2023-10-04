@@ -17,7 +17,7 @@
 }
 
 .bannerSatu{
-    background-image: url('../../components/elements/bannerBPM.png');
+    background-image: url('../../components/elements/bannerBPL.png');
     background-size: cover;
     color: #fff;
     padding : 6rem;
@@ -36,6 +36,7 @@
 .ContentProfil{
     display: flex;
     flex-direction: row;
+    text-decoration: none;
 }
 
 .ContentProfil p{

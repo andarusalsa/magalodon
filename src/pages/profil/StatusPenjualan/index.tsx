@@ -25,21 +25,62 @@ const StatusPenjualan = () => {
                     </div>
 
                     <Tab.Group>
-                        <Tab.List>
+                        <Tab.List className={styles.tabList}>
                             <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Menunggu Persetujuan</Tab>
                             <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Sedang Proses</Tab>
                             <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Telah Sampai</Tab>
                         </Tab.List>
-                        <Tab.Panels>
+                        <Tab.Panels className={styles.tabPanels}>
                             <Tab.Panel>
                                 <div className={styles.list}>
-                                    
+                                    <div className={styles.itemKiri}>
+                                        <div className={styles.item1}>
+                                            <p>2 Juli 2023</p>
+                                        </div>
+                                        <div className={styles.item2}>
+                                            5 Kilogram Maggot
+                                        </div>
+                                    </div>
+                                    <div className={styles.itemKanan}>
+                                        <p>estimasi pendapatan Rp. 500.000</p>
+                                    </div>
                                 </div>
+                                <hr/>
                             </Tab.Panel>
 
-                            <Tab.Panel></Tab.Panel>
+                            <Tab.Panel>
+                                <Link href={'/status'} className={styles.list}>
+                                    <div className={styles.itemKiri}>
+                                        <div className={styles.item1}>
+                                            <p>2 Juli 2023</p>
+                                        </div>
+                                        <div className={styles.item2}>
+                                            5 Kilogram Maggot
+                                        </div>
+                                    </div>
+                                    <div className={styles.itemKanan}>
+                                        <p>penjualanmu sudah disetujui, konfirmasi jika pesananmu sudah kamu kirim</p>
+                                    </div>
+                                </Link>
+                                <hr/>
+                            </Tab.Panel>
 
-                            <Tab.Panel></Tab.Panel>
+                            <Tab.Panel>
+                                <Link href={'/status'} className={styles.list}>
+                                    <div className={styles.itemKiri}>
+                                        <div className={styles.item1}>
+                                            <p>2 Juli 2023</p>
+                                        </div>
+                                        <div className={styles.item2}>
+                                            5 Kilogram Maggot
+                                        </div>
+                                    </div>
+                                    <div className={styles.itemKanan}>
+                                        <p>maggotmu telah sampai, konfirmasi jika uangmu sudah diterima</p>
+                                    </div>
+                                </Link>
+                                <hr/>
+                            </Tab.Panel>
                         </Tab.Panels>
                     </Tab.Group>
                 </div>

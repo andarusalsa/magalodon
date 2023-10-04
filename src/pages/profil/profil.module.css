@@ -106,3 +106,48 @@
 .opsi1 p {
     margin-left: 30px;
 }
+
+
+.ModalOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ModalContent {
+    background-color: #fff; /* Warna latar belakang modal */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 300px; /* Lebar maksimum modal */
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+  
+.ModalContent button {
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    border: #FF9500 1px solid;
+    width: 100px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: 'Poppins';
+    font-size: 10px;
+}
+
+.ModalContent button:last-child {
+    background-color: #FF9500; /* Warna latar belakang tombol Kembali ke Masuk */
+    color:#fff;
+    margin-left: 20px;
+    border:none
+}

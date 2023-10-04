@@ -45,7 +45,6 @@
     min-height: 50vh;
     position: relative;
     font-family: 'Poppins';
-    align-items: center;
     justify-content: center;
 }
 
@@ -54,18 +53,15 @@
     flex-direction: column;
     margin: 30px;
     background-color: #fff;
-    min-height: 50vh;
     width: 80%;
     border-radius: 20px;
     justify-content: center;
-    text-align: center;
     padding-bottom: 30px;
 }
 
 .menuUp{
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
 .menuUp1{
@@ -75,6 +71,8 @@
     margin-left: 30px;
     align-items: center;
     color: #000;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .menuUp1 p{
@@ -108,14 +106,59 @@
     align-items: center;
 }
 
-.iconOption{
-    margin-right: 20px;
-    margin-left: auto;
-    width: 15px;
-    height: 15px;
+.tab{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: none;
+    font-family: 'Poppins';
+    cursor: pointer;
+    padding-left: 108px;
+    padding-right: 108px;
 }
 
+.tabActive{
+    background-color: #F1F9F7;
+    color: #FF9500;
+}
 
+.tabPanels{
+    position: relative;
+    font-family: 'Poppins';
+    padding-bottom: 50px;
+    width: 995px;
+}
 
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+}
 
+.itemKiri{
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
 
+.itemKanan{
+    padding-right: 50px;
+    padding-left: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 10px;
+    color: #9d9d9d;
+    max-width: 200px;
+    text-align: right;
+}
+
+.item1{
+    font-size: 10px;
+    color: #9d9d9d;
+}
+
+.item2{
+    font-size: 12px;
+    color: #000;
+}

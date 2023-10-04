@@ -3,8 +3,22 @@ import Image from 'next/image'
 import profilImage from '@/components/elements/profil.png'
 import Link from 'next/link'
 import {ChevronLeft, FileText, Edit, HelpCircle, LogOut} from 'react-feather'
+import Modal from 'react-modal'
+import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 
-const profil = () => {
+const Profil = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const router = useRouter()
+
+    const handleKeluar = () => {
+        setIsModalOpen(true)
+    }
+
+    const handleLogout = () => {
+            router.push('/produk') 
+    };
+
     return (
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
@@ -36,10 +50,21 @@ const profil = () => {
                             <HelpCircle className={styles.iconOption}/>
                             <p>FAQ</p>
                         </Link>
-                        <Link href='#' className={styles.opsi1}>
+                        <Link href='#' className={styles.opsi1} onClick={handleKeluar}>
                             <LogOut className={styles.iconOption}/>
                             <p>Keluar</p>
                         </Link>
+                        <Modal
+                            isOpen={isModalOpen}
+                            contentLabel="Daftar Berhasil"
+                            className={styles.ModalOverlay}
+                          >
+                            <div className={styles.ModalContent}>
+                              <p>Anda yakin ingin keluar?</p>
+                              <button onClick={() => setIsModalOpen(false)}>Batal</button>
+                              <button onClick={handleLogout}>Ya</button>
+                            </div>
+                          </Modal>
                     </div>
                 </div>
             </div>
@@ -47,4 +72,4 @@ const profil = () => {
     )
 }
 
-export default profil
+export default Profil
