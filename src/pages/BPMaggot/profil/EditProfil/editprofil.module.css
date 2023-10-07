@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Poppins';
-    src: url('../../../components/assets/Poppins/Poppins-Light.ttf');
-    src: url('../../../components/assets/Poppins/Poppins-Medium.ttf');
+    src: url('../../../../components/assets/Poppins/Poppins-Light.ttf');
+    src: url('../../../../components/assets/Poppins/Poppins-Medium.ttf');
 }
 
 @font-face {
     font-family: 'Gaston';
-    src: url('../../../components/assets/Gaston\ Linear\ Bold.woff.ttf');
+    src: url('../../../../components/assets/Gaston\ Linear\ Bold.woff.ttf');
 }
 
 .container {

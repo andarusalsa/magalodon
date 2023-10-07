@@ -1,10 +1,10 @@
-import styles from './faq.module.css'
+import styles from './answer.module.css'
 import Link from 'next/link'
 import {ChevronLeft} from 'react-feather'
 import React from "react"
 import { ChevronRight } from 'react-feather'
 
-const FAQ = () => {
+const AnswerFAQ = () => {
     return (
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
@@ -17,25 +17,19 @@ const FAQ = () => {
             <div className = {styles.containerProfile}>
                 <div className={styles.profilWrapper}>
                     <div className={styles.menuUp}>
-                        <Link href='/profil' className={styles.menuUp1}>
+                        <Link href='/BPMaggot/profil/FAQ' className={styles.menuUp1}>
                             <ChevronLeft className={styles.backUp} />
                             <p>FAQ</p>
                         </Link>
                     </div>
 
                     <div className={styles.opsi}>
-                        <Link href='/profil/FAQ/AnswerFAQ' className={styles.button}>
+                        <div className={styles.kolom}>
                             <p>Bagaimana saya bisa menjual maggot saya?</p>
-                            <ChevronRight className={styles.iconOption}/>
-                        </Link>
-                        <Link href='#' className={styles.button}>
-                            <p>Bagaimana saya ?</p>
-                            <ChevronRight className={styles.iconOption}/>
-                        </Link>
-                        <Link href='#' className={styles.button}>
-                            <p>Bagaimana saya bisa ?</p>
-                            <ChevronRight className={styles.iconOption}/>
-                        </Link>
+                        </div>
+                        <div className={styles.kolom}>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut lorem eu dolor tristique vulputate. Integer non lacinia turpis. In ut orci hendrerit, luctus velit ut, condimentum urna. In neque nibh, imperdiet porta pharetra bibendum, aliquet ac mi. Maecenas sit amet sollicitudin nunc, congue laoreet sapien. Praesent sit amet suscipit sem. Nam in est felis.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,4 +37,4 @@ const FAQ = () => {
     )
 }
 
-export default FAQ
+export default AnswerFAQ

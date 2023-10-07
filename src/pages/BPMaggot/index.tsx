@@ -15,21 +15,6 @@ import {LogOut, ChevronLeft} from 'react-feather'
 import MoreButton from '@/components/fragments/moreButton/moreButton'
 import Modal from 'react-modal'
 
-interface ModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-}  
-
-function OpenModal({ isOpen, onClose }: ModalProps) {
-    return (
-        <div>
-            {/* Isi modal di sini */}
-            <p>Konten Modal</p>
-            <button onClick={onClose}>Tutup Modal</button>
-        </div>
-    );
-}
-
 const BPMaggot = () => {
     const [status, setStatus] = useState<string>("")
     const [nama, setnama] = useState("")
@@ -39,16 +24,35 @@ const BPMaggot = () => {
     const [liked, setLiked] = useState(false);
     const [jumlah, setjumlah] = useState<number>(0)
     const [harga, setharga] = useState<number>(0)
-    const [inputValue, setInputValue] = useState<string>('')
     const [error, setError] = useState<string>('')
     const [isStatusActive, setIsStatusActive] = useState(true)
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [ModalType, setModalType] = useState('')
     const [isBPMActive , setIsBPMActive] = useState(true)
+    const [wordCount, setWordCount] = useState<number>(0)
+
+    const countWords = (text: string) => {
+        // Periksa apakah input kosong, dan jika iya, kembalikan 0
+        if (text.trim() === "") {
+            return 0;
+        }
+        const words = text.trim().split(/\s+/);
+        return words.length;
+    };
 
     const handleStatusChange = (newStatus: string) => {
         setStatus(newStatus);
-    };
+        const newWordCount = countWords(newStatus);
+        setWordCount(newWordCount);
+    }
+
+    const handlePosting = (event: React.MouseEvent<HTMLButtonElement>) => {
+        if (status.trim() === "" && status.length <= 200) {
+            setError('Status tidak boleh kosong dan tidak boleh lebih dari 200 karakter');
+        } else {
+            setError('yuhu')
+        }
+    }    
 
     const handlenamaChange = (newnama: string) => {
         setnama(newnama);
@@ -102,13 +106,13 @@ const BPMaggot = () => {
         <div className={styles.container}>
             <section className={styles.bannerSatu}>
                 <div className={styles.kiri}>
-                    <Link href='/profil' className={styles.ContentProfil}>
+                    <Link href='/BPMaggot/profil' className={styles.ContentProfil}>
                         <Image src={profil} alt="profil" className={styles.profil} />
                         Andaru Putri Salsabila
                     </Link>
                 </div>
                 <div className={styles.kanan}>
-                    <Link href='/notifikasi'>
+                    <Link href='/BPMaggot/notifikasi'>
                         <FontAwesomeIcon icon={faBellOutline} className={styles.notifikasi}/>
                     </Link>
                     <Link href='/logout'>
@@ -144,12 +148,18 @@ const BPMaggot = () => {
                                                 value={status} 
                                                 onChange={handleStatusChange} 
                                                 />
+                                                <p className={styles.wordCount}>{wordCount}/200</p>
                                             </div>
                                             <div className={styles.iconContainer}>
+                                                <button className={styles.buttonStatus}>
                                                     <FontAwesomeIcon icon={faImage} className={styles.icon}/>
+                                                </button>
+                                                <button className={styles.buttonStatus} onClick={handlePosting}>
                                                     <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
+                                                </button>
                                             </div>
                                         </div>
+                                        {error && <p className={styles.error}>{error}</p>}
                                         
                                         <div className={styles.menusmall}>
                                             <Link href='/kirimanmu' className={styles.menu1}
@@ -349,11 +359,11 @@ const BPMaggot = () => {
                                 <div className={styles.contentTab2}>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nama</p>
-                                        <TextInput placeholder='Nama' onInputChange={handlenamaChange}/>
+                                        <TextInput placeholder='Nama' value={nama} onInputChange={handlenamaChange}/>
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nomor Telepon</p>
-                                        <TextInput placeholder='Nomor Telepon' onInputChange={handleNomorChange}/>
+                                        <TextInput placeholder='Nomor Telepon' value={nomor} onInputChange={handleNomorChange}/>
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nama Bank</p>
@@ -367,7 +377,7 @@ const BPMaggot = () => {
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nomor Rekening</p>
-                                        <TextInput placeholder='Nomor Rekening' onInputChange={handlenorekChange}/>
+                                        <TextInput placeholder='Nomor Rekening' value={norek} onInputChange={handlenorekChange}/>
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Jumlah yang ingin dijual</p>

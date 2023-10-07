@@ -38,15 +38,15 @@ const Profil = () => {
                     <hr className={styles.line} />
 
                     <div className={styles.opsi}>
-                        <Link href='/profil/StatusPenjualan' className={styles.opsi1}>
+                        <Link href='/BPMaggot/profil/StatusPenjualan' className={styles.opsi1}>
                             <FileText className={styles.iconOption}/>
                             <p>Status Penjualan</p>
                         </Link>
-                        <Link href='/profil/EditProfil' className={styles.opsi1}>
+                        <Link href='/BPMaggot/profil/EditProfil' className={styles.opsi1}>
                             <Edit className={styles.iconOption}/>
                             <p>Edit Profil</p>
                         </Link>
-                        <Link href='/profil/FAQ' className={styles.opsi1}>
+                        <Link href='/BPMaggot/profil/FAQ' className={styles.opsi1}>
                             <HelpCircle className={styles.iconOption}/>
                             <p>FAQ</p>
                         </Link>

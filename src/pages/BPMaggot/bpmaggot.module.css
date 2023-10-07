@@ -127,6 +127,11 @@
     margin-right: 20px;
 }
 
+.statusContainer{
+ display: flex;
+ flex-direction: row;
+}
+
 .status{
     display: flex;
     flex-direction: row;
@@ -138,13 +143,13 @@
     margin-bottom: auto;
     padding-top: 5px;
     padding-left: 20px;
-    padding-bottom: auto;
+    padding-bottom: 5px;
     margin-left: 20px;
     margin-right: 20px;
 }
 
 .statusInput{
-    width: 500px;
+    width: 450px;
     border: none;
     resize: none; /* Untuk mencegah pengguna mengubah ukuran textarea */
     max-height: 100px;
@@ -154,6 +159,8 @@
     font-size: 12px;
     padding-right: 20px;
     overflow-y:auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .statusInput:focus{
@@ -174,6 +181,13 @@
 .statusInput::-webkit-scrollbar-track {
     background-color: #f1f1f1; 
     border-radius: 30px;/* Warna track scrollbar */
+}
+
+.wordCount{
+    font-size: 10px;
+    color: #9d9d9d;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .iconContainer{
@@ -348,6 +362,24 @@
     text-align: center;
     margin-top: 30px;
     float: right;
+    font-family: 'Poppins';
+}
+
+.buttonStatus{
+    background-color: transparent;
+    border: none;
+}
+
+.error{
+    text-align: center;
+    color: #ff0000;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    font-style: italic;
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 .containerTab1{

@@ -1,19 +1,29 @@
-import React, { useState, useRef, ChangeEvent } from 'react';
+import React, { useRef, ChangeEvent } from 'react';
 
 interface AutoAdjustingTextInputProps {
-    className: string;
-    value: string;
-    onChange: (value: string) => void;
-    placeholder: string;
-  }
-function AutoAdjustingTextInput({ 
-    className, value, onChange, placeholder }
-  : AutoAdjustingTextInputProps) {
-  const [text, setText] = useState('');
+  className: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+  type?: string;
+}
+
+function AutoAdjustingTextInput({
+  className,
+  value,
+  onChange,
+  placeholder,
+}: AutoAdjustingTextInputProps) {
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value);
+    // Dapatkan nilai input dari event
+    const newValue = e.target.value;
+    
+    // Teruskan nilai input ke fungsi onChange yang diberikan
+    onChange(newValue);
+
+    // Sesuaikan tinggi textarea
     adjustHeight();
   };
 
@@ -28,7 +38,7 @@ function AutoAdjustingTextInput({
     <textarea
       ref={inputRef}
       className={`auto-adjust-textarea ${className}`}
-      value={text}
+      value={value} // Gunakan nilai yang diteruskan sebagai prop
       onChange={handleInputChange}
       rows={1}
       placeholder={placeholder}
@@ -37,4 +47,3 @@ function AutoAdjustingTextInput({
 }
 
 export default AutoAdjustingTextInput;
-

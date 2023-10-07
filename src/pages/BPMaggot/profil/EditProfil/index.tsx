@@ -57,7 +57,7 @@ const EditProfil = () => {
             <div className = {styles.containerProfile}>
                 <div className={styles.profilWrapper}>
                     <div className={styles.menuUp}>
-                        <Link href='/profil' className={styles.menuUp1}>
+                        <Link href='/BPMaggot/profil' className={styles.menuUp1}>
                             <ChevronLeft className={styles.backUp} />
                             <p>Edit Profil</p>
                         </Link>

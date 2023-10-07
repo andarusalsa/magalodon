@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../components/assets/Poppins/Poppins-ExtraLight.ttf');
+    src: url('../../../components/assets/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Gaston';
+    src: url('../../../components/assets/Gaston\ Linear\ Bold.woff.ttf');
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.bannerSatu{
+    background-image: url('../../../components/elements/bannerBPM.png');
+    background-size: cover;
+    color: #fff;
+    padding : 6rem;
+    font-family: 'Poppins';
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kiri{
+    display: flex;
+    flex-direction: row;
+}
+
+.ContentProfil{
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    font-style: none;
+    align-items: center;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.profil{
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.kanan{
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.notifikasi{
+    color:#fff;
+    width: 20px;
+    height: 20px;
+}
+
+.logout{
+    margin-left: 30px;
+    color: #fff;
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 20px;
+    height: 20px;
+}
+
+.notifContainer{
+    display: flex;
+    min-height: 50vh;
+    position: relative;
+    font-family: 'Poppins';
+    justify-content: center;
+}
+
+.notifWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color: #fff;
+    min-height: 50vh;
+    width: 80%;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.back{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #000;
+}
+
+.back1{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    margin-left: 30px;
+    align-items: center;
+    color: #000;
+}
+
+.back p{
+    margin-left: 20px;
+}
+
+.line{
+    position: relative;
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: #d9d9d9;
+    outline: none;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.notifList{
+    margin-left: 75px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.notif1{
+    margin-left: 75px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.notifDate{
+    font-size: 10px;
+    color: #9d9d9d;
+    margin: 0;
+    padding: 0;
+}
+
+.notifText{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
