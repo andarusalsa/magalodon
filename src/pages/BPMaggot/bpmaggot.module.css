@@ -55,12 +55,15 @@
 }
 
 .logout{
-    margin-left: 30px;
+    margin-left: 20px;
     color: #fff;
     margin-bottom: auto;
     margin-top: auto;
     width: 20px;
     height: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .containerTab{
@@ -113,6 +116,11 @@
     max-width: 1076px;
 }
 
+.setStatus{
+    display: flex;
+    flex-direction: column;
+}
+
 .buatstatus{
     display: flex;
     flex-direction: row;
@@ -128,8 +136,8 @@
 }
 
 .statusContainer{
- display: flex;
- flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .status{
@@ -371,16 +379,123 @@
 }
 
 .error{
-    text-align: center;
-    color: #ff0000;
-    font-size: 10px;
-    margin-top: 20px;
+    font-size: 8px;
+    margin-left: 20px;
     margin-bottom: auto;
     font-style: italic;
-    padding: 10px;
-    background-color: rgba(255, 0, 0, 0.1);
-    border-radius: 5px;
+    color: #9d9d9d ;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.ModalOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.ModalContent {
+    background-color: #fff; /* Warna latar belakang modal */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 300px; /* Lebar maksimum modal */
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 12px;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.ModalContent button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    border: #FF9500 solid 1px;
+    width: 100px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: 'Poppins';
+    font-size: 12px;
+    color: #FF9500;
+}
+
+.ModalContent button:last-child {
+    background-color: #FF9500;
+    color: #fff;
+    margin-left: 20px;
+    border:none
+}
+
+@keyframes drawCheck {
+    0% {
+        opacity: 0;
+      stroke-dashoffset: 30; 
+    }
+    100% {
+        opacity: 1;
+      stroke-dashoffset: 0; 
+    }
+}
+
+.check {
+    color: #FF9500;
+    font-size: 48px;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30; 
+    animation: drawCheck 1s ease-in-out;
+}
+
+.ModalOverlay1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ModalContent1 {
+    background-color: #fff; /* Warna latar belakang modal */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    max-width: 200px; /* Lebar maksimum modal */
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}  
 
 .containerTab1{
     display: flex;

@@ -1,17 +1,17 @@
 import styles from './bpmaggot.module.css'
-import { Tab } from '@headlessui/react';
-import classNames from 'classnames';
-import TextInput from "@/components/fragments/inputText/inputText";
-import AutoAdjustingTextInput from '@/components/fragments/inputText/autoAdjusting';
+import { Tab } from '@headlessui/react'
+import classNames from 'classnames'
+import TextInput from "@/components/fragments/inputText/inputText"
+import AutoAdjustingTextInput from '@/components/fragments/inputText/autoAdjusting'
 import React, { useState } from "react";
-import Link from 'next/link';
+import Link from 'next/link'
 import profil from '@/components/elements/profil.png'
-import Image from 'next/image';
+import Image from 'next/image'
 import profil1 from '@/components/elements/profil1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
-import {LogOut, ChevronLeft} from 'react-feather'
+import {LogOut, ChevronLeft, Check} from 'react-feather'
 import MoreButton from '@/components/fragments/moreButton/moreButton'
 import Modal from 'react-modal'
 
@@ -27,12 +27,10 @@ const BPMaggot = () => {
     const [error, setError] = useState<string>('')
     const [isStatusActive, setIsStatusActive] = useState(true)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [ModalType, setModalType] = useState('')
-    const [isBPMActive , setIsBPMActive] = useState(true)
+    const [modalLogout, setModalLogout] = useState(false)
     const [wordCount, setWordCount] = useState<number>(0)
 
     const countWords = (text: string) => {
-        // Periksa apakah input kosong, dan jika iya, kembalikan 0
         if (text.trim() === "") {
             return 0;
         }
@@ -41,16 +39,20 @@ const BPMaggot = () => {
     };
 
     const handleStatusChange = (newStatus: string) => {
-        setStatus(newStatus);
+        setStatus(newStatus)
         const newWordCount = countWords(newStatus);
-        setWordCount(newWordCount);
+        setWordCount(newWordCount)
     }
 
     const handlePosting = (event: React.MouseEvent<HTMLButtonElement>) => {
         if (status.trim() === "" && status.length <= 200) {
             setError('Status tidak boleh kosong dan tidak boleh lebih dari 200 karakter');
         } else {
-            setError('yuhu')
+            setIsModalOpen(true)
+
+            setTimeout(() => {
+                setIsModalOpen(false);
+            }, 1000);
         }
     }    
 
@@ -85,21 +87,12 @@ const BPMaggot = () => {
 
     const options = ['Hapus', 'Edit']
 
-
-    function handleOptionClick(option: string) {
-        if (option === 'Hapus') {
-            setModalType('hapus')
-            setIsModalOpen(true)
-        } else if (option === 'Edit') {
-            setModalType('edit')
-            setIsModalOpen(true)
-        }
+    const handleLogout = () => {
+        setModalLogout(true)
     }
 
-    function handleDeleteItem() {
-        // Lakukan tindakan penghapusan yang sesuai di sini
-        // Setelah penghapusan selesai, tutup modal
-        setIsModalOpen(false);
+    const handleConfirmLogout = () => {
+        window.location.href = '/beranda';
     }
 
     return (
@@ -115,9 +108,21 @@ const BPMaggot = () => {
                     <Link href='/BPMaggot/notifikasi'>
                         <FontAwesomeIcon icon={faBellOutline} className={styles.notifikasi}/>
                     </Link>
-                    <Link href='/logout'>
+                    <button className={styles.logout} onClick={handleLogout}>
                         <LogOut className={styles.logout}/>
-                    </Link>
+                    </button>
+                    <Modal
+                        isOpen={modalLogout}
+                        onRequestClose={() => setModalLogout(false)}
+                        className={styles.ModalOverlay}
+                        overlayClassName={styles.ModalOverlay}
+                    >
+                        <div className={styles.ModalContent}>
+                            <p>Anda yakin ingin keluar?</p>
+                            <button onClick={() => setModalLogout(false)}>Kembali</button>
+                            <button onClick={handleConfirmLogout}>Ya</button>
+                        </div>
+                    </Modal>
                 </div>
             </section>
                 
@@ -140,26 +145,39 @@ const BPMaggot = () => {
                                                 <Image src={profil} alt="profil" className={styles.profil} />
                                             </Link>
                                         </div>
-                                        <div className={styles.status}>
-                                            <div className={styles.statusContainer}>
-                                                <AutoAdjustingTextInput 
-                                                placeholder="Apa pertanyaan atau informasi yang kamu punya?"
-                                                className={styles.statusInput} 
-                                                value={status} 
-                                                onChange={handleStatusChange} 
-                                                />
-                                                <p className={styles.wordCount}>{wordCount}/200</p>
+                                        <div className={styles.setStatus}>
+                                            <div className={styles.status}>
+                                                <div className={styles.statusContainer}>
+                                                    <AutoAdjustingTextInput 
+                                                    placeholder="Apa pertanyaan atau informasi yang kamu punya?"
+                                                    className={styles.statusInput} 
+                                                    value={status} 
+                                                    onChange={handleStatusChange} 
+                                                    />
+                                                    <p className={styles.wordCount}>{wordCount}/200</p>
+                                                </div>
+                                                <div className={styles.iconContainer}>
+                                                    <button className={styles.buttonStatus}>
+                                                        <FontAwesomeIcon icon={faImage} className={styles.icon}/>
+                                                    </button>
+                                                    <button className={styles.buttonStatus} onClick={handlePosting}>
+                                                        <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div className={styles.iconContainer}>
-                                                <button className={styles.buttonStatus}>
-                                                    <FontAwesomeIcon icon={faImage} className={styles.icon}/>
-                                                </button>
-                                                <button className={styles.buttonStatus} onClick={handlePosting}>
-                                                    <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
-                                                </button>
-                                            </div>
+                                            {error && <p className={styles.error}>{error}</p>}
+                                            <Modal
+                                                isOpen={isModalOpen}
+                                                contentLabel="Daftar Berhasil"
+                                                className={styles.ModalOverlay1}
+
+                                            >
+                                                <div className={styles.ModalContent1}>
+                                                    <Check className={styles.check}/>
+                                                    <p>Berhasil dikirim!</p>
+                                                </div>
+                                            </Modal>
                                         </div>
-                                        {error && <p className={styles.error}>{error}</p>}
                                         
                                         <div className={styles.menusmall}>
                                             <Link href='/kirimanmu' className={styles.menu1}
@@ -294,39 +312,6 @@ const BPMaggot = () => {
                                             </div>
                                             <div className={styles.more}>
                                                 <MoreButton options={options}/>
-                                                {isModalOpen && (
-                                                    <Modal
-                                                        isOpen={isModalOpen}
-                                                        onRequestClose={() => setIsModalOpen(false)}
-                                                        contentLabel="Konfirmasi Hapus"
-                                                        className={styles.modal}
-                                                        overlayClassName={styles.overlay}
-                                                    >
-                                                        {ModalType === 'hapus' && (
-                                                            <>
-                                                                <div className={styles.modalContent}>
-                                                                    <h2>Konfirmasi Hapus</h2>
-                                                                    <p>Yakin ingin menghapus?</p>
-                                                                    <div className={styles.modalButtons}>
-                                                                        <button onClick={handleDeleteItem} className={styles.yesButton}>Ya</button>
-                                                                        <button onClick={() => setIsModalOpen(false)} className={styles.noButton}>Tidak</button>
-                                                                    </div>
-                                                                </div>
-                                                            </>
-                                                        )}
-                                                        {ModalType === 'edit' && (
-                                                            <>
-                                                                <div className={styles.modalContent}>
-                                                                    <h2>Edit</h2>
-                                                                    <p>Isi modal untuk opsi Edit di sini</p>
-                                                                    <div className={styles.modalButtons}>
-                                                                        <button onClick={() => setIsModalOpen(false)} className={styles.closeButton}>Tutup</button>
-                                                                    </div>
-                                                                </div>
-                                                            </>
-                                                        )}
-                                                    </Modal>
-                                                )}
                                             </div>
                                         </div>
                                         <div className={styles.isikiriman}>
