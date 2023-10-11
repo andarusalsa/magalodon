@@ -29,6 +29,7 @@ const BPMaggot = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [modalLogout, setModalLogout] = useState(false)
     const [wordCount, setWordCount] = useState<number>(0)
+    const [modalSell, setModalSell] = useState(false)
 
     const countWords = (text: string) => {
         if (text.trim() === "") {
@@ -93,6 +94,10 @@ const BPMaggot = () => {
 
     const handleConfirmLogout = () => {
         window.location.href = '/beranda';
+    }
+
+    const handleSell = () => {
+        setModalSell(true)
     }
 
     return (
@@ -378,8 +383,15 @@ const BPMaggot = () => {
                                         <p className={styles.judul1}>Estimasi Pendapatan : Rp. {harga}</p>
                                     </div>
                                     <div>
-                                        <button className={styles.button}>Jual</button>
+                                        <button className={styles.button} onClick={handleSell}>Jual</button>
                                     </div>
+                                    <Modal 
+                                    isOpen={modalSell} 
+                                    onRequestClose={handleSell} 
+                                    className={styles.ModalOverlay} 
+                                    overlayClassName={styles.ModalOverlay}>
+                                        <p>apaya?</p>
+                                    </Modal>
                                 </div>
                             </div>
                         </Tab.Panel>

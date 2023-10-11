@@ -1,7 +1,8 @@
 import React, { useState, useEffect, MouseEvent } from 'react'
-import { MoreVertical } from 'react-feather'
+import { MoreVertical, X } from 'react-feather'
 import styles from './mb.module.css'
 import Modal from 'react-modal'
+import AutoAdjustingTextInput from '../inputText/autoAdjusting'
 
 interface MoreButtonProps {
   options: string[]
@@ -11,7 +12,11 @@ export default function MoreButton({ options }: MoreButtonProps) {
   const [isOptionsVisible, setOptionsVisible] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState<string>('')
+  const [edit, setEdit] = useState<string>('')
 
+  const handleEdit = (newEdit: string) => {
+    setEdit(newEdit);
+  }
 
   function handleOptionClick(option: string) {
     if (option === 'Hapus' || option === 'Edit') {
@@ -76,18 +81,31 @@ export default function MoreButton({ options }: MoreButtonProps) {
             <h2>Konfirmasi Hapus</h2>
             <p>Yakin ingin menghapus ini?</p>
             <div className={styles.modalButtons}>
-              <button onClick={() => setIsModalOpen(false)}>Tidak</button>
-              <button onClick={() => setIsModalOpen(false)}>Ya</button>
+              <button onClick={() => setIsModalOpen(false)} className={styles.closeButton}>Tidak</button>
+              <button onClick={() => setIsModalOpen(false)} className={styles.confirmButton}>Ya</button>
             </div>
           </>
         )}
 
         {selectedOption === 'Edit' && (
           <>
-            <h3>Edit Konten</h3>
-            <p>Isi modal untuk opsi Edit di sini</p>
-            <div className={styles.modalButtons}>
-              <button onClick={() => setIsModalOpen(false)} className={styles.closeButton}>Tutup</button>
+            <div className={styles.edit}>
+              <div className={styles.xButton}>
+                <button onClick={() => setIsModalOpen(false)} className={styles.XButton}>
+                  <X className={styles.X}/>
+                </button>
+              </div>
+              <div className={styles.modalInput}>
+                <AutoAdjustingTextInput 
+                  placeholder="Apa pertanyaan atau informasi yang kamu punya?"
+                  className={styles.statusInput} 
+                  value={edit}
+                  onChange={handleEdit}
+                />
+              </div>
+              <div className={styles.save}>
+                <button onClick={() => setIsModalOpen(false)} className={styles.saveButton}>Simpan</button>
+              </div>
             </div>
           </>
         )}
