@@ -24,7 +24,7 @@ const StatusPenjualan = () => {
     return (
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
-                <Link href = "/BPMaggot" className={styles.Link}> 
+                <Link href = "/BPLimbah" className={styles.Link}> 
                     <ChevronLeft className = {styles.back} />
                     <p>Profil</p>
                 </Link>
@@ -33,7 +33,7 @@ const StatusPenjualan = () => {
             <div className = {styles.containerProfile}>
                 <div className={styles.profilWrapper}>
                     <div className={styles.menuUp}>
-                        <Link href='/BPMaggot/profil' className={styles.menuUp1}>
+                        <Link href='/BPLimbah/profil' className={styles.menuUp1}>
                             <ChevronLeft className={styles.backUp} />
                             <p>Status Penjualan</p>
                         </Link>
@@ -53,7 +53,7 @@ const StatusPenjualan = () => {
                                             <p>2 Juli 2023</p>
                                         </div>
                                         <div className={styles.item2}>
-                                            5 Kilogram Maggot
+                                            5 Kilogram Limbah
                                         </div>
                                     </div>
                                     <div className={styles.itemKanan}>
@@ -70,7 +70,7 @@ const StatusPenjualan = () => {
                                             <p>2 Juli 2023</p>
                                         </div>
                                         <div className={styles.item2}>
-                                            5 Kilogram Maggot
+                                            5 Kilogram Limbah
                                         </div>
                                     </div>
                                     <div className={styles.itemKanan}>
@@ -85,7 +85,7 @@ const StatusPenjualan = () => {
                                 >
                                     <div className={styles.ModalContent}>
                                         <h2>Konfirmasi Pesananmu</h2>
-                                        <p>5 Kg Maggot</p>
+                                        <p>5 Kg Limbah</p>
                                         <p>Estimasi Pendapatan: Rp.500.000</p>
                                         <p className={styles.Alamat}>Alamat Pengiriman : Jl. Perumahan Semarang</p>
                                         <button className={styles.buttonConfirm} onClick={() => setModalSP(false)}>Konfirmasi</button>
@@ -99,7 +99,7 @@ const StatusPenjualan = () => {
                                             <p>2 Juli 2023</p>
                                         </div>
                                         <div className={styles.item2}>
-                                            5 Kilogram Maggot
+                                            5 Kilogram Limbah
                                         </div>
                                     </div>
                                     <div className={styles.itemKanan}>
@@ -116,11 +116,11 @@ const StatusPenjualan = () => {
                                             <p>2 Juli 2023</p>
                                         </div>
                                         <div className={styles.item2}>
-                                            5 Kilogram Maggot
+                                            5 Kilogram Limbah
                                         </div>
                                     </div>
                                     <div className={styles.itemKanan}>
-                                        <p>maggotmu telah sampai, konfirmasi jika uangmu sudah diterima</p>
+                                        <p>Limbahmu telah sampai, konfirmasi jika uangmu sudah diterima</p>
                                     </div>
                                 </button>
                                 <Modal
@@ -131,7 +131,7 @@ const StatusPenjualan = () => {
                                 >
                                     <div className={styles.ModalContent}>
                                         <h2>Konfirmasi Pesananmu</h2>
-                                        <p>5 Kg Maggot</p>
+                                        <p>5 Kg Limbah</p>
                                         <div className={styles.imageContainer}>
                                             <Image src={buktiTF} alt="buktiTF" className={styles.buktiTF} />
                                         </div>

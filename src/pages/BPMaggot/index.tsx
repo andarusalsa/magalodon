@@ -11,7 +11,7 @@ import profil1 from '@/components/elements/profil1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
-import {LogOut, ChevronLeft, Check} from 'react-feather'
+import {LogOut, ChevronLeft, Check, X} from 'react-feather'
 import MoreButton from '@/components/fragments/moreButton/moreButton'
 import Modal from 'react-modal'
 
@@ -30,6 +30,9 @@ const BPMaggot = () => {
     const [modalLogout, setModalLogout] = useState(false)
     const [wordCount, setWordCount] = useState<number>(0)
     const [modalSell, setModalSell] = useState(false)
+    const [modalComment, setModalComment] = useState(false)
+    const [comment, setComment] = useState("")
+    const [modalSuccess, setModalSuccess] = useState(false)
 
     const countWords = (text: string) => {
         if (text.trim() === "") {
@@ -69,6 +72,10 @@ const BPMaggot = () => {
         setnorek(newnorek);
     }
 
+    const handleCommentChange = (newComment: string) => {
+        setComment(newComment);
+    }
+
     const handleLiked = () => {
         setLiked(!liked);
     }
@@ -97,7 +104,23 @@ const BPMaggot = () => {
     }
 
     const handleSell = () => {
-        setModalSell(true)
+        if (!nama || !nomor || selectedCategory === 'Pilih Kategori' || !norek || jumlah <= 0) {
+            setError('Semua kolom harus diisi dengan benar');
+        } else {
+            setModalSell(true);
+        }
+    }
+
+    const handleComment = () => {
+        setModalComment(true)
+    }
+
+    const handleSuccess = () =>{
+        setModalSell(false)
+        setModalSuccess(true);
+        setTimeout(() => {
+            setModalSuccess(false);
+        }, 2000); 
     }
 
     return (
@@ -219,10 +242,51 @@ const BPMaggot = () => {
                                                     />
                                                     <p className={styles.ket}>2 disukai</p>
                                                 </div>
-                                                <div className={styles.comment}>
+                                                <div onClick={handleComment} className={styles.comment}>
                                                     <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
                                                     <p className={styles.ket}>1 komentar</p>
                                                 </div>
+                                                <Modal
+                                                    isOpen={modalComment}
+                                                    contentLabel="Daftar Berhasil"
+                                                    className={styles.ModalOverlay2}
+                                                >
+                                                    <div className={styles.ModalContent2}>
+                                                        <div className={styles.Comment}>
+                                                            <div className={styles.headerComment}>
+                                                                <p>Kiriman Ivanna Putri</p>
+                                                                <X onClick={()=> setModalComment(false)} className={styles.closeComment}/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div className={styles.kirimanComment}>
+                                                                <div className={styles.akun}>
+                                                                    <Image src={profil1} alt="profil1" className={styles.profilComment} />
+                                                                    <p>Ivanna Putri</p>
+                                                                </div>
+                                                                <div className={styles.isikiriman}>
+                                                                    <p>
+                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div className={styles.comment1}>
+                                                                <div className={styles.commentContainer}>
+                                                                    <AutoAdjustingTextInput 
+                                                                    placeholder="Tuliskan Komentarmu Disini"
+                                                                    className={styles.commentInput} 
+                                                                    value={comment} 
+                                                                    onChange={handleCommentChange} 
+                                                                    />
+                                                                </div>
+                                                                <div className={styles.iconContainer}>
+                                                                    <button className={styles.buttonStatus} onClick={handlePosting}>
+                                                                        <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Modal>
                                             </div>
                                         </div>
                                     </div>
@@ -359,11 +423,10 @@ const BPMaggot = () => {
                                         <p className={styles.judul}>Nama Bank</p>
                                         <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className={styles.bankOption}>
                                             <option value="Pilih Kategori">Pilih Bank</option>
-                                            <option value="Pilih Kategori">BRI</option>
-                                            <option value="Pilih Kategori">BNI</option>
-                                            <option value="Pilih Kategori">BCA</option>
+                                            <option value="BRI">BRI</option>
+                                            <option value="BNI">BNI</option>
+                                            <option value="BCA">BCA</option>
                                         </select>
-                                        
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nomor Rekening</p>
@@ -385,12 +448,30 @@ const BPMaggot = () => {
                                     <div>
                                         <button className={styles.button} onClick={handleSell}>Jual</button>
                                     </div>
+                                    {error && <p className={styles.error}>{error}</p>}
                                     <Modal 
                                     isOpen={modalSell} 
                                     onRequestClose={handleSell} 
                                     className={styles.ModalOverlay} 
                                     overlayClassName={styles.ModalOverlay}>
-                                        <p>apaya?</p>
+                                        <div className={styles.Sell}>
+                                            <p>Anda yakin data yang diisi sudah sesuai?</p>
+                                            <div className={styles.sellOption}>
+                                                <button onClick={() => setModalSell(false)} className={styles.buttonSellNo}>Tidak</button>
+                                                <button onClick={handleSuccess} className={styles.buttonSellYes}>Ya</button>
+                                            </div>
+                                        </div>
+                                    </Modal>
+                                    <Modal
+                                        isOpen={modalSuccess} 
+                                        onRequestClose={() => setModalSuccess(false)}
+                                        contentLabel="Daftar Berhasil"
+                                        className={styles.ModalOverlay1}>
+                                        <div className={styles.ModalContent1}>
+                                            <Check className={styles.check}/>
+                                            <p>Berhasil dikirim!</p>
+                                            <p>Kamu bisa cek status penjualanmu di menu Profil</p>
+                                        </div>
                                     </Modal>
                                 </div>
                             </div>

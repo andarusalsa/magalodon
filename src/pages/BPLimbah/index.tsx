@@ -1,17 +1,19 @@
 import styles from './bplimbah.module.css'
-import { Tab } from '@headlessui/react';
-import classNames from 'classnames';
-import TextInput from "@/components/fragments/inputText/inputText";
-import AutoAdjustingTextInput from '@/components/fragments/inputText/autoAdjusting';
+import { Tab } from '@headlessui/react'
+import classNames from 'classnames'
+import TextInput from "@/components/fragments/inputText/inputText"
+import AutoAdjustingTextInput from '@/components/fragments/inputText/autoAdjusting'
 import React, { useState } from "react";
-import Link from 'next/link';
+import Link from 'next/link'
 import profil from '@/components/elements/profil.png'
-import Image from 'next/image';
+import Image from 'next/image'
 import profil1 from '@/components/elements/profil1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
-import {LogOut} from 'react-feather'
+import {LogOut, ChevronLeft, Check, X} from 'react-feather'
+import MoreButton from '@/components/fragments/moreButton/moreButton'
+import Modal from 'react-modal'
 
 const BPLimbah = () => {
     const [status, setStatus] = useState<string>("")
@@ -22,12 +24,41 @@ const BPLimbah = () => {
     const [liked, setLiked] = useState(false);
     const [jumlah, setjumlah] = useState<number>(0)
     const [harga, setharga] = useState<number>(0)
-    const [inputValue, setInputValue] = useState<string>('');
-    const [error, setError] = useState<string>('');
+    const [error, setError] = useState<string>('')
+    const [isStatusActive, setIsStatusActive] = useState(true)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [modalLogout, setModalLogout] = useState(false)
+    const [wordCount, setWordCount] = useState<number>(0)
+    const [modalSell, setModalSell] = useState(false)
+    const [modalComment, setModalComment] = useState(false)
+    const [comment, setComment] = useState("")
+    const [modalSuccess, setModalSuccess] = useState(false)
+
+    const countWords = (text: string) => {
+        if (text.trim() === "") {
+            return 0;
+        }
+        const words = text.trim().split(/\s+/);
+        return words.length;
+    };
 
     const handleStatusChange = (newStatus: string) => {
-        setStatus(newStatus);
-    };
+        setStatus(newStatus)
+        const newWordCount = countWords(newStatus);
+        setWordCount(newWordCount)
+    }
+
+    const handlePosting = (event: React.MouseEvent<HTMLButtonElement>) => {
+        if (status.trim() === "" && status.length <= 200) {
+            setError('Status tidak boleh kosong dan tidak boleh lebih dari 200 karakter');
+        } else {
+            setIsModalOpen(true)
+
+            setTimeout(() => {
+                setIsModalOpen(false);
+            }, 1000);
+        }
+    }    
 
     const handlenamaChange = (newnama: string) => {
         setnama(newnama);
@@ -41,39 +72,85 @@ const BPLimbah = () => {
         setnorek(newnorek);
     }
 
+    const handleCommentChange = (newComment: string) => {
+        setComment(newComment);
+    }
+
     const handleLiked = () => {
         setLiked(!liked);
     }
 
     const handlejumlahChange = (newjumlah: string) => {
         if (isNaN(parseInt(newjumlah))) {
-          setharga(0);
-          setjumlah(0);
-          setError('');
+            setharga(0);
+            setjumlah(0);
+            setError('');
         } else {
-          const parsedValue = parseInt(newjumlah);
-          const Total = parsedValue * 10000;
-          setharga(Total);
-          setjumlah(parsedValue);
+            const parsedValue = parseInt(newjumlah);
+            const Total = parsedValue * 10000;
+            setharga(Total);
+            setjumlah(parsedValue);
         }
-      }
+    }
+
+    const options = ['Hapus', 'Edit']
+
+    const handleLogout = () => {
+        setModalLogout(true)
+    }
+
+    const handleConfirmLogout = () => {
+        window.location.href = '/beranda';
+    }
+
+    const handleSell = () => {
+        if (!nama || !nomor || selectedCategory === 'Pilih Kategori' || !norek || jumlah <= 0) {
+            setError('Semua kolom harus diisi dengan benar');
+          } else {
+            setModalSell(true);
+          }
+    }
+
+    const handleComment = () => {
+        setModalComment(true)
+    }
+
+    const handleSuccess = () =>{
+        setModalSell(false)
+        setModalSuccess(true);
+        setTimeout(() => {
+            setModalSuccess(false);
+        }, 2000); 
+    }
 
     return (
         <div className={styles.container}>
             <section className={styles.bannerSatu}>
                 <div className={styles.kiri}>
-                    <Link href='/profil' className={styles.ContentProfil}>
+                    <Link href='/BPLimbah/profil' className={styles.ContentProfil}>
                         <Image src={profil} alt="profil" className={styles.profil} />
-                        <p> Andaru Putri Salsabila</p>
+                        Andaru Putri Salsabila
                     </Link>
                 </div>
                 <div className={styles.kanan}>
-                    <Link href='/notifikasi'>
+                    <Link href='/BPLimbah/notifikasi'>
                         <FontAwesomeIcon icon={faBellOutline} className={styles.notifikasi}/>
                     </Link>
-                    <Link href='/logout'>
+                    <button className={styles.logout} onClick={handleLogout}>
                         <LogOut className={styles.logout}/>
-                    </Link>
+                    </button>
+                    <Modal
+                        isOpen={modalLogout}
+                        onRequestClose={() => setModalLogout(false)}
+                        className={styles.ModalOverlay}
+                        overlayClassName={styles.ModalOverlay}
+                    >
+                        <div className={styles.ModalContent}>
+                            <p>Anda yakin ingin keluar?</p>
+                            <button onClick={() => setModalLogout(false)}>Kembali</button>
+                            <button onClick={handleConfirmLogout}>Ya</button>
+                        </div>
+                    </Modal>
                 </div>
             </section>
                 
@@ -87,31 +164,55 @@ const BPLimbah = () => {
 
                     <Tab.Panels className={styles.tabPanels}>
                         <Tab.Panel>
-                            <div className={styles.containerTab}>
-                                <div className={styles.tabContent1}>
+                            <div className={styles.containerTab1}>
+                                {isStatusActive?(
+                                <>
                                     <div className={styles.buatstatus}>
                                         <div className={styles.profilsmall}>
                                             <Link href='#'>
                                                 <Image src={profil} alt="profil" className={styles.profil} />
                                             </Link>
                                         </div>
-                                        <div className={styles.status}>
-                                            <div className={styles.statusContainer}>
-                                                <AutoAdjustingTextInput 
-                                                placeholder="Apa pertanyaan atau informasi yang kamu punya?"
-                                                className={styles.statusInput} 
-                                                value={status} 
-                                                onChange={handleStatusChange} 
-                                                />
+                                        <div className={styles.setStatus}>
+                                            <div className={styles.status}>
+                                                <div className={styles.statusContainer}>
+                                                    <AutoAdjustingTextInput 
+                                                    placeholder="Apa pertanyaan atau informasi yang kamu punya?"
+                                                    className={styles.statusInput} 
+                                                    value={status} 
+                                                    onChange={handleStatusChange} 
+                                                    />
+                                                    <p className={styles.wordCount}>{wordCount}/200</p>
+                                                </div>
+                                                <div className={styles.iconContainer}>
+                                                    <button className={styles.buttonStatus}>
+                                                        <FontAwesomeIcon icon={faImage} className={styles.icon}/>
+                                                    </button>
+                                                    <button className={styles.buttonStatus} onClick={handlePosting}>
+                                                        <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div className={styles.iconContainer}>
-                                                    <FontAwesomeIcon icon={faImage} className={styles.icon}/>
-                                                    <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
-                                            </div>
+                                            {error && <p className={styles.error}>{error}</p>}
+                                            <Modal
+                                                isOpen={isModalOpen}
+                                                contentLabel="Daftar Berhasil"
+                                                className={styles.ModalOverlay1}
+
+                                            >
+                                                <div className={styles.ModalContent1}>
+                                                    <Check className={styles.check}/>
+                                                    <p>Berhasil dikirim!</p>
+                                                </div>
+                                            </Modal>
                                         </div>
                                         
                                         <div className={styles.menusmall}>
-                                            <Link href='#' className={styles.menu1}>Kirimanmu</Link>
+                                            <Link href='/kirimanmu' className={styles.menu1}
+                                            onClick={(e) =>{
+                                            e.preventDefault();
+                                            setIsStatusActive(!isStatusActive);
+                                            }}>{isStatusActive? 'Kirimanmu' : 'Kirimanmu'} </Link>
                                             <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className={styles.menu2}>
                                                 <option value="Pilih Kategori">Urutkan</option>
                                                 <option value="Pilih Kategori">Kiriman Terbaru</option>
@@ -120,91 +221,190 @@ const BPLimbah = () => {
                                             </select>
                                         </div>
                                     </div>
-                                </div>
 
-                                <hr className={styles.line}/>
+                                    <hr className={styles.line}/>
 
-                                <div className={styles.kiriman}>
-                                    <div className={styles.akun}>
-                                        <Image src={profil1} alt="profil1" className={styles.profil} />
-                                        <p>Ivanna Putri</p>
-                                    </div>
-                                    <div className={styles.isikiriman}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
-                                        </p>
-                                        <div className={styles.interaksi}>
-                                            <div className={styles.like}>
-                                                <FontAwesomeIcon 
-                                                    icon={liked? faHeart : faHeartOutline}
-                                                    className={styles.icon2}
-                                                    onClick={handleLiked}
-                                                />
-                                                <p className={styles.ket}>2 disukai</p>
-                                            </div>
-                                            <div className={styles.comment}>
-                                                <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
-                                                <p className={styles.ket}>1 komentar</p>
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.akun}>
+                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <p>Ivanna Putri</p>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div onClick={handleComment} className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
+                                                <Modal
+                                                    isOpen={modalComment}
+                                                    contentLabel="Daftar Berhasil"
+                                                    className={styles.ModalOverlay2}
+                                                >
+                                                    <div className={styles.ModalContent2}>
+                                                        <div className={styles.Comment}>
+                                                            <div className={styles.headerComment}>
+                                                                <p>Kiriman Ivanna Putri</p>
+                                                                <X onClick={()=> setModalComment(false)} className={styles.closeComment}/>
+                                                            </div>
+                                                            <hr/>
+                                                            <div className={styles.kirimanComment}>
+                                                                <div className={styles.akun}>
+                                                                    <Image src={profil1} alt="profil1" className={styles.profilComment} />
+                                                                    <p>Ivanna Putri</p>
+                                                                </div>
+                                                                <div className={styles.isikiriman}>
+                                                                    <p>
+                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div className={styles.comment1}>
+                                                                <div className={styles.commentContainer}>
+                                                                    <AutoAdjustingTextInput 
+                                                                    placeholder="Tuliskan Komentarmu Disini"
+                                                                    className={styles.commentInput} 
+                                                                    value={comment} 
+                                                                    onChange={handleCommentChange} 
+                                                                    />
+                                                                </div>
+                                                                <div className={styles.iconContainer}>
+                                                                    <button className={styles.buttonStatus} onClick={handlePosting}>
+                                                                        <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </Modal>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <hr className={styles.line}/>
+                                    <hr className={styles.line}/>
 
-                                <div className={styles.kiriman}>
-                                    <div className={styles.akun}>
-                                        <Image src={profil1} alt="profil1" className={styles.profil} />
-                                        <p>Ivanna Putri</p>
-                                    </div>
-                                    <div className={styles.isikiriman}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
-                                        </p>
-                                        <div className={styles.interaksi}>
-                                            <div className={styles.like}>
-                                                <FontAwesomeIcon 
-                                                    icon={liked? faHeart : faHeartOutline}
-                                                    className={styles.icon2}
-                                                    onClick={handleLiked}
-                                                />
-                                                <p className={styles.ket}>2 disukai</p>
-                                            </div>
-                                            <div className={styles.comment}>
-                                                <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
-                                                <p className={styles.ket}>1 komentar</p>
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.akun}>
+                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <p>Ivanna Putri</p>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <hr className={styles.line}/>
+                                    <hr className={styles.line}/>
 
-                                <div className={styles.kiriman}>
-                                    <div className={styles.akun}>
-                                        <Image src={profil1} alt="profil1" className={styles.profil} />
-                                        <p>Ivanna Putri</p>
-                                    </div>
-                                    <div className={styles.isikiriman}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
-                                        </p>
-                                        <div className={styles.interaksi}>
-                                            <div className={styles.like}>
-                                                <FontAwesomeIcon 
-                                                    icon={liked? faHeart : faHeartOutline}
-                                                    className={styles.icon2}
-                                                    onClick={handleLiked}
-                                                />
-                                                <p className={styles.ket}>2 disukai</p>
-                                            </div>
-                                            <div className={styles.comment}>
-                                                <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
-                                                <p className={styles.ket}>1 komentar</p>
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.akun}>
+                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <p>Ivanna Putri</p>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </>
+                                ):
+                                <>
+                                    <div className={styles.colAtas}>
+                                        <div className={styles.kiri1}>
+                                            <Link
+                                                href="#"
+                                                className={styles.menu1a}
+                                                onClick={(e) => {
+                                                e.preventDefault();
+                                                setIsStatusActive(!isStatusActive);}}>
+                                                <ChevronLeft className={styles.iconmenu1} />
+                                                Kirimanmu
+                                            </Link>
+                                        </div>
+                                        <div className={styles.kanan1}>
+                                            <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className={styles.menu2a}>
+                                                <option value="Pilih Kategori">Urutkan</option>
+                                                <option value="Pilih Kategori">Kiriman Terbaru</option>
+                                                <option value="Pilih Kategori">Kiriman Terpopuler</option>
+                                                <option value="Pilih Kategori">Magalodon Official</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <hr className={styles.line}/>
+
+                                    <div className={styles.kiriman}>
+                                        <div className={styles.kirimanUp}>
+                                            <div className={styles.akunUp}>
+                                                <Image src={profil1} alt="profil1" className={styles.profilUp} />
+                                                <p>Andaru Putri Salsabila</p>
+                                            </div>
+                                            <div className={styles.more}>
+                                                <MoreButton options={options}/>
+                                            </div>
+                                        </div>
+                                        <div className={styles.isikiriman}>
+                                            <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis auctor magna, in vehicula lacus. Curabitur vehicula quis lorem nec viverra. Proin faucibus neque sed nibh sodales, et maximus erat convallis. Aenean id finibus orci. Aliquam eu aliquam mauris. Nulla porttitor, neque eu aliquam finibus, ante ipsum commodo neque, id porta elit ligula non felis. Maecenas sed varius nisi, eu accumsan lectus. Aliquam lacinia, massa a maximus efficitur, justo nisl vestibulum elit, ac semper ligula purus eget tortor. Vivamus fermentum lacinia ipsum et condimentum.
+                                            </p>
+                                            <div className={styles.interaksi}>
+                                                <div className={styles.like}>
+                                                    <FontAwesomeIcon 
+                                                        icon={liked? faHeart : faHeartOutline}
+                                                        className={styles.icon2}
+                                                        onClick={handleLiked}
+                                                    />
+                                                    <p className={styles.ket}>2 disukai</p>
+                                                </div>
+                                                <div className={styles.comment}>
+                                                    <FontAwesomeIcon icon={faCommentOutline} className={styles.icon2} />
+                                                    <p className={styles.ket}>1 komentar</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr className={styles.line}/>
+                                </>}
                             </div>
                         </Tab.Panel>
 
@@ -213,25 +413,24 @@ const BPLimbah = () => {
                                 <div className={styles.contentTab2}>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nama</p>
-                                        <TextInput placeholder='Nama' onInputChange={handlenamaChange}/>
+                                        <TextInput placeholder='Nama' value={nama} onInputChange={handlenamaChange}/>
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nomor Telepon</p>
-                                        <TextInput placeholder='Nomor Telepon' onInputChange={handleNomorChange}/>
+                                        <TextInput placeholder='Nomor Telepon' value={nomor} onInputChange={handleNomorChange}/>
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nama Bank</p>
                                         <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className={styles.bankOption}>
                                             <option value="Pilih Kategori">Pilih Bank</option>
-                                            <option value="Pilih Kategori">BRI</option>
-                                            <option value="Pilih Kategori">BNI</option>
-                                            <option value="Pilih Kategori">BCA</option>
+                                            <option value="BRI">BRI</option>
+                                            <option value="BNI">BNI</option>
+                                            <option value="BCA">BCA</option>
                                         </select>
-                                        
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nomor Rekening</p>
-                                        <TextInput placeholder='Nomor Rekening' onInputChange={handlenorekChange}/>
+                                        <TextInput placeholder='Nomor Rekening' value={norek} onInputChange={handlenorekChange}/>
                                     </div>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Jumlah yang ingin dijual</p>
@@ -247,8 +446,33 @@ const BPLimbah = () => {
                                         <p className={styles.judul1}>Estimasi Pendapatan : Rp. {harga}</p>
                                     </div>
                                     <div>
-                                        <button className={styles.button}>Jual</button>
+                                        <button className={styles.button} onClick={handleSell}>Jual</button>
                                     </div>
+                                    {error && <p className={styles.error}>{error}</p>}
+                                    <Modal 
+                                    isOpen={modalSell} 
+                                    onRequestClose={handleSell} 
+                                    className={styles.ModalOverlay} 
+                                    overlayClassName={styles.ModalOverlay}>
+                                        <div className={styles.Sell}>
+                                            <p>Anda yakin data yang diisi sudah sesuai?</p>
+                                            <div className={styles.sellOption}>
+                                                <button onClick={() => setModalSell(false)} className={styles.buttonSellNo}>Tidak</button>
+                                                <button onClick={handleSuccess} className={styles.buttonSellYes}>Ya</button>
+                                            </div>
+                                        </div>
+                                    </Modal>
+                                    <Modal
+                                        isOpen={modalSuccess} 
+                                        onRequestClose={() => setModalSuccess(false)}
+                                        contentLabel="Daftar Berhasil"
+                                        className={styles.ModalOverlay1}>
+                                        <div className={styles.ModalContent1}>
+                                            <Check className={styles.check}/>
+                                            <p>Berhasil dikirim!</p>
+                                            <p>Kamu bisa cek status penjualanmu di menu Profil</p>
+                                        </div>
+                                    </Modal>
                                 </div>
                             </div>
                         </Tab.Panel>

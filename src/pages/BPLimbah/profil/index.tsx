@@ -22,7 +22,7 @@ const Profil = () => {
     return (
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
-                <Link href = "/BPMaggot" className={styles.Link}> 
+                <Link href = "/BPLimbah" className={styles.Link}> 
                     <ChevronLeft className = {styles.back} />
                     <p>Profil</p>
                 </Link>
@@ -38,15 +38,15 @@ const Profil = () => {
                     <hr className={styles.line} />
 
                     <div className={styles.opsi}>
-                        <Link href='/BPMaggot/profil/StatusPenjualan' className={styles.opsi1}>
+                        <Link href='/BPLimbah/profil/StatusPenjualan' className={styles.opsi1}>
                             <FileText className={styles.iconOption}/>
                             <p>Status Penjualan</p>
                         </Link>
-                        <Link href='/BPMaggot/profil/EditProfil' className={styles.opsi1}>
+                        <Link href='/BPLimbah/profil/EditProfil' className={styles.opsi1}>
                             <Edit className={styles.iconOption}/>
                             <p>Edit Profil</p>
                         </Link>
-                        <Link href='/BPMaggot/profil/FAQ' className={styles.opsi1}>
+                        <Link href='/BPLimbah/profil/FAQ' className={styles.opsi1}>
                             <HelpCircle className={styles.iconOption}/>
                             <p>FAQ</p>
                         </Link>
@@ -58,13 +58,13 @@ const Profil = () => {
                             isOpen={isModalOpen}
                             contentLabel="Daftar Berhasil"
                             className={styles.ModalOverlay}
-                          >
+                        >
                             <div className={styles.ModalContent}>
-                              <p>Anda yakin ingin keluar?</p>
-                              <button onClick={() => setIsModalOpen(false)}>Batal</button>
-                              <button onClick={handleLogout}>Ya</button>
+                                <p>Anda yakin ingin keluar?</p>
+                                    <button onClick={() => setIsModalOpen(false)}>Batal</button>
+                                <button onClick={handleLogout}>Ya</button>
                             </div>
-                          </Modal>
+                        </Modal>
                     </div>
                 </div>
             </div>

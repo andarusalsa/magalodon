@@ -478,8 +478,8 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-    max-width: 200px; /* Lebar maksimum modal */
-    width: 100%;
+    min-width: 200px;
+    max-width: 400px;
     text-align: center;
     font-family: 'Poppins';
     font-size: 12px;
@@ -650,4 +650,141 @@
     width: 500px;
     padding: 20px;
     border-radius: 10px;
+}
+
+.ModalOverlay2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.ModalContent2{
+    background-color: #fff; 
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 12px;
+    animation: fadeIn 0.2s ease-in-out;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.headerComment{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+.closeComment{
+    margin-left: auto;
+    cursor: pointer;
+    margin-right: 50px;
+}
+
+.kirimanComment{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.profilComment{
+    width: 50px;
+    height: 50px;
+}
+
+.comment1{
+    display: flex;
+    flex-direction: row;
+    border: #9d9d9d 1px solid;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding-top: 6px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.commentContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.commentInput{
+    width: 700px;
+    border: none;
+    resize: none; 
+    max-height: 100px;
+    overflow-y: auto;
+    background-color: transparent;
+    font-family: 'Poppins';
+    font-size: 12px;
+    padding-right: 20px;
+    overflow-y:auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.commentInput:focus{
+    outline: none;
+}
+
+.Sell{
+    background-color: #fff; 
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 12px;
+    animation: fadeIn 0.2s ease-in-out;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.buttonSellNo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    border: #FF9500 solid 1px;
+    width: 100px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: 'Poppins';
+    font-size: 12px;
+    color: #FF9500;
+}
+
+.buttonSellYes{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #FF9500;
+    border: #FF9500 solid 1px;
+    width: 100px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-family: 'Poppins';
+    font-size: 12px;
+    color: #FFff;
 }
