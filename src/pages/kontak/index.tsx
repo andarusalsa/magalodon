@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import styles from "./kontak.module.css"
-import TextInput from "@/components/fragments/inputText/inputText";
+import TextInput from "@/components/fragments/inputText/inputText"
+import AutoAdjustingTextInput from "@/components/fragments/inputText/autoAdjusting"
 
 const Kontak = () => {
     const [nama, setNama] = useState("");
@@ -46,7 +47,7 @@ const Kontak = () => {
                     <div className={styles.isian3}>
                             <p className={styles.text3}>Masukkan pesan atau pertanyaanmu</p>
                             <div className={styles.wrapper}>
-                            <TextInput placeholder="Masukkan pesan atau pertanyaanmu" value={pesan} onInputChange={handlePesanChange}/>
+                                <AutoAdjustingTextInput className={styles.textArea} placeholder="Masukkan pesan atau pertanyaanmu" value={pesan} onChange={handlePesanChange}/>
                             </div>
                             <button className={styles.button}>Kirim</button>
                     </div>
@@ -55,9 +56,8 @@ const Kontak = () => {
 
             <section className={styles.bannerTiga}>
                 <div className={styles.bannerContent}>
-                    <div className={styles.text1}>
-                        <p> Kami sangat terbuka untuk menyambut kehadiran Anda semua. 
-Jangan ragu untuk mengunjungi kami di berbagai platform media sosial yang kami kelola. </p>
+                    <div className={`${styles.text1} ${styles.textAnimation}`}>
+                        <p> Kami sangat terbuka untuk menyambut kehadiran Anda semua. Jangan ragu untuk mengunjungi kami di berbagai platform media sosial yang kami kelola. </p>
                     </div>
                 </div>
             </section>

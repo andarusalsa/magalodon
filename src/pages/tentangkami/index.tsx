@@ -2,6 +2,7 @@ import styles from './tentangkami.module.css'
 import Image from 'next/image'
 import produk2 from '../../components/elements/Produk2.png'
 import produk3 from '../../components/elements/Produk3.png'
+import Appshell from '@/components/layout/Appshell';
 
 const AboutPage = () => {
     return(
@@ -36,4 +37,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-

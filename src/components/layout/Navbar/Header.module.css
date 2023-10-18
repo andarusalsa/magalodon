@@ -4,14 +4,13 @@
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 60px;
     position: fixed;
     left: 0;
-    top: 0; /* Pastikan header ada di atas */
-    width: 100%; /* Header menutupi seluruh lebar layar */
-    z-index: 100; /* Atur z-index agar header muncul di atas konten lain */
+    top: 0; 
+    width: 100%; 
+    z-index: 100; 
   }
   @media (max-width: 768px) {
     .header {
@@ -24,12 +23,12 @@
     width: 78px;
     height: 49.333px;
     flex-shrink: 0;
-    padding-left: 1rem;
+    padding-left: 2rem;
   }
   @media (max-width: 768px) {
     .logo {
-      width: 50px; /* Sesuaikan ukuran yang Anda inginkan */
-      height: auto; /* Untuk menjaga aspek rasio */
+      width: 50px; 
+      height: auto; 
       padding-left: 1rem;
     }
   }
@@ -39,41 +38,42 @@
     display: flex;
     margin: 0;
     padding: 0;
+    padding-right: 2rem;
   }
+
+  .navigation li{
+    margin-left: 20px;
+  }
+
   @media (max-width: 768px) {
     .navigation ul {
       flex-direction: row;
-      align-items: center; /* Untuk tengah secara horizontal */
+      align-items: center; 
     }
   }
   
   .link {
     margin-right: 20px;
   }
+
   @media (max-width: 768px) {
     .link {
-      margin-right: 1rem; /* Menghapus margin kanan pada layar kecil */
-      margin-bottom: 10px; /* Memberi jarak antara elemen navigasi */
+      margin-right: 1rem; 
+      margin-bottom: 10px; 
     }
   }
 
   
-  .navigation a {
-    color: #000000;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-  }
+.navigation a {
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
   
-  .link {
-    color : #000000;
-  }
+.navigation a:hover{
+  color : #FF9500;
+}
 
-  .link:active,.link:focus{
-    color: #FF9500;
-  }
-  
-  .navigation a:hover {
-    color : #FF9500;
-  }
-  
+.activeLink{
+  color : #FF9500;
+}

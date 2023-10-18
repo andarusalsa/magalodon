@@ -1,29 +1,75 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/Poppins/Poppins-Light.ttf');
+  src:url('../../assets/Poppins/Poppins-Medium.ttf');
+}
+
 .footer {
   display: flex;
   justify-content: center;
-  align-items: center;
   background-color: #ffffff;
-  color: white;
   bottom: 0;
   left: 0;
   width: 100%;
+  font-family: 'Poppins';
 }
 
 .footerContent {
   display: flex;
-  flex-direction: column; /* Mengatur konten dalam bentuk kolom */
+  flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top:30px; 
+  margin-bottom: 30px;
+}
+
+.footerContent h2{
+  font-size: 18px;
+  color: #9d9d9d;
+}
+
+.footerContent p{
+  font-size: 10px;
 }
 
 .imageContainer {
   display: flex;
-  margin-top: 10px; /* Memberi jarak antara teks dan gambar */
+  align-items: center;
+  font-size: 30px;
+}
+
+.facebook {
+  margin: 0 100px;
+}
+
+.facebook :hover{
+  color: #3b5998;
+  transform: scale(1.10);
+}
+
+.instagram {
+  margin: 0 100px;
+}
+
+.instagram :hover{
+  color: #d62976;
+  transform: scale(1.10);
+}
+
+.youtube{
+  margin: 0 100px;
+}
+
+.youtube :hover{
+  color: #FF0000;
+  transform: scale(1.10);
 }
 
 .image {
-  margin: 0 10px; /* Memberi jarak antara gambar */
   width: 30px;
   height: 30px;
-  flex-shrink: 0;
+  cursor: pointer;
+  color: #9d9d9d;
 }
+
+

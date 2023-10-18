@@ -1,24 +1,30 @@
 import React from 'react';
 import styles from './footer.module.css';
 import Link from 'next/link';
-import Image from 'next/image'
-import ig from '../../elements/ig.png';
-import fb from '../../elements/fb.png';
-import yt from '../../elements/yt.png';
+import {Facebook, Instagram, Youtube} from 'react-feather'
+
 
 const Footer = () => {
   return (
-    <div>
       <div className={styles.footer}>
         <div className={styles.footerContent}>
+          <h2>Kunjungi Kami</h2>
           <div className={styles.imageContainer}>
-            <Image src={ig} alt="ig" className={styles.image} />
-            <Image src={fb} alt="fb" className={styles.image} />
-            <Image src={yt} alt="yt" className={styles.image} />
+            <Link href='#' className={styles.facebook}>
+              <Facebook className={styles.image}/>
+            </Link>
+            <p>/</p>
+            <Link href='#' className={styles.instagram}>
+              <Instagram className={styles.image}/>
+            </Link>
+            <p>/</p>
+            <Link href='#' className={styles.youtube}>
+              <Youtube className={styles.image}/>
+            </Link>
           </div>
+          <p>© 2023 Magalodon</p>
         </div>
       </div>
-    </div>
   );
 };
 

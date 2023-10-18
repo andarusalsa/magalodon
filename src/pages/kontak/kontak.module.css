@@ -10,12 +10,12 @@
     min-height: 100vh;
     position: relative;
     font-family: 'Poppins';
+    margin-top: 3rem;
 }
 
 .bannerSatu{
     background-image: url('../../components/elements/bannerKontak.png');
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
     color: #fff;
     padding : 6rem;
 }
@@ -49,24 +49,6 @@
     margin-top: 30px;
 }
 
-.wrapper {
-    width: 800px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-}
-
-.wrapper input {
-    width:1000px;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    padding-left: 20px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
 .wrapper1 input{
     border: none;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -77,10 +59,45 @@
     border-radius: 10px;
 }
 
+.textArea{
+    border: none;
+    resize: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    width: 500px;
+    min-height: 50px;
+    max-height: 100px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-left: 30px;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    margin : 20 10 20 20px;
+}
+
+.textArea:focus{
+    outline: none;
+}
+
 .bannerTiga{
     background-color: #385C4E;
     color: #fff;
-    text-align: center;
+    font-size: 12px;
+}
+
+@keyframes textAnimation {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.textAnimation {
+    animation: textAnimation 20s linear infinite; 
+    white-space: nowrap; 
+    overflow: hidden; 
 }
 
 .button{

@@ -1,4 +1,5 @@
 import styles from './beranda.module.css'
+import Appshell from '@/components/layout/Appshell'
 
 export default function Home() {
   return (
