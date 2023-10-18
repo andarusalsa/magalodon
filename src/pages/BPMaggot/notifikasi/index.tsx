@@ -6,10 +6,12 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
 import {LogOut, ChevronLeft} from 'react-feather'
+import AppShell from '@/components/layout/Appshell'
 
 const BPMaggot = () => {
 
     return (
+        <AppShell withHeaderAndFooter={true}>
         <div className={styles.container}>
             <div className={styles.bannerSatu}>
                 <div className={styles.kiri}>
@@ -59,6 +61,7 @@ const BPMaggot = () => {
                 </div>
             </div>
         </div>
+        </AppShell>
     );
 };
 

@@ -14,6 +14,7 @@ import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBe
 import {LogOut, ChevronLeft, Check, X} from 'react-feather'
 import MoreButton from '@/components/fragments/moreButton/moreButton'
 import Modal from 'react-modal'
+import AppShell from '@/components/layout/Appshell'
 
 const BPMaggot = () => {
     const [status, setStatus] = useState<string>("")
@@ -124,6 +125,7 @@ const BPMaggot = () => {
     }
 
     return (
+        <AppShell withHeaderAndFooter={true}>
         <div className={styles.container}>
             <section className={styles.bannerSatu}>
                 <div className={styles.kiri}>
@@ -508,6 +510,7 @@ const BPMaggot = () => {
                 </Tab.Group>
             </section>
         </div>
+        </AppShell>
     );
 };
 

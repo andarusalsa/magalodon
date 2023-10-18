@@ -8,6 +8,7 @@ import { useState } from 'react'
 import Modal from 'react-modal'
 import Image from 'next/image'
 import buktiTF from '@/components/elements/buktiTF.jpg'
+import AppShell from '@/components/layout/Appshell'
 
 const StatusPenjualan = () => {
     const [modalSP, setModalSP] = useState(false)
@@ -22,6 +23,7 @@ const StatusPenjualan = () => {
     }
 
     return (
+        <AppShell withHeaderAndFooter={true}>
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
                 <Link href = "/BPLimbah" className={styles.Link}> 
@@ -147,6 +149,7 @@ const StatusPenjualan = () => {
                 </div>
             </div>
         </div>
+        </AppShell>
     )
 }
 

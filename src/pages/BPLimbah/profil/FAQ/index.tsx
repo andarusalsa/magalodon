@@ -3,9 +3,11 @@ import Link from 'next/link'
 import {ChevronLeft} from 'react-feather'
 import React from "react"
 import { ChevronRight } from 'react-feather'
+import AppShell from '@/components/layout/Appshell'
 
 const FAQ = () => {
     return (
+        <AppShell withHeaderAndFooter={true}>
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
                 <Link href = "/BPLimbah" className={styles.Link}> 
@@ -40,6 +42,7 @@ const FAQ = () => {
                 </div>
             </div>
         </div>
+        </AppShell>
     )
 }
 

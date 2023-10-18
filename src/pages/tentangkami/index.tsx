@@ -2,10 +2,11 @@ import styles from './tentangkami.module.css'
 import Image from 'next/image'
 import produk2 from '../../components/elements/Produk2.png'
 import produk3 from '../../components/elements/Produk3.png'
-import Appshell from '@/components/layout/Appshell';
+import AppShell from '@/components/layout/Appshell';
 
 const AboutPage = () => {
     return(
+        <AppShell withHeaderAndFooter={true}>
         <div className={styles.container}>
             <section className={styles.bannerSatu}>
                 <h2> Magalodon berupaya untuk mengurangi sampah organik sekaligus menciptakan pakan ternak yang tinggi akan protein </h2>
@@ -33,6 +34,7 @@ const AboutPage = () => {
                 </div>  
             </section>
         </div>
+        </AppShell>
     );
 };
 

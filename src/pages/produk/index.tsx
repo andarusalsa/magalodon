@@ -6,6 +6,7 @@ import React, { useState } from "react"
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ReactModal from 'react-modal'
+import AppShell from '@/components/layout/Appshell'
 
 
 const Produk = () => {
@@ -107,6 +108,7 @@ const Produk = () => {
 
 
   return (
+    <AppShell withHeaderAndFooter={true}>
     <div className={styles.container}>
       <section className={styles.bannerSatu}>
         <h1>menuju kehidupan yang berkelanjutan</h1>
@@ -450,6 +452,7 @@ const Produk = () => {
         </div>
       </div>
     </div>
+    </AppShell>
   );
 };
 

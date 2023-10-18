@@ -15,7 +15,7 @@
 
 .bannerSatu{
     background-image: url('../../components/elements/bannerKontak.png');
-    background-size: contain;
+    background-size: cover;
     color: #fff;
     padding : 6rem;
 }

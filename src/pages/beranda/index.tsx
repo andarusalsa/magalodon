@@ -1,8 +1,9 @@
 import styles from './beranda.module.css'
-import Appshell from '@/components/layout/Appshell'
+import AppShell from '@/components/layout/Appshell'
 
 export default function Home() {
   return (
+    <AppShell withHeaderAndFooter={true}>
     <div className={styles.container}>
       <section className={styles.banner}>
         <div className={styles.bannerContent}>
@@ -51,5 +52,6 @@ Dapatkan semua keunggulan ini dan rasakan perbedaannya sekarang! Bergabunglah de
         </div>
       </section>
     </div>
+    </AppShell>
   )
 }

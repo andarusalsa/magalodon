@@ -6,6 +6,7 @@ import {ChevronLeft, FileText, Edit, HelpCircle, LogOut} from 'react-feather'
 import Modal from 'react-modal'
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
+import AppShell from '@/components/layout/Appshell'
 
 const Profil = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -20,6 +21,7 @@ const Profil = () => {
     };
 
     return (
+        <AppShell withHeaderAndFooter={true}>
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
                 <Link href = "/BPLimbah" className={styles.Link}> 
@@ -69,6 +71,7 @@ const Profil = () => {
                 </div>
             </div>
         </div>
+        </AppShell>
     )
 }
 

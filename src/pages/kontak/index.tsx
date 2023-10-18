@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styles from "./kontak.module.css"
 import TextInput from "@/components/fragments/inputText/inputText"
 import AutoAdjustingTextInput from "@/components/fragments/inputText/autoAdjusting"
+import AppShell from "@/components/layout/Appshell"
 
 const Kontak = () => {
     const [nama, setNama] = useState("");
@@ -21,6 +22,7 @@ const Kontak = () => {
     }
 
     return (
+        <AppShell withHeaderAndFooter={true}>
         <div className={styles.container}>
             <section className={styles.bannerSatu}>
                 <div className={styles.text}>
@@ -62,6 +64,7 @@ const Kontak = () => {
                 </div>
             </section>
         </div>
+        </AppShell>
     );
 }
 

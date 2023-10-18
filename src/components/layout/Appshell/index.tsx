@@ -4,18 +4,18 @@ import { useRouter } from 'next/router';
 
 type AppshellProps = {
     children: React.ReactNode;
+    withHeaderAndFooter: boolean; 
 }
 
-const Appshell = (props: AppshellProps) => {
-    const { children } = props;
+const Appshell: React.FC<AppshellProps> = ({ children, withHeaderAndFooter }) => {
     const router = useRouter();
     const { pathname } = router;
 
     return (
         <main>
-            <Header activePath={pathname} />
+            {withHeaderAndFooter && <Header activePath={pathname} />}
             {children}
-            <div><Footer /></div>
+            {withHeaderAndFooter && <Footer />}
         </main>
     )
 }

@@ -7,6 +7,7 @@ import React, { useState } from "react"
 import TextInput from '@/components/fragments/inputText/inputText'
 import Modal from 'react-modal'
 import { useRouter } from 'next/router'
+import AppShell from '@/components/layout/Appshell'
 
 const EditProfil = () => {
     const [nama, setNama] = useState('')
@@ -46,6 +47,7 @@ const EditProfil = () => {
     }
 
     return (
+        <AppShell withHeaderAndFooter={true}>
         <div className = {styles.container}>
             <section className = {styles.bannerSatu}>
                 <Link href = "/BPLimbah" className={styles.Link}> 
@@ -114,6 +116,7 @@ const EditProfil = () => {
                 </div>
             </div>
         </div>
+        </AppShell>
     )
 }
 
