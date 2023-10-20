@@ -31,7 +31,7 @@ const Admin = () => {
       
           if (user) {
             console.log('Login berhasil')
-            router.push('/berandaAdmin') 
+            router.push('/Admin/Dashboard') 
           } else {
             setError("Email atau kata sandi tidak valid.")
           }

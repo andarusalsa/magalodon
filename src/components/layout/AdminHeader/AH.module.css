@@ -74,6 +74,24 @@
   color : #FF9500;
 }
 
-.active a{
+.activeLink{
   color : #FF9500;
+}
+
+.li{
+    cursor: pointer;
+    align-items: center;
+}
+
+.li:hover{
+    color:#FF9500;
+}
+
+.active{
+    color: #FF9500;
+}
+
+.user{
+    align-items: center;
+    margin-right: 10px;
 }

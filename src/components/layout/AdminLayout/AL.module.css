@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../assets/Poppins/Poppins-Light.ttf');
+    src:url('../../assets/Poppins/Poppins-Medium.ttf');
+}
+
+.adminLayout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    font-family: 'Poppins';
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.sidebar{
+    order: 1;
+    width: 220px;
+    background-color: #F1F9F7; /* Atur warna latar belakang sesuai keinginan Anda */
+    color: #000;
+}
+
+.content{
+    order: 2;
+    flex:1;
+}

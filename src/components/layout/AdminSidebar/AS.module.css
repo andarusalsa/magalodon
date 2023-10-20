@@ -1,20 +1,76 @@
-/* styles/AdminSidebar.module.css */
 .adminSidebar {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: #F1F9F7;
 }
 
 .ul {
-    list-style: none;
     padding: 0;
+    margin: 0;
+    padding-right: 30px;
+}
+
+.li a{
+    list-style: none;
+    padding: 0px;
+    margin-left: 0;
+    color: black;
+    text-decoration: none;
 }
 
 .li {
-    margin-bottom: 10px;
+    list-style: none; 
+    margin-top: 20px;
+    cursor: pointer;
 }
 
-.li a {
-    color: #fff;
-    text-decoration: none;
+.li:hover{
+    color: #FF9500;
+}
+
+.active a{
+    color: #FF9500;
+}
+
+.active{
+    color: #FF9500;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 15px;
+    padding-left: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    background-color: transparent;
+}
+
+.menuItem:hover {
+    color: #FF9500;
+}
+
+.dropdownItem {
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    list-style: none;
+    background-color: #fff;
+}
+
+.dropdownItem:first-child {
+    color: #000;
+}
+
+.dropdownItem:not(:first-child) {
+    color: #000;
+}
+
+.dropdownItem:first-child:hover {
+    background-color: #f0f0f0; /* Ganti warna latar belakang saat hover sesuai keinginan Anda */
+}
+
+.dropdownItem:not(:first-child):hover {
+    background-color: #f0f0f0; /* Ganti warna latar belakang saat hover sesuai keinginan Anda */
 }

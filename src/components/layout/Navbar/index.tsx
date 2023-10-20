@@ -1,21 +1,12 @@
-import { useState, useEffect } from 'react';
 import styles from "./Header.module.css";
 import Image from 'next/image'
 import logo from '../../elements/logo.jpeg'
 import { useRouter } from 'next/router'; // Menggunakan useRouter dari next/router
 import Link from 'next/link'
 
-type HeaderProps = {
-    activePath: string;
-};
-
-const Header: React.FC<HeaderProps> = ({ activePath }) => {
-    const location = useRouter();
-    const [currentPath, setCurrentPath] = useState(activePath);
-
-    useEffect(() => {
-        setCurrentPath(activePath);
-    }, [activePath]);
+const Header = () => {
+    const router = useRouter();
+    const isMenuActive = (path: string) => router.pathname === path;
 
     return (
         <div>
@@ -25,23 +16,17 @@ const Header: React.FC<HeaderProps> = ({ activePath }) => {
                 </div>
                 <nav className={styles.navigation}>
                     <ul>
-                        <li>
-                            <Link href='/beranda' className={currentPath === '/beranda' ? styles.activeLink : ''}>
-                                Beranda
-                            </Link>
+                        <li className={`li ${styles.li} ${isMenuActive('/beranda') ? styles.active : ''}`}>
+                            <Link href='/beranda'>Beranda</Link>
                         </li>
-                        <li>
-                            <Link href='/tentangkami' className={currentPath === '/tentangkami' ? styles.activeLink : ''}>
-                                Tentang Kami
-                            </Link>
+                        <li className={`li ${styles.li} ${isMenuActive('/tentangkami') ? styles.active : ''}`}>
+                            <Link href='/tentangkami'>Tentang Kami</Link>
                         </li>
-                        <li>
-                            <Link href='/produk' className={currentPath === '/produk' ? styles.activeLink : ''}>
-                                Produk
-                            </Link>
+                        <li className={`li ${styles.li} ${isMenuActive('/produk') ? styles.active : ''}`}>
+                            <Link href='/produk'>Produk</Link>
                         </li>
-                        <li>
-                            <Link href='/kontak' className={currentPath === '/kontak' ? styles.activeLink : ''}>
+                        <li className={`li ${styles.li} ${isMenuActive('/kontak') ? styles.active : ''}`}>
+                            <Link href='/kontak'>
                                 Kontak
                             </Link>
                         </li>
