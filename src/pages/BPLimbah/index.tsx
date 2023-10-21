@@ -412,6 +412,11 @@ const BPLimbah = () => {
 
                         <Tab.Panel>
                             <div className={styles.containerTab}>
+                                <div className={styles.catatan}>
+                                    <p><span className={styles.judulCatatan}>Catatan :</span>
+                                    <br/>1. Pengiriman produk hanya dapat dikirimkan ketika penjualanmu sudah disetujui oleh Magalodon. Status penjualan dapat dilihat <Link href='./BPLimbah/profil/StatusPenjualan' className={styles.linkCatat}>di sini.</Link>
+                                    <br/>2. Pastikan tuliskan setidaknya ID Pesananmu di produk yang akan kamu kirim.</p>
+                                </div>
                                 <div className={styles.contentTab2}>
                                     <div className={styles.form}>
                                         <p className={styles.judul}>Nama</p>

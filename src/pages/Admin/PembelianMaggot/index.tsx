@@ -3,13 +3,22 @@ import styles from './pembelian.module.css'
 import { Tab } from '@headlessui/react'
 import classNames from 'classnames'
 import { useState } from 'react'
-import { Search, Upload } from 'react-feather'
+import { Search, Upload, Edit, Trash, Download } from 'react-feather'
 import Modal from 'react-modal'
+import Image from 'next/image'
+import buktitf from '@/components/elements/buktiTF.jpg'
 
 interface PembelianData {
     id: number;
     tanggalPengajuan: string;
+    tanggalTiba: string;
+    nama: string;
     produk: string;
+    jumlah: number;
+    total: number;
+    norek: number;
+    bank: string;
+    alamat: string;
 }
 
 const PembelianMaggot = () => {
@@ -17,12 +26,26 @@ const PembelianMaggot = () => {
         {
             id: 1234,
             tanggalPengajuan: '12/12/2021',
-            produk: '5kg Maggot'
+            tanggalTiba: '17/12/2021',
+            nama: 'salsa',
+            produk: '5kg Maggot',
+            jumlah: 5,
+            total: 50000,
+            norek: 12345898765,
+            bank: 'mandiri',
+            alamat: 'Jl. Gunung Terang'
         },
         {
             id: 2234,
             tanggalPengajuan: '13/12/2021',
-            produk: '10kg Maggot'
+            tanggalTiba: '17/12/2021',
+            nama: 'andaru',
+            produk: '10kg Maggot',
+            jumlah: 10,
+            total: 100000,
+            norek: 98767652,
+            bank: 'BRI',
+            alamat: 'Jl. Kemiling'
         },
     ]);
     
@@ -33,10 +56,18 @@ const PembelianMaggot = () => {
         const dateLowerCase = item.tanggalPengajuan.toLowerCase();
         const id = item.id.toString();
         const idLowerCase= id.toLowerCase();
+        const jumlah = item.jumlah.toString();
+        const total = item.total.toString();
+        const jumlahLowerCase = jumlah.toLowerCase();
+        const namaLowerCase = item.nama.toLowerCase();
+        const totalLowerCase = total.toLowerCase();
         const searchTermLowerCase = searchTerm.toLowerCase();
+
         console.log('productLowerCase:', productLowerCase);
         console.log('dateLowerCase:', dateLowerCase);
         console.log('idLowerCase:', idLowerCase);
+        console.log('jumlahLowerCase:', jumlahLowerCase);
+        console.log('totalLowerCase:', totalLowerCase);
         console.log('searchTermLowerCase:', searchTermLowerCase);
         console.log('Matching:', productLowerCase.includes(searchTermLowerCase));
 
@@ -128,13 +159,13 @@ const PembelianMaggot = () => {
                                                                     <p className={styles.modalDetail1}>Jumlah yang harus dibayar</p>
                                                                 </div>
                                                                 <div className={styles.isi}>
-                                                                    <p className={styles.modalDetail2}>: 2234</p>
-                                                                    <p className={styles.modalDetail2}>: Salsa</p>
-                                                                    <p className={styles.modalDetail2}>: Jl. Melati</p>
-                                                                    <p className={styles.modalDetail2}>: 5 Kg</p>
-                                                                    <p className={styles.modalDetail2}>: BRI</p>
-                                                                    <p className={styles.modalDetail2}>: 1234872</p>
-                                                                    <p className={styles.modalDetail2}>: Rp. 50.000</p>
+                                                                    <p className={styles.modalDetail2}>: {item.id}</p>
+                                                                    <p className={styles.modalDetail2}>: {item.nama}</p>
+                                                                    <p className={styles.modalDetail2}>: {item.alamat}</p>
+                                                                    <p className={styles.modalDetail2}>: {item.produk}</p>
+                                                                    <p className={styles.modalDetail2}>: {item.bank}</p>
+                                                                    <p className={styles.modalDetail2}>: {item.norek}</p>
+                                                                    <p className={styles.modalDetail2}>: {item.total}</p>
                                                                 </div>
                                                             </div>
                                                             <button className={styles.buttonTutup} onClick={() => setModalDetailAju(false)}>Tutup</button>
@@ -239,7 +270,69 @@ const PembelianMaggot = () => {
                                 </table>
                             </Tab.Panel>
 
-                            <Tab.Panel></Tab.Panel>
+                            <Tab.Panel>
+                                <div className={styles.up}>
+                                    <div className={styles.inputSearch1}>
+                                        <Search className={styles.iconSearch}/>
+                                        <input
+                                            type="text"
+                                            placeholder="Cari..."
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                            className={styles.input}
+                                        />
+                                    </div>
+                                    <button className={styles.download}> 
+                                        <p>Download Excel</p>
+                                        <Download className={styles.iconDownload}/>
+                                    </button>
+                                </div>
+                                <table className={styles.table}>
+                                    <thead>
+                                        <tr className={styles.tr}>
+                                            <th className={styles.th1}>ID</th>
+                                            <th className={styles.th1}>Nama</th>
+                                            <th className={styles.th1}>Alamat</th>
+                                            <th className={styles.th1}>Tanggal Pengajuan</th>
+                                            <th className={styles.th1}>Tanggal Tiba</th>
+                                            <th className={styles.th1}>Produk</th>
+                                            <th className={styles.th1}>Jumlah</th>
+                                            <th className={styles.th1}>Total</th>
+                                            <th className={styles.th1}>Bank</th>
+                                            <th className={styles.th1}>No. Rekening</th>
+                                            <th className={styles.th1}>Bukti Transfer</th>
+                                            <th className={styles.th1}> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {filteredData.map((item, index) => (
+                                            <tr key={index} className={styles.tr}>
+                                                <td className={styles.td1}>{item.id}</td>
+                                                <td className={styles.td1}>{item.nama}</td>
+                                                <td className={styles.td1}>{item.alamat}</td>
+                                                <td className={styles.td1}>{item.tanggalPengajuan}</td>
+                                                <td className={styles.td1}>{item.tanggalTiba}</td>
+                                                <td className={styles.td1}>{item.produk}</td>
+                                                <td className={styles.td1}>{item.jumlah}</td>
+                                                <td className={styles.td1}>{item.total}</td>
+                                                <td className={styles.td1}>{item.bank}</td>
+                                                <td className={styles.td1}>{item.norek}</td>
+                                                <td className={styles.td1}>
+                                                    <div className={styles.imageContainer}>
+                                                        <Image src={buktitf} alt="bukti" className={styles.buktiTF}/>
+                                                    </div>
+                                                </td>
+                                                <td className={styles.td1}>
+                                                    <div className={styles.button}>
+                                                        <button className={styles.buttonEdit}><Edit className={styles.iconEdit}/></button>
+                                                        <button className={styles.buttonHapus}><Trash className={styles.iconHapus}/></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </Tab.Panel>
                         </Tab.Panels>
                     </Tab.Group>
                 </div>

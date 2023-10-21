@@ -7,6 +7,8 @@ import Link from 'next/link'
 const Header = () => {
     const router = useRouter();
     const isMenuActive = (path: string) => router.pathname === path;
+    // Menambahkan pengecualian untuk "BPMaggot" dan "Profil"
+    const isProductPage = isMenuActive('/produk') || router.pathname.includes('/BPMaggot') || router.pathname.includes('/BPLimbah');
 
     return (
         <div>
@@ -22,7 +24,8 @@ const Header = () => {
                         <li className={`li ${styles.li} ${isMenuActive('/tentangkami') ? styles.active : ''}`}>
                             <Link href='/tentangkami'>Tentang Kami</Link>
                         </li>
-                        <li className={`li ${styles.li} ${isMenuActive('/produk') ? styles.active : ''}`}>
+                        {/* Menggunakan kondisi yang mengesampingkan "BPMaggot" dan "Profil" */}
+                        <li className={`li ${styles.li} ${isProductPage ? styles.active : ''}`}>
                             <Link href='/produk'>Produk</Link>
                         </li>
                         <li className={`li ${styles.li} ${isMenuActive('/kontak') ? styles.active : ''}`}>
