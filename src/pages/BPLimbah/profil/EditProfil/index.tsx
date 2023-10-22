@@ -1,6 +1,5 @@
 import styles from './editprofil.module.css'
 import Image from 'next/image'
-import profilImage from '@/components/elements/profil.png'
 import Link from 'next/link'
 import {ChevronLeft, FileText, Edit, HelpCircle, LogOut} from 'react-feather'
 import React, { useState } from "react"
@@ -81,7 +80,7 @@ const EditProfil = () => {
                     </div>
 
                     <div className={styles.profil}>
-                        <Image src={profilImage} alt="profil" className={styles.foto} />
+                        <Image src='/images/profilImage' alt="profil" className={styles.foto} />
                         <button className={styles.editFoto}>Ubah Foto Profil</button>
                     </div>
 

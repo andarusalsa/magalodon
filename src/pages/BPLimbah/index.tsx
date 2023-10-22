@@ -5,9 +5,7 @@ import TextInput from "@/components/fragments/inputText/inputText"
 import AutoAdjustingTextInput from '@/components/fragments/inputText/autoAdjusting'
 import React, { useState } from "react";
 import Link from 'next/link'
-import profil from '@/components/elements/profil.png'
 import Image from 'next/image'
-import profil1 from '@/components/elements/profil1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage,faHeart, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import {faHeart as faHeartOutline, faComment as faCommentOutline, faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
@@ -130,7 +128,7 @@ const BPLimbah = () => {
             <section className={styles.bannerSatu}>
                 <div className={styles.kiri}>
                     <Link href='/BPLimbah/profil' className={styles.ContentProfil}>
-                        <Image src={profil} alt="profil" className={styles.profil} />
+                        <Image src='/images/profil.png' alt="profil" className={styles.profil} />
                         Andaru Putri Salsabila
                     </Link>
                 </div>
@@ -172,7 +170,7 @@ const BPLimbah = () => {
                                     <div className={styles.buatstatus}>
                                         <div className={styles.profilsmall}>
                                             <Link href='#'>
-                                                <Image src={profil} alt="profil" className={styles.profil} />
+                                                <Image src='/images/profil' alt="profil" className={styles.profil} />
                                             </Link>
                                         </div>
                                         <div className={styles.setStatus}>
@@ -228,7 +226,7 @@ const BPLimbah = () => {
 
                                     <div className={styles.kiriman}>
                                         <div className={styles.akun}>
-                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <Image src='/images/profil' alt="profil1" className={styles.profil} />
                                             <p>Ivanna Putri</p>
                                         </div>
                                         <div className={styles.isikiriman}>
@@ -262,7 +260,7 @@ const BPLimbah = () => {
                                                             <hr/>
                                                             <div className={styles.kirimanComment}>
                                                                 <div className={styles.akun}>
-                                                                    <Image src={profil1} alt="profil1" className={styles.profilComment} />
+                                                                    <Image src='/images/profil1' alt="profil1" className={styles.profilComment} />
                                                                     <p>Ivanna Putri</p>
                                                                 </div>
                                                                 <div className={styles.isikiriman}>
@@ -297,7 +295,7 @@ const BPLimbah = () => {
 
                                     <div className={styles.kiriman}>
                                         <div className={styles.akun}>
-                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <Image src='/images/profil1' alt="profil1" className={styles.profil} />
                                             <p>Ivanna Putri</p>
                                         </div>
                                         <div className={styles.isikiriman}>
@@ -325,7 +323,7 @@ const BPLimbah = () => {
 
                                     <div className={styles.kiriman}>
                                         <div className={styles.akun}>
-                                            <Image src={profil1} alt="profil1" className={styles.profil} />
+                                            <Image src='/images/profil1' alt="profil1" className={styles.profil} />
                                             <p>Ivanna Putri</p>
                                         </div>
                                         <div className={styles.isikiriman}>
@@ -378,7 +376,7 @@ const BPLimbah = () => {
                                     <div className={styles.kiriman}>
                                         <div className={styles.kirimanUp}>
                                             <div className={styles.akunUp}>
-                                                <Image src={profil1} alt="profil1" className={styles.profilUp} />
+                                                <Image src='/images/profil1' alt="profil1" className={styles.profilUp} />
                                                 <p>Andaru Putri Salsabila</p>
                                             </div>
                                             <div className={styles.more}>

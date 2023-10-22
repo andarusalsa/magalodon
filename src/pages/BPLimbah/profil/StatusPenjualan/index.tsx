@@ -7,7 +7,6 @@ import classNames from 'classnames'
 import { useState } from 'react'
 import Modal from 'react-modal'
 import Image from 'next/image'
-import buktiTF from '@/components/elements/buktiTF.jpg'
 import AppShell from '@/components/layout/Appshell'
 
 const StatusPenjualan = () => {
@@ -135,7 +134,7 @@ const StatusPenjualan = () => {
                                         <h2>Konfirmasi Pesananmu</h2>
                                         <p>5 Kg Limbah</p>
                                         <div className={styles.imageContainer}>
-                                            <Image src={buktiTF} alt="buktiTF" className={styles.buktiTF} />
+                                            <Image src='/images/buktiTF.jpg' alt="buktiTF" className={styles.buktiTF} />
                                         </div>
                                         <p>Apakah pendapatanmu sudah diterima?</p>
                                         <button className={styles.buttonConfirm} onClick={() => setModalConfirm(false)}>Konfirmasi</button>

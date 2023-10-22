@@ -19,12 +19,6 @@
     background-image: url("../../components/elements/banner.png");
 }
     
-@media (max-width: 768px) {
-.banner {
-    padding: 3rem; /* Mengurangi padding pada ukuran layar kecil */
-}
-}
-    
 .bannerButton{
     margin-top: 0;
     margin-bottom: 20px;
@@ -175,4 +169,39 @@
 
 .colorText{
     color: #385C4E;
+}
+
+    
+@media (max-width: 768px) {
+    .banner {
+        padding: 3rem; /* Mengurangi padding pada ukuran layar kecil */
+    }
+    
+    .bannerButton {
+            padding: 8px 24px; /* Sesuaikan padding untuk layar kecil */
+            font-size: 0.8rem; /* Ukuran font yang lebih kecil untuk layar kecil */
+    }
+
+    .banner h1 {
+        font-size: 1.5rem; /* Ukuran font yang lebih kecil untuk layar kecil */
+    }
+
+    .bannerContent {
+            padding-top: 2rem; /* Kurangi padding pada layar kecil */
+            max-width: 90%; /* Gunakan lebar maksimum yang lebih kecil pada layar kecil */
+    }
+
+    .solusi {
+        flex-direction: column; /* Stack card di bawah teks pada layar kecil */
+        padding: 2rem; /* Mengurangi padding pada layar kecil */
+    }
+
+    .cardContainer {
+        flex-direction: column; /* Stack card di bawah teks pada layar kecil */
+    }
+
+    .solusiContent {
+        padding-right: 0; /* Hapus jarak antara teks dan card pada layar kecil */
+        font-size: 1.5rem; /* Atur ukuran font kembali ke ukuran asli */
+    }    
 }

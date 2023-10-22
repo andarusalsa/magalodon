@@ -2,7 +2,6 @@ import styles from './admin.module.css'
 import InputText from "@/components/fragments/inputText/inputText"
 import { useState } from "react"
 import { useRouter } from "next/router"
-import Link from "next/link"
 
 
 const Admin = () => {

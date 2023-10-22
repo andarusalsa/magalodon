@@ -1,6 +1,5 @@
 import styles from './profil.module.css'
 import Image from 'next/image'
-import profilImage from '@/components/elements/profil.png'
 import Link from 'next/link'
 import {ChevronLeft, FileText, Edit, HelpCircle, LogOut} from 'react-feather'
 import Modal from 'react-modal'
@@ -33,7 +32,7 @@ const Profil = () => {
             <div className = {styles.containerProfile}>
                 <div className={styles.profilWrapper}>
                     <div className={styles.profil}>
-                        <Image src={profilImage} alt="profil" className={styles.foto} />
+                        <Image src='/images/profilImage.png' alt="profil" className={styles.foto} />
                         <p>Andaru Putri Salsabila</p>
                     </div>
 
