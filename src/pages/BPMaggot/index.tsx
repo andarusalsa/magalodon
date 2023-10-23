@@ -170,6 +170,7 @@ const BPMaggot = () => {
                                 {isStatusActive?(
                                 <>
                                     <div className={styles.buatstatus}>
+                                        <div className={styles.prof}>
                                         <div className={styles.profilsmall}>
                                             <Link href='#'>
                                                 <Image src={profil} alt="profil" className={styles.profil} />
@@ -208,6 +209,8 @@ const BPMaggot = () => {
                                                 </div>
                                             </Modal>
                                         </div>
+                                        </div>
+                                        
                                         
                                         <div className={styles.menusmall}>
                                             <Link href='/kirimanmu' className={styles.menu1}

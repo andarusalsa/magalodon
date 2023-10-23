@@ -805,3 +805,178 @@
     font-size: 12px;
     color: #FFff;
 }
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 1rem;
+    }
+
+    .bannerSatu {
+        margin-top: 2rem;
+        padding-top: 3rem; 
+        padding-bottom: 3rem;
+        padding-left: 0;
+        flex-direction: row;
+        margin-left: 0; 
+    }
+
+    .ContentProfil {
+        margin-left: 2rem; 
+        padding: 0;
+        font-size: 0.6rem;
+        flex-direction: row;
+    }
+
+    .profil {
+        width: 40px;
+        height: 40px; /* Sesuaikan ukuran profil untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    
+    .kiri {
+        margin-right: auto;
+    }
+
+    .kanan{
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .notifikasi{
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0;
+    }
+
+    .logout{
+        width: 1rem;
+        height: 1rem;
+        margin-left: 1rem;
+    }
+
+
+    .containerTab {
+        min-height: 30vh;
+        margin-bottom: 15px;
+        /* Sesuaikan properti CSS untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .line {
+        margin-top: 15px;
+        /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .tab{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.8rem;
+    }
+
+    .tabPanels{
+        max-width: 80%;
+    }
+
+    .profil{
+        width: 30px;
+        height: 30px;
+        margin-right: 1rem;
+    }
+
+    .buatstatus{
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .prof{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .status {
+        max-width: 15rem;
+        width: 100%;
+        padding: 0; 
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 1rem;
+        margin-left: 0;
+        flex-direction: row;/* Sesuaikan padding untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .statusInput {
+        width: 100%;
+        font-size: 0.5rem; /* Sesuaikan font size untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .wordCount {
+        font-size: 8px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .icon {
+        margin-left: 5px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        height: 12px; /* Sesuaikan tinggi icon untuk tampilan responsif di bawah 768px lebar layar */
+        width: 12px; /* Sesuaikan lebar icon untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .menu1 {
+        margin-right: 0; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 0.6rem; 
+        margin-left: 0;/* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .menu2 {
+        margin-right: 10px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 0.6rem; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        width: 60px; /* Sesuaikan lebar untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .buatstatus {
+        margin-left: 0; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    
+    .kiriman {
+        margin-top: 20px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        margin-left: 20px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .akun p {
+        font-size: 12px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .isikiriman {
+        margin-right: 20px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .contentTab2 {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* Sesuaikan properti CSS untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .judul1, .judul2 {
+        margin-right: 10px;
+        /* Sesuaikan margin-right untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .form input {
+        width: 100%; /* Sesuaikan lebar input untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .ket2 {
+        font-size: 8px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .bankOption {
+        font-size: 10px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .button {
+        font-size: 10px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        width: 80px; /* Sesuaikan lebar button untuk tampilan responsif di bawah 768px lebar layar */
+        margin-top: 20px; /* Sesuaikan margin atas untuk tampilan responsif di bawah 768px lebar layar */
+        float: none; /* Hapus float untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .error {
+        font-size: 6px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        margin-left: 10px; /* Sesuaikan margin kiri untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+}

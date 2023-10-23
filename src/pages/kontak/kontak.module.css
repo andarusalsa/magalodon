@@ -113,3 +113,57 @@
     padding-right: 50px;
     font-family: 'Poppins';
 }
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 1rem;
+    }
+	
+    .bannerSatu {
+        padding: 3rem;
+        margin-top: 4rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .isian1, .isian2 {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 0.9rem;
+    }
+
+    .isian3 {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .wrapper1 input {
+        width: 80%;
+        font-size: 0.8rem;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .textArea {
+        width: 100%;  
+        font-size: 0.8rem;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .bannerTiga {
+        font-size: 10px;
+        /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-top: 20px;
+    }
+}
+

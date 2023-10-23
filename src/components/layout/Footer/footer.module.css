@@ -72,4 +72,28 @@
   color: #9d9d9d;
 }
 
+@media (max-width: 768px) {
+  .footerContent h2 {
+      font-size: 0.75rem; /* Mengurangi ukuran teks saat layar kecil */
+      margin-bottom: 0.25rem; /* Mengurangi margin bawah */
+  }
 
+  .footerContent p {
+      font-size: 0.6rem; /* Ukuran teks yang lebih kecil pada elemen p */
+  }
+
+  .imageContainer {
+      font-size: 1rem; /* Mengurangi ukuran teks saat layar kecil */
+  }
+
+  .image {
+    width: 20px; 
+    height: 20px; 
+  }
+
+  .youtube,
+  .facebook,
+  .instagram{
+    margin: 0 50px;
+  }
+}

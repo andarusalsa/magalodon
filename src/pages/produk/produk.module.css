@@ -273,7 +273,7 @@
             padding-top: 20px; /* Adjust padding-top for smaller screens */
     }
     .tab {
-            padding: 10px; /* Adjust padding for smaller screens */
+            padding: 10px;
         }
     
     .tabPanels {
@@ -319,7 +319,13 @@
         font-size: 13px;
     }
 
+    .form input{
+        font-size: 0.7rem;
+    }
     
+    .form1 input{
+        font-size: 0.7rem;
+    }
 }
 
 

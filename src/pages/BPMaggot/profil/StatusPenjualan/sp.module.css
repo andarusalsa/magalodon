@@ -233,3 +233,79 @@
     width: 100%;
     height: auto;
 }
+
+@media (max-width: 768px) {
+    .Link p {
+        margin-left: 10px; 
+        font-size: 0.9rem; 
+    }
+
+    .profilWrapper {
+        margin: 10px; 
+        width: 100%; 
+        border-radius: 10px;
+    }
+
+    .menuUp1 {
+        margin-left: 10px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .menuUp1 p {
+        font-size: 0.8rem;
+        margin-left: 10px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .opsi {
+        margin-left: 20px; /* Sesuaikan margin kiri untuk tampilan responsif di bawah 768px lebar layar */
+        margin-right: 20px; /* Sesuaikan margin kanan untuk tampilan responsif di bawah 768px lebar layar */
+    }
+    .button {
+        margin-top: 10px; /* Sesuaikan margin atas untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 10px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .tab {
+        font-size: 0.6rem;
+        padding-top: 10px; /* Sesuaikan padding atas untuk tampilan responsif di bawah 768px lebar layar */
+        padding-bottom: 10px; /* Sesuaikan padding bawah untuk tampilan responsif di bawah 768px lebar layar */
+        padding-left: 10px; /* Sesuaikan padding kiri untuk tampilan responsif di bawah 768px lebar layar */
+        padding-right: 10px; /* Sesuaikan padding kanan untuk tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .tabPanels {
+        width: 100%; /* Menggunakan lebar 100% agar elemen mengisi lebar layar pada tampilan responsif di bawah 768px lebar layar */
+    }
+
+    .list {
+        width: 100%; 
+    }
+
+   .itemKiri, .itemKanan, .item1, .item2 {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 0.5rem;
+    }
+    .itemKanan {
+        font-size: 0.5rem;
+    }
+    .item2 {
+        font-size: 0.5rem;
+    }
+
+    .ModalContent {
+        max-width: 80%;
+        font-size: 0.7rem;
+    }
+    .buttonConfirm {
+        width: 100%;
+    }
+    .Note {
+        font-size: 8px;
+    }
+    .imageContainer {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .buktiTF {
+        width: 100%;
+    }
+}

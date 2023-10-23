@@ -128,12 +128,6 @@
     color: #666;
 }
     
-@media (max-width: 768px) {
-.card {
-    width: calc(50% - 20px); /* Mengatur lebar card agar dua card berada dalam satu baris pada layar kecil */
-}
-}
-    
 .cardButton{
     width: 87px;
     height: 24px;
@@ -187,8 +181,8 @@
     }
 
     .bannerContent {
-            padding-top: 2rem; /* Kurangi padding pada layar kecil */
-            max-width: 90%; /* Gunakan lebar maksimum yang lebih kecil pada layar kecil */
+        padding-top: 2rem; /* Kurangi padding pada layar kecil */
+        max-width: 100%; /* Gunakan lebar maksimum yang lebih kecil pada layar kecil */
     }
 
     .solusi {
@@ -200,8 +194,26 @@
         flex-direction: column; /* Stack card di bawah teks pada layar kecil */
     }
 
-    .solusiContent {
+    .solusiContent h2{
         padding-right: 0; /* Hapus jarak antara teks dan card pada layar kecil */
         font-size: 1.5rem; /* Atur ukuran font kembali ke ukuran asli */
     }    
+
+    .solusiContent p {
+        padding-right: 0; /* Hapus jarak kanan pada layar kecil */
+        font-size: 0.8rem; /* Mengurangi ukuran font untuk responsivitas */
+    }
+
+    .card {
+        width: calc(50% - 20px); /* Kartu akan mengambil lebar penuh pada layar kecil */
+    }
+
+    .cardButton {
+        height: 30px; /* Mengurangi tinggi tombol saat layar kecil */
+        font-size: 0.6rem; /* Mengurangi ukuran teks saat layar kecil */
+    }
+
+    .promosi p {
+        font-size: 0.9rem; /* Mengurangi ukuran teks saat layar kecil */
+    }
 }

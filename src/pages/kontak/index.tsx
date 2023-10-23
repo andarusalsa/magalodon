@@ -43,7 +43,7 @@ const Kontak = () => {
                             <p>Email</p>
                             <div className={styles.wrapper1}>
                                 <TextInput placeholder="Masukkan email" value={email} onInputChange={handleEmailChange} />
-                            </div>
+                            </div> 
                         </div>
                     </div>
                     <div className={styles.isian3}>
