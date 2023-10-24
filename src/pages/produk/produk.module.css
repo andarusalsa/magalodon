@@ -304,7 +304,7 @@
     }
 
     .LoginContainer {
-        width: 90%; /* Make it full-width for smaller screens */
+        width: 90%; 
     }
 
     .isiproduk, .isiproduk, .isiprodukkal, .isiprodukkal2, .isiproduktem{
@@ -319,12 +319,17 @@
         font-size: 13px;
     }
 
+    .form, .form1{
+        width: 100%;
+    }
+
     .form input{
         font-size: 0.7rem;
     }
     
     .form1 input{
         font-size: 0.7rem;
+        max-width: 70%;
     }
 }
 

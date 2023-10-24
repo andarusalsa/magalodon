@@ -44,8 +44,8 @@
 .bannerContent{
     position: relative;
     width: 100%;
-    max-width: 1200px; /* Atur sesuai kebutuhan Anda */
-    margin: 0 auto; /* Untuk tengah secara horizontal */
+    max-width: 1200px; 
+    margin-left: 2rem;
     background-size: cover;
     background-position: center;
     padding-top: 3rem;
@@ -74,7 +74,7 @@
     padding-right: 5rem; /* Memberi jarak antara teks dan card */
     color: var(--green-2, #385C4E);
     font-family: Poppins, sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -155,7 +155,7 @@
 .promosi p{
     color: #FFF;
     font-family: "Poppins", sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -168,12 +168,13 @@
     
 @media (max-width: 768px) {
     .banner {
-        padding: 3rem; /* Mengurangi padding pada ukuran layar kecil */
+        padding: 3rem; 
+        padding-left: 0;
     }
     
     .bannerButton {
-            padding: 8px 24px; /* Sesuaikan padding untuk layar kecil */
-            font-size: 0.8rem; /* Ukuran font yang lebih kecil untuk layar kecil */
+        padding: 8px 24px; /* Sesuaikan padding untuk layar kecil */
+        font-size: 0.8rem; /* Ukuran font yang lebih kecil untuk layar kecil */
     }
 
     .banner h1 {
@@ -181,7 +182,8 @@
     }
 
     .bannerContent {
-        padding-top: 2rem; /* Kurangi padding pada layar kecil */
+        padding-top: 2rem;
+        padding-left: 1rem; /* Kurangi padding pada layar kecil */
         max-width: 100%; /* Gunakan lebar maksimum yang lebih kecil pada layar kecil */
     }
 
@@ -205,7 +207,7 @@
     }
 
     .card {
-        width: calc(50% - 20px); /* Kartu akan mengambil lebar penuh pada layar kecil */
+        width: calc(90% - 10px); 
     }
 
     .cardButton {

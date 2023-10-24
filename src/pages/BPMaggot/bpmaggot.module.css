@@ -135,6 +135,12 @@
     margin-right: 20px;
 }
 
+.prof{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .statusContainer{
     display: flex;
     flex-direction: row;
@@ -159,7 +165,7 @@
 .statusInput{
     width: 450px;
     border: none;
-    resize: none; /* Untuk mencegah pengguna mengubah ukuran textarea */
+    resize: none; 
     max-height: 100px;
     overflow-y: auto;
     background-color: transparent;
@@ -176,19 +182,19 @@
 }
 
 .statusInput::-webkit-scrollbar{
-    background-color: #888; /* Warna thumb scrollbar */
-    border-radius: 20px; /* Bentuk thumb scrollbar */
+    background-color: #888; 
+    border-radius: 20px; 
     width: 5px;
 }
 
 .statusInput::-webkit-scrollbar-thumb{
-    background-color: #d9d9d9; /* Warna scroll thumb */
-    border-radius: 20px; /* Bentuk scroll thumb */
+    background-color: #d9d9d9; 
+    border-radius: 20px; 
 }
 
 .statusInput::-webkit-scrollbar-track {
     background-color: #f1f1f1; 
-    border-radius: 30px;/* Warna track scrollbar */
+    border-radius: 30px;
 }
 
 .wordCount{
@@ -348,11 +354,11 @@
 }
 
 .bankOption{
-    background-color: #f8f8f8; /* Warna latar belakang */
-    color: rgba(0, 0, 0, 0.5); /* Warna teks */
+    background-color: #f8f8f8; 
+    color: rgba(0, 0, 0, 0.5); 
     padding:10px;
-    border: 1px solid #9d9d9d; /* Ukuran dan warna border */
-    border-radius: 5px; /* Sudut border */
+    border: 1px solid #9d9d9d; 
+    border-radius: 5px; 
     transition: border-color 0.3s ease;
     font-family: 'Poppins';
     font-size: 12px;
@@ -401,7 +407,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -409,11 +415,11 @@
 }
 
 .ModalContent {
-    background-color: #fff; /* Warna latar belakang modal */
+    background-color: #fff; 
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-    max-width: 300px; /* Lebar maksimum modal */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    max-width: 300px;
     width: 100%;
     text-align: center;
     font-family: 'Poppins';
@@ -484,17 +490,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .ModalContent1 {
-    background-color: #fff; /* Warna latar belakang modal */
+    background-color: #fff; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
     min-width: 200px;
     max-width: 400px;
     text-align: center;
@@ -656,14 +662,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .modalContent {
-    background-color: #fff; /* Warna latar belakang */
+    background-color: #fff; 
     width: 500px;
     padding: 20px;
     border-radius: 10px;
@@ -675,7 +681,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -829,7 +835,7 @@
 
     .profil {
         width: 40px;
-        height: 40px; /* Sesuaikan ukuran profil untuk tampilan responsif di bawah 768px lebar layar */
+        height: 40px; 
     }
     
     .kiri {
@@ -858,18 +864,13 @@
     .containerTab {
         min-height: 30vh;
         margin-bottom: 15px;
-        /* Sesuaikan properti CSS untuk tampilan responsif di bawah 768px lebar layar */
     }
     .line {
         margin-top: 15px;
-        /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
     }
 
     .tab{
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding: 10px;
         font-size: 0.8rem;
     }
 
@@ -901,48 +902,48 @@
         padding-bottom: 5px;
         padding-left: 1rem;
         margin-left: 0;
-        flex-direction: row;/* Sesuaikan padding untuk tampilan responsif di bawah 768px lebar layar */
+        flex-direction: row;
     }
 
     .statusInput {
         width: 100%;
-        font-size: 0.5rem; /* Sesuaikan font size untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 0.5rem; 
     }
 
     .wordCount {
-        font-size: 8px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 8px; 
     }
 
     .icon {
-        margin-left: 5px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
-        height: 12px; /* Sesuaikan tinggi icon untuk tampilan responsif di bawah 768px lebar layar */
-        width: 12px; /* Sesuaikan lebar icon untuk tampilan responsif di bawah 768px lebar layar */
+        margin-left: 5px; 
+        height: 12px; 
+        width: 12px; 
     }
 
     .menu1 {
-        margin-right: 0; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        margin-right: 0; 
         font-size: 0.6rem; 
-        margin-left: 0;/* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        margin-left: 0;
     }
     .menu2 {
-        margin-right: 10px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
-        font-size: 0.6rem; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
-        width: 60px; /* Sesuaikan lebar untuk tampilan responsif di bawah 768px lebar layar */
+        margin-right: 10px; 
+        font-size: 0.6rem; 
+        width: 60px; 
     }
 
     .buatstatus {
-        margin-left: 0; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        margin-left: 0; 
     }
     
     .kiriman {
-        margin-top: 20px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
-        margin-left: 20px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        margin-top: 20px; 
+        margin-left: 20px; 
     }
     .akun p {
-        font-size: 12px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 12px; 
     }
     .isikiriman {
-        margin-right: 20px; /* Sesuaikan margin untuk tampilan responsif di bawah 768px lebar layar */
+        margin-right: 20px; 
     }
 
     .contentTab2 {
@@ -951,32 +952,31 @@
         margin: 5px;
         margin-left: 20px;
         margin-right: 20px;
-        /* Sesuaikan properti CSS untuk tampilan responsif di bawah 768px lebar layar */
+        
     }
     .judul1, .judul2 {
         margin-right: 10px;
-        /* Sesuaikan margin-right untuk tampilan responsif di bawah 768px lebar layar */
     }
 
     .form input {
-        width: 100%; /* Sesuaikan lebar input untuk tampilan responsif di bawah 768px lebar layar */
+        width: 100%; 
     }
     .ket2 {
-        font-size: 8px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 8px; 
     }
     .bankOption {
-        font-size: 10px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 10px; 
     }
 
     .button {
-        font-size: 10px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
-        width: 80px; /* Sesuaikan lebar button untuk tampilan responsif di bawah 768px lebar layar */
-        margin-top: 20px; /* Sesuaikan margin atas untuk tampilan responsif di bawah 768px lebar layar */
-        float: none; /* Hapus float untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 10px; 
+        width: 80px; 
+        margin-top: 20px; 
+        float: none; 
     }
     .error {
-        font-size: 6px; /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
-        margin-left: 10px; /* Sesuaikan margin kiri untuk tampilan responsif di bawah 768px lebar layar */
+        font-size: 6px; 
+        margin-left: 10px; 
     }
 
 }

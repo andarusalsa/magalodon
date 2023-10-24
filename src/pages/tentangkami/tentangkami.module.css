@@ -51,7 +51,7 @@
 .imageContainer {
   flex: 1;
   padding-left:8rem;
-}
+} 
 
 .text {
   flex: 1;
@@ -88,17 +88,17 @@
 
 @media (max-width: 768px) {
   .container {
-      align-items: center; /* Pusatkan konten secara vertikal pada layar kecil */
+      align-items: center; 
   }
 
   .bannerSatu {
       padding: 3rem;
-      margin-top: 3rem; /* Kurangi padding pada layar kecil */
+      margin-top: 3rem; 
   }
 
   .bannerSatu h2 {
-      font-size: 1.25rem; /* Atur ukuran font lebih kecil untuk layar kecil */
-      max-width: 70%; /* Kurangi lebar maksimum untuk konten agar tidak terlalu lebar pada layar kecil */
+      font-size: 1rem;
+      max-width: 70%; 
   }
 
   .bannerContent {

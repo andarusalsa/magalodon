@@ -28,7 +28,8 @@
     background-color: #F1F9F7;
     background-size: cover;
     background-position: center;
-    padding : 3rem;
+    padding-top : 3rem;
+    padding-bottom: 3rem;
 }
 
 .isian{
@@ -129,9 +130,12 @@
     }
 
     .isian1, .isian2 {
-        margin-left: 10px;
-        margin-right: 10px;
         font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .isian1 p, .isian2 p{
+        text-align: left;
     }
 
     .isian3 {
@@ -145,6 +149,13 @@
         font-size: 0.8rem;
         padding-top: 0;
         padding-bottom: 0;
+        padding-left: 1rem;
+    }
+
+    .wrapper{
+        justify-content: center;
+        width: 70%;
+        padding-right: 2rem;
     }
 
     .textArea {
