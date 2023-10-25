@@ -492,7 +492,7 @@ const BPMaggot = () => {
                                 <div className={styles.contentTab3}>
                                     <div className={styles.form3}>
                                         <div className={styles.col1}>
-                                            <p>Jumlah yang ingin dijual</p>
+                                            <p className={styles.judul1}>Jumlah yang ingin dijual</p>
                                             <div className={styles.col2}>
                                                 <TextInput 
                                                     type="number" 

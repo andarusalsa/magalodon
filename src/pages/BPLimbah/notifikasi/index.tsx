@@ -1,6 +1,7 @@
 import styles from './notifikasi.module.css'
 import React, { useState } from "react"
 import Link from 'next/link'
+import profil from '@/components/elements/profil.png'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
@@ -14,7 +15,7 @@ const BPLimbah = () => {
             <div className={styles.bannerSatu}>
                 <div className={styles.kiri}>
                     <Link href='/BPLimbah/profil' className={styles.ContentProfil}>
-                        <Image src='/images/profil.png' alt="profil" className={styles.profil} />
+                        <Image src={profil} alt="profil" className={styles.profil} />
                         Andaru Putri Salsabila
                     </Link>
                 </div>

@@ -805,3 +805,227 @@
     font-size: 12px;
     color: #FFff;
 }
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 1rem;
+    }
+
+    .bannerSatu {
+        margin-top: 2rem;
+        padding-top: 3rem; 
+        padding-bottom: 3rem;
+        padding-left: 0;
+        flex-direction: row;
+        margin-left: 0; 
+    }
+
+    .ContentProfil {
+        margin-left: 2rem; 
+        padding: 0;
+        font-size: 0.6rem;
+        flex-direction: row;
+    }
+
+    .profil {
+        width: 40px;
+        height: 40px; 
+    }
+    
+    .kiri {
+        margin-right: auto;
+    }
+
+    .kanan{
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .notifikasi{
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0;
+    }
+
+    .logout{
+        width: 1rem;
+        height: 1rem;
+        margin-left: 1rem;
+    }
+
+
+    .containerTab {
+        min-height: 30vh;
+        margin-bottom: 15px;
+    }
+
+    .containerTab1{
+       max-width: 100%; 
+    }
+
+    .line {
+        margin-top: 15px;
+    }
+
+    .tab{
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .tabPanels{
+        max-width: 80%;
+    }
+
+    .profil{
+        width: 30px;
+        height: 30px;
+        margin-right: 1rem;
+    }
+
+    .setStatus{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .buatstatus{
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    .prof{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .status {
+        width: 80%;
+        padding: 0; 
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 1rem;
+        margin-left: 0;
+        flex-direction: row;
+    }
+
+    .statusContainer{
+        max-width: 80%;
+    }
+
+    .statusInput {
+        max-width: 100%;
+        font-size: 0.5rem; 
+    }
+
+    .wordCount {
+        font-size: 8px; 
+    }
+
+    .icon {
+        margin-left: 5px; 
+        height: 12px; 
+        width: 12px; 
+    }
+
+    .menu1 {
+        margin-right: 0; 
+        font-size: 0.6rem; 
+        margin-left: 0;
+    }
+    .menu2 {
+        margin-right: 10px; 
+        font-size: 0.6rem; 
+        width: 60px; 
+    }
+
+    .buatstatus {
+        margin-left: 1rem; 
+    }
+    
+    .kiriman {
+        margin-top: 20px; 
+        margin-left: 20px; 
+    }
+    .akun p {
+        font-size: 0.7rem; 
+    }
+    .isikiriman {
+        margin-right: 20px; 
+        font-size: 0.7rem;
+    }
+
+    .ModalContent2 {
+        max-width: 80%; 
+    }
+
+    .comment1{
+        max-width: 80%;
+    }
+
+    .commentContainer{
+        width: 80%;
+    }
+
+    .contentTab2 {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .form{
+        font-size: 0.8rem;
+    }
+
+    .form input {
+        width: 100%; 
+        font-size: 0.7rem;
+    }
+
+    .hasil{
+        font-size: 0.7rem;
+    }
+
+    .ket2 {
+        font-size: 8px; 
+    }
+
+    .bankOption {
+        font-size: 10px; 
+    }
+
+    .button {
+        font-size: 10px; 
+        width: 80px; 
+        margin-top: 20px; 
+        float: none; 
+    }
+    .error {
+        font-size: 6px; 
+        margin-left: 10px; 
+    }
+
+    .contentTab3{
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .form3{
+        width: 90%;
+    }
+
+    .ket3{
+        font-size: 0.5rem;
+    }
+
+    .judul1{
+        font-size: 0.7rem;
+        margin: 0 auto;
+    }
+
+    .col2{
+        width: 90%;
+    }
+
+    .col2 input{
+        width: 100%;
+    }
+}
