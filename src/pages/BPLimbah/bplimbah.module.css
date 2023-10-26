@@ -250,6 +250,12 @@
     margin-right: auto;
 }
 
+.prof{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .judulCatatan{
     color: #385C4E;
 }

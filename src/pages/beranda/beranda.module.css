@@ -53,7 +53,7 @@
     
 .solusi{
     display: flex;
-    align-items: flex-start; /* Membuat card berada di samping teks */
+    align-items: flex-start; 
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -63,15 +63,15 @@
 
 .cardContainer {
     display: flex;
-    flex-wrap: wrap; /* Menggunakan wrap untuk memindahkan card ke baris baru pada ukuran layar kecil */
+    flex-wrap: wrap; 
     justify-content: space-between;
     background-color: #f1f9f7;
     padding: 50px;
 }
     
 .solusiContent h2{
-    flex: 1; /* Menyebarkan sisa lebar konten */
-    padding-right: 5rem; /* Memberi jarak antara teks dan card */
+    flex: 1; 
+    padding-right: 5rem; 
     color: var(--green-2, #385C4E);
     font-family: Poppins, sans-serif;
     font-size: 40px;
@@ -142,6 +142,7 @@
     align-items: center;
     margin-top: auto;
     margin-bottom: 10px;
+    cursor: pointer;
 }
     
 .promosi{
@@ -173,37 +174,37 @@
     }
     
     .bannerButton {
-        padding: 8px 24px; /* Sesuaikan padding untuk layar kecil */
-        font-size: 0.8rem; /* Ukuran font yang lebih kecil untuk layar kecil */
+        padding: 8px 24px; 
+        font-size: 0.8rem; 
     }
 
     .banner h1 {
-        font-size: 1.5rem; /* Ukuran font yang lebih kecil untuk layar kecil */
+        font-size: 1.5rem; 
     }
 
     .bannerContent {
         padding-top: 2rem;
-        padding-left: 1rem; /* Kurangi padding pada layar kecil */
-        max-width: 100%; /* Gunakan lebar maksimum yang lebih kecil pada layar kecil */
+        padding-left: 1rem; 
+        max-width: 100%; 
     }
 
     .solusi {
-        flex-direction: column; /* Stack card di bawah teks pada layar kecil */
-        padding: 2rem; /* Mengurangi padding pada layar kecil */
+        flex-direction: column; 
+        padding: 2rem; 
     }
 
     .cardContainer {
-        flex-direction: column; /* Stack card di bawah teks pada layar kecil */
+        flex-direction: column; 
     }
 
     .solusiContent h2{
-        padding-right: 0; /* Hapus jarak antara teks dan card pada layar kecil */
-        font-size: 1.5rem; /* Atur ukuran font kembali ke ukuran asli */
+        padding-right: 0; 
+        font-size: 1.5rem; 
     }    
 
     .solusiContent p {
-        padding-right: 0; /* Hapus jarak kanan pada layar kecil */
-        font-size: 0.8rem; /* Mengurangi ukuran font untuk responsivitas */
+        padding-right: 0; 
+        font-size: 0.8rem; 
     }
 
     .card {
@@ -211,11 +212,12 @@
     }
 
     .cardButton {
-        height: 30px; /* Mengurangi tinggi tombol saat layar kecil */
-        font-size: 0.6rem; /* Mengurangi ukuran teks saat layar kecil */
+        height: 30px; 
+        font-size: 0.6rem;
+        cursor: pointer;
     }
 
     .promosi p {
-        font-size: 0.9rem; /* Mengurangi ukuran teks saat layar kecil */
+        font-size: 0.9rem; 
     }
 }

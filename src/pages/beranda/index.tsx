@@ -1,7 +1,22 @@
 import styles from './beranda.module.css'
 import AppShell from '@/components/layout/Appshell'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleCardClick = (MaggotCare : string) => {
+    router.push(`/produk#${MaggotCare}`);
+  };
+
+  const handleCardClick1 = (TrashCare : string) => {
+    router.push(`/produk#${TrashCare}`);
+  };
+
+  const handleCardClick2 = (PartnerCare : string) => {
+    router.push(`/produk#${PartnerCare}`);
+  };
+
   return (
     <AppShell withHeaderAndFooter={true}>
     <div className={styles.container}>
@@ -20,24 +35,25 @@ export default function Home() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla varius luctus mauris quis eleifend.</p>
         </div>
         <div className={styles.cardContainer}>
-          <div className={styles.card}>
+          <div className={styles.card} id='MaggotCare' onClick={() => handleCardClick("MaggotCare")}>
             <h3>MaggotCare</h3>
             <p>Bersama untuk memberikan kontribusi positif bagi lingkungan sekaligus meningkatkan keberhasilan bisnis Anda!</p>
-            <button className={styles.cardButton}>
+            <button className={styles.cardButton} onClick={() => handleCardClick("MaggotCare")}>
               Selengkapnya
             </button>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card} id='TrashCare' onClick={() => handleCardClick1("TrashCare")}>
             <h3>TrashCare</h3>
             <p>Buat masa depan yang lebih berkelanjutan dengan mengurangi limbah pangan dan memberikan kontribusi positif terhadap lingkungan.</p>
-            <button className={styles.cardButton}>
+            <button className={styles.cardButton} onClick={() => handleCardClick1("TrashCare")}>
           Selengkapnya
             </button>
           </div>
-          <div className={styles.card}>
+          <div className={styles.card} id='PartnerCare' onClick={() => handleCardClick2("PartnerCare")}>
+
             <h3>PartnerCare</h3>
             <p>Menjalin kemitraan yang kuat dan mendorong inovasi berkelanjutan. Bersama dapat mengubah dunia menjadi tempat yang lebih hijau dan berkelanjutan.</p>
-            <button className={styles.cardButton}>
+            <button className={styles.cardButton} onClick={() => handleCardClick2("PartnerCare")}>
           Selengkapnya
             </button>
           </div>

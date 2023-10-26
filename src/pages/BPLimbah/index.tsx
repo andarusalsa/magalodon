@@ -165,11 +165,12 @@ const BPLimbah = () => {
                     </Tab.List>
 
                     <Tab.Panels className={styles.tabPanels}>
-                        <Tab.Panel>
+                        <Tab.Panel> 
                             <div className={styles.containerTab1}>
                                 {isStatusActive?(
                                 <>
                                     <div className={styles.buatstatus}>
+                                        <div className={styles.prof}>
                                         <div className={styles.profilsmall}>
                                             <Link href='#'>
                                                 <Image src={profil} alt="profil" className={styles.profil}/>
@@ -207,6 +208,7 @@ const BPLimbah = () => {
                                                     <p>Berhasil dikirim!</p>
                                                 </div>
                                             </Modal>
+                                        </div>
                                         </div>
                                         
                                         <div className={styles.menusmall}>

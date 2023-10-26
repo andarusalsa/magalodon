@@ -20,6 +20,7 @@ const Produk = () => {
   const router = useRouter()
   const [isModalVisible, setIsModalVisible] = useState(false)
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+  const [activeTab, setActiveTab] = useState("")
 
   const users = [
     { email: 'salsa@gmail.com', password: 'Salsabila26' }
@@ -60,6 +61,7 @@ const Produk = () => {
     }
   };
 
+
   const handleLogin1 = () => {
     if (email.trim() === "" || katasandi.trim() === "") {
       setError("Silakan isi email dan kata sandi Anda.")
@@ -94,6 +96,19 @@ const Produk = () => {
     }
   };
 
+  const handleCardClick = (tabId: string) => {
+    setActiveTab(tabId); // Mengatur tab yang sesuai sebagai aktif
+  };
+  
+  const handleCardClick1 = (tabId: string) => {
+    setActiveTab(tabId); // Mengatur tab yang sesuai sebagai aktif
+  };
+  
+  const handleCardClick2 = (tabId: string) => {
+    setActiveTab(tabId); // Mengatur tab yang sesuai sebagai aktif
+  };
+  
+
     const handleDaftar1 = () => {
       setError('Form harus terisi dengan lengkap.');
       if (!emailRegex.test(email)) {
@@ -106,7 +121,6 @@ const Produk = () => {
       }
   };
 
-
   return (
     <AppShell withHeaderAndFooter={true}>
     <div className={styles.container}>
@@ -117,12 +131,13 @@ const Produk = () => {
         <div className={styles.Tab}>
           <Tab.Group>
             <Tab.List className={styles.tabList}>
-              <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>MaggotCare</Tab>
-              <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>TrashCare</Tab>
-              <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>PartnerCare</Tab>
+              <Tab className={({selected}) => classNames(styles.tab, selected && styles.tabActive, activeTab === "MaggotCare" && selected)} onClick={() => setActiveTab("MaggotCare")}>MaggotCare</Tab>
+              <Tab className={({selected}) => classNames(styles.tab, selected && styles.tabActive, activeTab === "TrashCare" && selected)} onClick={() => setActiveTab("TrashCare")}>TrashCare</Tab>
+              <Tab className={({selected}) => classNames(styles.tab, selected && styles.tabActive, activeTab === "PartnerCare" && selected)} onClick={() => setActiveTab("PartnerCare")}>PartnerCare</Tab>
             </Tab.List>
+
             <Tab.Panels className={styles.tabPanels}>
-              <Tab.Panel>
+              <Tab.Panel id='MaggotCare'>
                 <div className={styles.tabContent}>
                   <div className={styles.tabContent1}>
                     <div className={styles.judul}>
@@ -262,7 +277,7 @@ const Produk = () => {
               </Tab.Panel>
 
 
-              <Tab.Panel>
+              <Tab.Panel id='TrashCare'>
                 <div className={styles.tabContent}>
                   <div className={styles.tabContent1}>
                     <div className={styles.judul}>
@@ -400,7 +415,7 @@ const Produk = () => {
                 </div>
               </Tab.Panel>
               
-              <Tab.Panel>
+              <Tab.Panel id='PartnerCare'>
                 <div className={styles.tabContent}>
                   <div className={styles.tabContent1}>
                     <div className={styles.judul}>

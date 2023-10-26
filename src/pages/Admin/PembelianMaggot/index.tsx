@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { Search, Upload, Edit, Trash, Download } from 'react-feather'
 import Modal from 'react-modal'
 import Image from 'next/image'
+import buktiTF from '@/components/elements/buktiTF.jpg'
 
 interface PembelianData {
     id: number;
@@ -318,7 +319,7 @@ const PembelianMaggot = () => {
                                                 <td className={styles.td1}>{item.norek}</td>
                                                 <td className={styles.td1}>
                                                     <div className={styles.imageContainer}>
-                                                        <Image src="/images/buktiTF.jpg" alt="Bukti Transfer" className={styles.buktiTF} />
+                                                        <Image src={buktiTF} alt="Bukti Transfer" className={styles.buktiTF} />
                                                     </div>
                                                 </td>
                                                 <td className={styles.td1}>
