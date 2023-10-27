@@ -15,12 +15,13 @@
     display: flex;
     flex-direction: row;
     margin-top: 50px;
+    width: 100%;
 }
 
 .sidebar{
     order: 1;
     width: 220px;
-    background-color: #F1F9F7; /* Atur warna latar belakang sesuai keinginan Anda */
+    border-right: #bec6c4 1px solid;
     color: #000;
 }
 

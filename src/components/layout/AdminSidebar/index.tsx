@@ -30,8 +30,8 @@ const AdminSidebar = () => {
                         </ul>
                     )}
                 </li>
-                <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
-                    <Link href="/admin/payment-proof">Data Kerjasama</Link>
+                <li className={`li ${styles.li} ${isMenuActive('/Admin/Kerjasama') ? styles.active : ''}`}>
+                    <Link href="/Admin/Kerjasama">Data Kerjasama</Link>
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
                     <Link href="/admin/download-sales">Komunitas</Link>
