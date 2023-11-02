@@ -153,11 +153,13 @@
     text-align: center;
     font-family: 'Poppins';
     font-size: 12px;
+    padding: 10px;
 }
 
 .judulDetail{
-    font-size: 18px;
-    color: #7A9791;
+    background-color: #ffe2c1;
+    font-size: 15px;
+    color: #FF4136;
 }
 
 .detail{
@@ -310,4 +312,42 @@
 
 .download:hover{
     color: #FF9500;
+}
+
+.buttonModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.isiModal{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.subJudul{
+    margin-right: 20px;
+}
+
+.TF{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.iconUp{
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
 }

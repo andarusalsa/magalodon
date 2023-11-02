@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import styles from './AS.module.css'; 
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import styles from './AS.module.css'
+import Modal from 'react-modal'
 
 const AdminSidebar = () => {
+    const [openModal, setOpenModal] = useState(false)
     const router = useRouter();
-    const [isPembelianOpen, setIsPembelianOpen] = useState(false);
+    const [isPembelianOpen, setIsPembelianOpen] = useState(false)
 
-    const isMenuActive = (path: string) => router.pathname === path;
+    const isMenuActive = (path: string) => router.pathname === path
+    const handleModal = () =>{
+        setOpenModal(true);
+    }
+
+    const handleLogout = () => {
+        router.push('/Admin')
+    }
 
     return (
         <div className="admin-sidebar">
@@ -36,13 +45,26 @@ const AdminSidebar = () => {
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
                     <Link href="/admin/download-sales">Komunitas</Link>
                 </li>
-                <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
-                    <Link href="/admin/download-sales">Profil</Link>
+                <li className={`li ${styles.li} ${isMenuActive('/Admin/Profil') ? styles.active : ''}`}>
+                    <Link href="/Admin/Profil">Profil</Link>
                 </li>
-                <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
-                    <Link href="/admin/download-sales">Keluar</Link>
+                <li className={styles.li}>
+                    <Link href='#' onClick={handleModal}>Keluar</Link>
                 </li>
             </ul>
+            <Modal
+                isOpen={openModal} 
+                onRequestClose={() => setOpenModal(false)}
+                className={styles.modalOverlay}
+            >
+                <div className={styles.modalContent}>
+                    <p>Anda yakin ingin keluar?</p>
+                    <div className={styles.button}>
+                        <button className={styles.buttonTutup} onClick={() => setOpenModal(false)}>Tutup</button>
+                        <button className={styles.buttonKonfirmasi} onClick={handleLogout}>Ya</button>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 };

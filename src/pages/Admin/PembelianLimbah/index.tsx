@@ -147,7 +147,7 @@ const PembelianLimbah = () => {
                                                         className={styles.modalOverlay}
                                                     >
                                                         <div className={styles.modalContent}>
-                                                            <p className={styles.judulDetail}>Detail</p>
+                                                            <p className={styles.judulDetail}>Setujui Penjualan</p>
                                                             <div className={styles.detail}>
                                                                 <div className={styles.subJudul}>
                                                                     <p className={styles.modalDetail1}>ID</p>
@@ -248,19 +248,30 @@ const PembelianLimbah = () => {
                                                         className={styles.modalOverlay}
                                                     >   
                                                         <div className={styles.modalContent}>
-                                                            <p>Apakah produk dengan :</p>
-                                                            <p>ID : {item.id}</p>
-                                                            <p>Produk : {item.produk}</p>
-                                                            <p>Sudah kamu terima?</p>
-                                                            <p>jika sudah transfer uang ke No. Rekening </p>
-                                                            <p>123455</p>
-                                                            <p>BRI</p>
+                                                            <p className={styles.judulDetail}>Konfirmasi Pembayaran</p>
+                                                            <p>Detail Produk</p>
+                                                            <div className={styles.isiModal}>
+                                                                <div className={styles.subJudul}>
+                                                                    <p>ID</p>
+                                                                    <p>Produk</p>
+                                                                    <p>No. Rekening</p>
+                                                                    <p>Bank Tujuan</p>
+                                                                </div>
+                                                                <div className={styles.isiSub}>
+                                                                    <p>: {item.id}</p>
+                                                                    <p>: {item.produk}</p>
+                                                                    <p>: {item.norek}</p>
+                                                                    <p>: {item.bank}</p>
+                                                                </div>
+                                                            </div>
                                                             <p>Kirim bukti transfer lalu konfirmasi</p>
-                                                            <button>
-                                                                <p>Upload bukti TF disini</p>
-                                                                <Upload/>
-                                                            </button>
-                                                            <button className={styles.buttonKonfirmasi} onClick={() => setModalConfTiba(false)}>Konfirmasi</button>
+                                                            <div className={styles.buttonModal}>
+                                                                <button className={styles.TF}>
+                                                                    <Upload className={styles.iconUp}/>
+                                                                    <p>Upload bukti Transfer</p>
+                                                                </button>
+                                                                <button className={styles.buttonKonfirmasi} onClick={() => setModalConfTiba(false)}>Konfirmasi</button>
+                                                            </div>
                                                         </div>
                                                     </Modal>
                                                 </td>

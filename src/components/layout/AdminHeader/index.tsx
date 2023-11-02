@@ -17,9 +17,8 @@ const Header = () => {
                 </div>
                 <nav className={styles.navigation}>
                     <ul>
-                        <li className={`li ${styles.li} ${isMenuActive('/beranda') ? styles.active : ''}`}>
-                            {/*//*<User className={styles.user}/>*/}
-                            <Link href='/beranda'>Admin</Link>
+                        <li className={`li ${styles.li} ${isMenuActive('/Admin/Profil') ? styles.active : ''}`}>
+                            <Link href='/Admin/Profil'>Admin</Link>
                         </li>
                     </ul>
                 </nav>
