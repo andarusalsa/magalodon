@@ -42,8 +42,8 @@ const AdminSidebar = () => {
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Kerjasama') ? styles.active : ''}`}>
                     <Link href="/Admin/Kerjasama">Data Kerjasama</Link>
                 </li>
-                <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
-                    <Link href="/admin/download-sales">Komunitas</Link>
+                <li className={`li ${styles.li} ${isMenuActive('/Admin/Komunitas') ? styles.active : ''}`}>
+                    <Link href="/Admin/Komunitas">Komunitas</Link>
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Profil') ? styles.active : ''}`}>
                     <Link href="/Admin/Profil">Profil</Link>
