@@ -80,15 +80,17 @@ const Produk = () => {
   const handleDaftar = () => {
       setError('Form harus terisi dengan lengkap.');
       if (isLoginActive) {
+      } else if(email.trim() === "" || katasandi.trim() === "" || nama.trim() === "" || alamat.trim() === "") {
         setError('Form harus terisi dengan lengkap.');
       } else if (!emailRegex.test(email)) {
         setError('Format email tidak valid. Masukkan alamat email yang benar.');
       } else {
+        
       const isKataSandiValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,12}$/.test(katasandi);
-
-
       if (!isKataSandiValid) {
         setError("Kata sandi harus sesuai dengan panduan yang tertera.");
+      } else if (!isKataSandiValid && !emailRegex.test(email)){
+        setError("Email dan katasandi harus sesuai panduan")
       } else {
         console.log('Pendaftaran berhasil');
         setIsModalVisible(true);
@@ -199,14 +201,14 @@ const Produk = () => {
                         </div>
                         <div className={styles.buttonContainer}>
                           <button className={styles.button} onClick={handleLogin}>Masuk</button>
-                          <p> Belum memiliki akun? 
+                          <p> Belum memiliki akun?  
                             <Link href="/daftar" className={styles.daftar} 
-                            onClick={(e) =>{
+                            onClick={(e) =>{ 
                               e.preventDefault();
                               setIsLoginActive(!isLoginActive);
                             }}
                             >
-                              {isLoginActive? 'Daftar' : 'Kembali ke Masuk'}
+                              {isLoginActive? ' Daftar' : 'Kembali ke Masuk'}
                             </Link>
                           </p>
                         </div>

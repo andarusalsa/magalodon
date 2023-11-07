@@ -47,6 +47,7 @@
     font-family: 'Poppins';
     align-items: center;
     justify-content: center;
+    overflow: auto;
 }
 
 .profilWrapper{
@@ -60,6 +61,22 @@
     justify-content: center;
     text-align: center;
     padding-bottom: 30px;
+}
+
+.buttonSimpan{
+    margin-top: 20px;
+    display: flex;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.buttonSave{
+    padding: 10px 20px 10px 20px;
+    background-color: #FF9500;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .foto{
@@ -166,10 +183,11 @@
 .form{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     text-align: left;
-    margin-left: 100px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
+    max-width: 100%;
 }
 
 .form p{
@@ -184,7 +202,7 @@
     border-radius: 5px;
     padding: 10px;
     padding-left: 20px;
-    width: 750px;
+    width: 90%;
 }
 
 .selectWrapper{
@@ -193,7 +211,7 @@
     border-radius: 5px;
     padding: 10px;
     padding-left: 20px;
-    width: 750px;
+    width: 90%;
 }
 
 .select{
@@ -213,21 +231,21 @@
         margin-right: 2rem;
     }
 
-    .form1 p {
+    .form p {
         font-size: 0.8rem;
     }
 
-    .form1 input {
-        width: 100%; /* Menggunakan lebar 100% agar elemen input mengisi lebar parent */
+    .form input {
+        width: 90%; /* Menggunakan lebar 100% agar elemen input mengisi lebar parent */
         font-size: 0.7rem;
     }
 
     .selectWrapper {
-        width: 200%; /* Menggunakan lebar 100% agar elemen selectWrapper mengisi lebar parent */
+        width: 90%; 
     }
 
     .select {
-        width: 100%; /* Menggunakan lebar 100% agar elemen select mengisi lebar parent */
+        width: 90%; /* Menggunakan lebar 100% agar elemen select mengisi lebar parent */
     }
 
     .editFoto{

@@ -40,16 +40,18 @@ const TabContentMaggot = () => {
     }
 
     const handlePosting = (event: React.MouseEvent<HTMLButtonElement>) => {
-        if (status.trim() === "" && status.length <= 200) {
-            setError('Status tidak boleh kosong dan tidak boleh lebih dari 200 karakter');
+        if (status.trim() === "") {
+            setError('Status tidak boleh kosong.');
+        } else if (countWords(status) > 200) {
+            setError('Status tidak boleh lebih dari 200 kata.');
         } else {
-            setIsModalOpen(true)
-
+            setIsModalOpen(true);
+    
             setTimeout(() => {
                 setIsModalOpen(false);
             }, 1000);
         }
-    } 
+    }
 
     const handleCommentChange = (newComment: string) => {
         setComment(newComment);

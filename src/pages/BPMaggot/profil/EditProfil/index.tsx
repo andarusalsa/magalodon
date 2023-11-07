@@ -112,6 +112,11 @@ const EditProfil = () => {
                             <p>Nomor Rekening</p>
                             <TextInput type="text" value={norek} placeholder="Masukkan Nama Lengkap" onInputChange={handleNorekChange}/>
                         </div>
+                        <div className={styles.buttonSimpan}>
+                            <button className={styles.buttonSave} onClick={handleSimpanClick}>
+                                Simpan
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

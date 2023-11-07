@@ -202,11 +202,11 @@ const BPMaggot = () => {
                         </Tab.Panel>
 
                         <Tab.Panel>
-                            <div className={styles.containerTab1}>
+                        <div className={styles.containerTab1}>
                                 <div className={styles.contentTab3}>
                                     <div className={styles.form3}>
                                         <div className={styles.col1}>
-                                            <p className={styles.judul1}>Jumlah yang ingin dijual</p>
+                                            <p>Jumlah yang ingin dijual</p>
                                             <div className={styles.col2}>
                                                 <TextInput 
                                                     type="number" 
@@ -214,7 +214,7 @@ const BPMaggot = () => {
                                                     value={jumlah.toString()} 
                                                     onInputChange={(newValue) => handlejumlahChange(newValue)}
                                                 />
-                                                <p className={styles.ket3}>*Masukkan jumlah dengan satuan kilogram</p>
+                                               <p className={styles.ket3}>*Masukkan jumlah dengan satuan kilogram</p>
                                             </div>
                                         </div>
                                     </div>

@@ -214,7 +214,7 @@ const BPLimbah = () => {
                                                     value={jumlah.toString()} 
                                                     onInputChange={(newValue) => handlejumlahChange(newValue)}
                                                 />
-                                                <p className={styles.ket3}>*Masukkan jumlah dengan satuan kilogram</p>
+                                               <p className={styles.ket3}>*Masukkan jumlah dengan satuan kilogram</p>
                                             </div>
                                         </div>
                                     </div>
