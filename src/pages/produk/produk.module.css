@@ -12,7 +12,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     position: relative;
 }
 
@@ -261,6 +260,10 @@
 
 /* Responsive Styles for smaller screens */
 @media (max-width: 768px) {
+    .container{
+        width: 100%;
+    }
+
     .bannerSatu {
         padding: 3rem; /* Adjust padding for smaller screens */
         padding-top: 5rem;

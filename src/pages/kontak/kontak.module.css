@@ -7,7 +7,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 50vh;
     position: relative;
     font-family: 'Poppins';
     margin-top: 3rem;
@@ -100,25 +100,11 @@
     font-family: 'Poppins';
 }
 
-@keyframes textAnimation {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+.bannerContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.textAnimation {
-    animation: textAnimation 20s linear infinite; 
-    white-space: nowrap; 
-    overflow: hidden; 
-}
-
-.bannerContent {
-    width: 100%;
-    max-width: 100%; 
-  }
   
 @media (max-width: 768px) {
     .container {
@@ -129,6 +115,16 @@
     .bannerSatu {
         padding: 3rem;
         margin-top: 4rem;
+        width: 100%;
+    }
+
+    .bannerDua, .bannerTiga{
+        width: 100%;
+        padding: 3rem;
+    }
+
+    .bannerContent{
+        width: 100%;
     }
 
     .text {
