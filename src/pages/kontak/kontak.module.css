@@ -86,6 +86,20 @@
     font-size: 12px;
 }
 
+.button{
+    background-color: #FF9500;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 18px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: 'Poppins';
+}
+
 @keyframes textAnimation {
     0% {
         transform: translateX(100%);
@@ -101,23 +115,15 @@
     overflow: hidden; 
 }
 
-.button{
-    background-color: #FF9500;
-    border: none;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 30px;
-    font-size: 18px;
-    padding-left: 50px;
-    padding-right: 50px;
-    font-family: 'Poppins';
-}
-
+.bannerContent {
+    width: 100%;
+    max-width: 100%; 
+  }
+  
 @media (max-width: 768px) {
     .container {
         margin-top: 1rem;
+        width: 100%;
     }
 	
     .bannerSatu {
@@ -167,7 +173,6 @@
 
     .bannerTiga {
         font-size: 10px;
-        /* Sesuaikan ukuran font untuk tampilan responsif di bawah 768px lebar layar */
     }
 
     .button {
@@ -176,5 +181,9 @@
         padding-right: 40px;
         margin-top: 20px;
     }
+
+    .bannerContent {
+        width: 100%;
+      }
 }
 
