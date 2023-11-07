@@ -7,15 +7,14 @@ type AppshellProps = {
     withHeaderAndFooter: boolean; 
 }
 
-const Appshell: React.FC<AppshellProps> = ({ children, withHeaderAndFooter }) => {
-    const router = useRouter();
-    const { pathname } = router;
+
+const Appshell: React.FC<AppshellProps> = ({ children}) => {
 
     return (
         <main>
-            {withHeaderAndFooter && <Header activePath={pathname} />}
+            <Header/>
             {children}
-            {withHeaderAndFooter && <Footer />}
+            <Footer />
         </main>
     )
 }
