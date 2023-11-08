@@ -108,18 +108,16 @@
   
 @media (max-width: 768px) {
     .container {
-        margin-top: 1rem;
         width: 100%;
     }
 	
     .bannerSatu {
         padding: 3rem;
-        margin-top: 4rem;
-        width: 100%;
+        padding-top: 5rem;
+        font-size: 12px;
     }
 
     .bannerDua, .bannerTiga{
-        width: 100%;
         padding: 3rem;
     }
 
@@ -131,33 +129,45 @@
         font-size: 1rem;
     }
 
+    .isian{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
     .isian1, .isian2 {
-        font-size: 0.9rem;
-        text-align: center;
+        text-align: left;
+        width: 80%;
     }
 
     .isian1 p, .isian2 p{
         text-align: left;
+        font-size: 12px;
     }
 
     .isian3 {
         margin-top: 20px;
-        font-size: 0.9rem;
-        text-align: center;
+        text-align: left;
+        width: 100%;
+        font-size: 12px;
     }
     
     .wrapper1 input {
-        width: 80%;
-        font-size: 0.8rem;
+        width: 100%;
+        font-size: 12px;
         padding-top: 0;
         padding-bottom: 0;
         padding-left: 1rem;
     }
 
     .wrapper{
-        justify-content: center;
         width: 70%;
         padding-right: 2rem;
+    }
+ 
+    .wrapper input{
+        width: 100%;
+        font-size: 12px;
     }
 
     .textArea {
@@ -177,9 +187,5 @@
         padding-right: 40px;
         margin-top: 20px;
     }
-
-    .bannerContent {
-        width: 100%;
-      }
 }
 

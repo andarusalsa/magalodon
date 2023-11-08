@@ -47,7 +47,7 @@ const Kontak = () => {
                         </div>
                     </div>
                     <div className={styles.isian3}>
-                            <p className={styles.text3}>Masukkan pesan atau pertanyaanmu</p>
+                            <p className={styles.text3}>Pesan atau Pertanyaan</p>
                             <div className={styles.wrapper}>
                                 <AutoAdjustingTextInput className={styles.textArea} placeholder="Masukkan pesan atau pertanyaanmu" value={pesan} onChange={handlePesanChange}/>
                             </div>
