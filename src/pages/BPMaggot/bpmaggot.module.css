@@ -823,7 +823,7 @@
         padding-bottom: 3rem;
         padding-left: 0;
         flex-direction: row;
-        margin-left: 0; 
+        padding-right: 3rem;
     }
 
     .ContentProfil {
@@ -832,34 +832,40 @@
         font-size: 0.6rem;
         flex-direction: row;
     }
-
-    .profil {
-        width: 40px;
-        height: 40px; 
-    }
     
     .kiri {
-        margin-right: auto;
+        margin-right: 0;
+
     }
 
     .kanan{
         flex-direction: row;
-        margin-left: auto;
-        margin-right: 0;
     }
 
     .notifikasi{
         width: 1rem;
         height: 1rem;
-        margin-right: 0;
     }
 
     .logout{
         width: 1rem;
         height: 1rem;
-        margin-left: 1rem;
+        margin-left: 10px;
     }
 
+    .ModalContent {
+        padding: 10px; 
+        width: 70%;
+        font-size: 0.7rem;
+        animation: fadeIn 0.2s ease-in-out;
+    }
+    
+    .ModalContent button {
+        width: 90px;
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 0.6rem;
+    }
 
     .containerTab {
         min-height: 30vh;
@@ -876,7 +882,7 @@
 
     .tab{
         padding: 10px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .tabPanels{
@@ -974,16 +980,20 @@
 
     .contentTab2 {
         margin: 0 auto;
-        max-width: 100%;
+        width: 100%;
+        padding:1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
     }
 
     .form{
         font-size: 0.8rem;
+        margin-left: 2px;
     }
 
     .form input {
-        width: 100%; 
-        font-size: 0.7rem;
+        width: 90%; 
+        font-size: 0.6rem;
     }
 
     .hasil{
@@ -996,6 +1006,11 @@
 
     .bankOption {
         font-size: 10px; 
+        width: 98%;
+    }
+
+    .catatan{
+        margin-left: 2px;
     }
 
     .button {
@@ -1005,8 +1020,26 @@
         float: none; 
     }
     .error {
-        font-size: 6px; 
+        font-size: 0.6rem; 
         margin-left: 10px; 
+    }
+
+    .Sell{
+        width: 80%;
+    }
+
+    .Sell p{
+        font-size: 0.7rem;
+    }
+
+    .buttonSellNo{
+        font-size: 0.6rem;
+        width: 5rem;
+    }
+
+    .buttonSellYes{
+        font-size: 0.6rem;
+        width: 5rem;
     }
 
     .contentTab3{
@@ -1019,7 +1052,11 @@
     }
 
     .ket3{
-        font-size: 0.5rem;
+        font-size: 10px;
+    }
+
+    .judul{
+        font-size: 12px;
     }
 
     .judul1{
@@ -1027,8 +1064,14 @@
         margin: 0 auto;
     }
 
+    .col1 {
+        font-size: 0.7rem;
+        margin: 0 auto;
+    }
+
     .col2{
-        width: 90%;
+        width: 100%;
+        margin-left: 0;
     }
 
     .col2 input{

@@ -86,15 +86,17 @@ const TabContentLimbah = () => {
                                             value={status} 
                                             onChange={handleStatusChange} 
                                         />
-                                        <p className={styles.wordCount}>{wordCount}/200</p>
                                     </div>
                                     <div className={styles.iconContainer}>
-                                        <button className={styles.buttonStatus}>
-                                            <FontAwesomeIcon icon={faImage} className={styles.icon}/>
-                                        </button>
-                                        <button className={styles.buttonStatus} onClick={handlePosting}>
-                                            <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
-                                        </button>
+                                        <p className={styles.wordCount}>{wordCount}/200</p>
+                                        <div className={styles.iconPost}>
+                                            <button className={styles.buttonStatus}>
+                                                <FontAwesomeIcon icon={faImage} className={styles.icon}/>
+                                            </button>
+                                            <button className={styles.buttonStatus} onClick={handlePosting}>
+                                                <FontAwesomeIcon icon={faPaperPlane} className={styles.icon} />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                                 {error && <p className={styles.error}>{error}</p>}

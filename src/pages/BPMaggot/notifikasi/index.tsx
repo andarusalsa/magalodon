@@ -7,13 +7,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBell as faBellOutline} from '@fortawesome/free-regular-svg-icons'
 import {LogOut, ChevronLeft} from 'react-feather'
 import AppShell from '@/components/layout/Appshell'
+import Modal from 'react-modal'
 
 const BPMaggot = () => {
+    const [modalLogout, setModalLogout] = useState(false)
+
+    const handleLogout = () => {
+        setModalLogout(true)
+    }
+
+    const handleConfirmLogout = () => {
+        window.location.href = '/beranda';
+    }
 
     return (
         <AppShell withHeaderAndFooter={true}>
         <div className={styles.container}>
-            <div className={styles.bannerSatu}>
+            <section className={styles.bannerSatu}>
                 <div className={styles.kiri}>
                     <Link href='/BPMaggot/profil' className={styles.ContentProfil}>
                         <Image src={profil} alt="profil" className={styles.profil} />
@@ -24,11 +34,23 @@ const BPMaggot = () => {
                     <Link href='/BPMaggot/notifikasi'>
                         <FontAwesomeIcon icon={faBellOutline} className={styles.notifikasi}/>
                     </Link>
-                    <Link href='/logout'>
+                    <button className={styles.logout} onClick={handleLogout}>
                         <LogOut className={styles.logout}/>
-                    </Link>
+                    </button>
+                    <Modal
+                        isOpen={modalLogout}
+                        onRequestClose={() => setModalLogout(false)}
+                        className={styles.ModalOverlay}
+                        overlayClassName={styles.ModalOverlay}
+                    >
+                        <div className={styles.ModalContent}>
+                            <p>Anda yakin ingin keluar?</p>
+                            <button onClick={() => setModalLogout(false)}>Kembali</button>
+                            <button onClick={handleConfirmLogout}>Ya</button>
+                        </div>
+                    </Modal>
                 </div>
-            </div>
+            </section>
 
                 
             <div className={styles.notifContainer}>

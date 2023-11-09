@@ -123,7 +123,7 @@
   .logo {
     width: 50px;
     height: auto;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
     margin-right: auto;
   }
 
@@ -131,6 +131,7 @@
     padding: 10px;
     font-size: 12px;
     flex-direction: column;
+    height: 50px;
   }
 
   .listIcon {
@@ -142,6 +143,6 @@
     margin-left: auto;
     cursor: pointer;
     position: absolute;
-    
+    margin-top: 0.5rem;
   }
 }

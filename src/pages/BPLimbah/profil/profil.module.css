@@ -131,7 +131,7 @@
     font-family: 'Poppins';
     font-size: 12px;
 }
-
+  
 .ModalContent button {
     margin-top: 10px;
     background-color: #f8f8f8;
@@ -156,4 +156,57 @@
     .opsi{
         margin-left: 50px;
     }
+
+    .Link p{
+        font-size: 0.8rem;
+        margin-left: 1rem;
+    }
+
+    .back{
+        width: 20px;
+        height: 20px;
+    }
+    
+    .foto{
+        width: 50px;
+        height: 50px;
+        margin-top: 20px;
+    }
+    
+    .profil p{
+        font-size: 0.8rem;
+        margin-top: 5px;
+    }
+    
+    .opsi1{
+        font-size: 0.7rem;
+        margin-top: 20px;
+    }
+    
+    .iconOption{
+        width: 15px;
+        height: 15px;
+    }
+    
+    .opsi1 p {
+        margin-left: 20px;
+    }
+    
+    .ModalContent {
+        padding: 10px;
+        border-radius: 5px;
+        width: 70%;
+        font-size: 0.8rem;
+    }
+      
+    .ModalContent button {
+        width: 80px;
+        cursor: pointer;
+        margin-right: 0;
+    }
+    
+    .ModalContent button:last-child {
+        margin-left: 10px;
+    }
+    
 }

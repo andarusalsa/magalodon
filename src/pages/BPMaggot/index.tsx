@@ -174,10 +174,11 @@ const BPMaggot = () => {
                                     </div>
                                     {error && <p className={styles.error}>{error}</p>}
                                     <Modal 
-                                    isOpen={modalSell} 
-                                    onRequestClose={handleSell} 
-                                    className={styles.ModalOverlay} 
-                                    overlayClassName={styles.ModalOverlay}>
+                                        isOpen={modalSell} 
+                                        onRequestClose={handleSell} 
+                                        className={styles.ModalOverlay} 
+                                        overlayClassName={styles.ModalOverlay}
+                                    >
                                         <div className={styles.Sell}>
                                             <p>Anda yakin data yang diisi sudah sesuai?</p>
                                             <div className={styles.sellOption}>
@@ -206,7 +207,7 @@ const BPMaggot = () => {
                                 <div className={styles.contentTab3}>
                                     <div className={styles.form3}>
                                         <div className={styles.col1}>
-                                            <p>Jumlah yang ingin dijual</p>
+                                            <p className={styles.col1}>Jumlah yang ingin dijual</p>
                                             <div className={styles.col2}>
                                                 <TextInput 
                                                     type="number" 

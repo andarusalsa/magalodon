@@ -904,9 +904,9 @@
         padding: 0; 
         padding-top: 5px;
         padding-bottom: 5px;
-        padding-left: 1rem;
+        padding-left: 0.5rem;
         margin-left: 0;
-        flex-direction: row;
+        border-radius: 5px;
     }
 
     .statusContainer{
@@ -918,14 +918,31 @@
         font-size: 0.5rem; 
     }
 
+    .iconContainer{
+        flex-direction: column;
+    }
+
+    .iconPost{
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+    }
+
     .wordCount {
         font-size: 8px; 
+        padding-left: 5px;
     }
 
     .icon {
-        margin-left: 5px; 
-        height: 12px; 
-        width: 12px; 
+        margin-left: 0; 
+        padding: 0;
+        height: 10px; 
+        width: 10px; 
+    }
+
+    .menusmall{
+        margin-left: 0;
+        margin-top: 5px;
     }
 
     .menu1 {
@@ -949,10 +966,11 @@
     }
     .akun p {
         font-size: 0.7rem; 
+        margin-left: 0;
     }
     .isikiriman {
         margin-right: 20px; 
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .ModalContent2 {
@@ -983,6 +1001,10 @@
 
     .hasil{
         font-size: 0.7rem;
+    }
+
+    .ket{
+        font-size: 0.6rem;
     }
 
     .ket2 {
@@ -1028,5 +1050,47 @@
 
     .col2 input{
         width: 100%;
+    }
+
+    .menu1a{
+        font-size: 0.7rem;
+    }
+    
+    .iconmenu1{
+        margin-left: 0;
+        margin-right: 5px;
+        height: 15px;
+        width: 15px;
+    }
+    
+    .kiri1{
+        margin-left: 20px;
+    }
+    
+    .kanan1{
+        margin-right: 20px;
+    }
+    
+    .menu2a{
+        font-size: 0.7rem;
+        width: 70px;
+    }
+    
+    .akunUp p{
+        margin-left: 1rem;
+        font-size: 0.7rem;
+    }
+    
+    .profilUp{
+        width: 30px;
+        height: 30px;
+    }
+    
+    .more{
+        width: 1rem;
+        height: 1rem;
+        margin-left: auto;
+        margin-right: 20px;
+        margin-bottom: 10px;
     }
 }
