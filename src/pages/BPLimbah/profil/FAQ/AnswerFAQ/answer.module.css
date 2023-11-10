@@ -4,6 +4,7 @@
     src: url('../../../../../components/assets/Poppins/Poppins-Medium.ttf');
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -83,7 +84,7 @@
     margin-right: 70px;
 }
 
-.button{
+.kolom{
     margin-top: 20px;
     background-color: #fff;
     border: none;
@@ -97,20 +98,58 @@
     font-size: 12px;
     text-decoration: none;
     color: #000;
-    cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.iconOption{
-    margin-right: 20px;
-    margin-left: auto;
-    width: 15px;
-    height: 15px;
+@media (max-width: 768px) {
+    .back{
+        width: 20px;
+        height: 20px;
+    }
+
+    
+
+    .Link p{
+        font-size: 0.8rem;
+        margin-left: 1rem;
+    }
+
+    .backUp{
+        width: 20px;
+        height: 20px;
+    }
+
+    .menuUp1{
+        margin-left: 1.5rem;
+        font-size: 0.8rem;
+        align-items: center;
+    }
+
+    .menuUp1 p{
+        margin-left: 0.5rem;
+    }
+
+    .opsi{
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .profilWrapper{
+        min-height: 20vh;
+        width: 80%;
+        border-radius: 20px;
+        padding-bottom: 3rem;
+        padding-top: 1rem;
+    }
+
+    .kolom{
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 0.6rem;
+    }
 }
-
-
-
-
-

@@ -42,7 +42,7 @@ const EditProfil = () => {
         setTimeout(() => {
             setIsModalVisible(false);
             setShowSuccessMessage(false);
-            router.push('/profil'); // Gunakan router dari 'next/router' di sini
+            router.push('/BPMaggot/profil'); 
         }, 3000);
     }
 

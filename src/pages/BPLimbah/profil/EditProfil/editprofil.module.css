@@ -224,6 +224,15 @@
 }
 
 @media (max-width: 768px) {
+    .back{
+        width: 20px;
+        height: 20px;
+    }
+
+    .Link p{
+        font-size: 0.8rem;
+        margin-left: 1rem;
+    }
 
     .form {
         max-width: 100%;
@@ -232,12 +241,12 @@
     }
 
     .form p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .form input {
         width: 90%; /* Menggunakan lebar 100% agar elemen input mengisi lebar parent */
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .selectWrapper {
@@ -245,7 +254,8 @@
     }
 
     .select {
-        width: 90%; /* Menggunakan lebar 100% agar elemen select mengisi lebar parent */
+        width: 90%; 
+        font-size: 0.7rem;
     }
 
     .editFoto{
@@ -253,9 +263,14 @@
         font-size: 0.6rem;
     }
 
+    .backUp{
+        width: 20px;
+        height: 20px;
+    }
+
     .menuUp2{
         margin-left: auto;
-        margin-right: 30px;
+        margin-right: 1.5rem;
         font-size: 0.8rem;
     }
 
@@ -265,16 +280,8 @@
         align-items: center;
     }
 
-    .ModalOverlay{
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .menuUp1 p{
+        margin-left: 0.5rem;
     }
     
     .ModalContent {
@@ -298,7 +305,8 @@
         margin-left: 20px;
         border:none
     }
+
+    .buttonSave{
+        font-size: 0.7rem;
+    }
 }
-
-
-
