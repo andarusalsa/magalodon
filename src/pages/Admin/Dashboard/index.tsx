@@ -16,10 +16,9 @@ const Dashboard = () => {
                 <div className={styles.content}>
                     <div className={styles.judul}>
                         <h2>Ringkasan</h2>
-                        <ChevronDown className={styles.down}/>
                     </div>
                     <div className={styles.card1}>
-                        <div className={styles.card}>
+                        <div className={styles.card2}>
                             <div className={styles.iconContainer}>
                                 <Image src={buy} alt='buy' className={styles.icon}/>
                             </div>
@@ -29,7 +28,7 @@ const Dashboard = () => {
                                 <p>50kg Maggot <br/>50kg Limbah</p>
                             </div>
                         </div>
-                        <div className={styles.card}>
+                        <div className={styles.card3}>
                         <div className={styles.iconContainer}>
                                 <Image src={sell} alt='sell' className={styles.icon}/>
                             </div>
@@ -39,7 +38,7 @@ const Dashboard = () => {
                                 <p>50kg Maggot <br/>50kg Limbah</p>
                             </div>
                         </div>
-                        <div className={styles.card}>
+                        <div className={styles.card4}>
                         <div className={styles.iconContainer}>
                                 <Image src={partner} alt='partner' className={styles.icon}/>
                             </div>

@@ -20,9 +20,9 @@
 
 .sidebar{
     order: 1;
-    width: 220px;
-    border-right: #bec6c4 1px solid;
+    width: 300px;
     color: #000;
+    background-color: #F1F9F7;
 }
 
 .content{

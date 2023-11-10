@@ -19,7 +19,7 @@ const AdminSidebar = () => {
     }
 
     return (
-        <div className="admin-sidebar">
+        <div className={styles.adminSidebar}>
             <ul className="ul">
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Dashboard') ? styles.active : ''}`}>
                     <Link className={styles.link} href="/Admin/Dashboard">Dashboard</Link>
