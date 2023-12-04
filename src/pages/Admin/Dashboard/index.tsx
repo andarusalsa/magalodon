@@ -1,6 +1,6 @@
 import AdminLayout from '../../../components/layout/AdminLayout'
 import styles from './dashboard.module.css'
-import { ChevronDown } from 'react-feather'
+import MyChart from '../../../components/fragments/Chart/chart'
 import Image from 'next/image'
 import buy from '@/components/elements/adminBuy.png'
 import sell from '@/components/elements/adminSell.png'
@@ -10,9 +10,6 @@ const Dashboard = () => {
     return (
         <AdminLayout>
             <div className={styles.container}>
-                <div className={styles.judul1}>
-                    <h1>Admin</h1>
-                </div>
                 <div className={styles.content}>
                     <div className={styles.judul}>
                         <h2>Ringkasan</h2>
@@ -47,6 +44,15 @@ const Dashboard = () => {
                             <div className={styles.p2}>
                                 <p>100 Instansi telah bekerjasama</p>
                             </div>
+                        </div>
+                    </div>
+                    <div className={styles.content2}>
+                        <div className={styles.chart}>
+                            <h2>Statistika</h2>
+                            <MyChart />
+                        </div>
+                        <div className={styles.activity}>
+                            <h2>Aktivitas Terbaru</h2>
                         </div>
                     </div>
                 </div>

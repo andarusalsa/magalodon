@@ -19,7 +19,7 @@
     margin-left: 13rem;
     color:#000;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.94rem;
 }
 
 .card1{
@@ -94,4 +94,25 @@
 
 .p1{
     color: #fff;
+}
+
+.content2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.chart{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    min-width: 700px;
+    height: 300px;
+    justify-content: center;
+}
+
+.activity{
+    border-left: #000 1px solid;
+    padding: 20px;
 }

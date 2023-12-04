@@ -36,22 +36,44 @@
 .bannerContent{
     position: relative;
     display: flex;
-    padding-top : 3.125rem;
+    padding-top : 5rem;
     justify-content: space-between;
 }
 
-.bannerDua {
+.bannerDua{
   display: flex;
   align-items: flex-start;
   flex-direction: row;
   background-color: #fff;
-  
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.bannerTiga {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: #fff;
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-top: 2rem;
 }
 
 .imageContainer {
   flex: 1;
   padding-left:8rem;
 } 
+
+.imageContainer1 {
+  flex: 1;
+  padding-right:8rem;
+} 
+
+
+.produk2{
+  height: 300px;
+  width: 500px;
+}
 
 .text {
   flex: 1;
@@ -60,13 +82,19 @@
   justify-content: center;
 }
 
-.text p {
+.text h2, .text1 h2{
+  font-family: 'Poppins';
+  font: 20px;
+  color:#7A9791;
+  margin-bottom: 0;
+}
+
+.text p, .text1 p {
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 2;
   color: #333;
-  text-align: right;
   font-family: 'Poppins', sans-serif;
-  padding-right: 7rem;
+  padding-right: 5rem;
 }
 
 .text1{
@@ -74,16 +102,94 @@
   padding-left: 7rem;
   font-family: 'poppins', sans-serif;
   font-size: 18px;
-  line-height: 1.5;
   color: #333;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .produk3{
   padding-left: 7rem;
+}
+
+.bannerContent1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #385C4E;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  margin-top: 5rem;
+}
+
+.content{
+  display: flex;
+  margin-left: 20px;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.plateContainer{
+  width: 100px;
+  height: 100px;
+  margin-right: 50px;
+  align-items: center;
+}
+
+.plate{
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.caption{
+  color: #FFF;
+  font-family: 'Poppins';
+  font-size: 12px;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.videoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #7A9791;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  margin-top: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.achieve{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.kanan, .kiri{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 100px;
+  margin-left: 100px;
+  font-family: 'Poppins';
+}
+
+.kanan h2, .kiri h2{
+  margin-bottom: 0;
+  color: #FF9500;
+  font-size: 30px;
 }
 
 @media (max-width: 768px) {

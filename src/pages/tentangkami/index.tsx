@@ -1,8 +1,10 @@
 import styles from './tentangkami.module.css'
 import Image from 'next/image'
-import produk2 from '../../components/elements/Produk2.png'
+import produk2 from '../../components/elements/Produk2.jpg'
 import produk3 from '../../components/elements/Produk3.png'
-import AppShell from '@/components/layout/Appshell';
+import AppShell from '@/components/layout/Appshell'
+import VideoPlayer from '@/components/fragments/videoPlayer/videoPlayer'   
+import plate from '@/components/elements/plate.png'
 
 const AboutPage = () => {
     return(
@@ -18,20 +20,53 @@ const AboutPage = () => {
                         <Image src={produk2} alt="produk2" className={styles.produk2} />
                     </div>
                     <div className={styles.text}>
-                        <p> Tumpukan sampah menjadi permasalahan utama terkhususnya di negara berkembang, berdasarakan data yang ada, sampah organk yang dihasilkan dari kegitan domestik seperti rumah tangga, rumah makan, dan pasar menempati proporsi terbesar. </p>
+                        <h2>Bersatu untuk bumi yang lebih hijau</h2>
+                        <p> Bersama kami untuk penanganan sampah organik domestik, terutama sisa pangan.</p>
                     </div>
                 </div>
             </section>
 
+            <section className={styles.bannerContent1}>
+                <div className={styles.content}>
+                    <div className={styles.plateContainer}>
+                        <Image src={plate} alt="plate" className={styles.plate} />
+                    </div>
+                    <div className={styles.caption}>
+                        <h2>Sustainability Starts with Your Plate</h2>
+                    </div>
+                </div>
+            </section>
+
+
             <section className={styles.bannerTiga}>
                 <div className={styles.bannerContent}>
                     <div className={styles.text1}>
-                        <p>di sisi lain harga pakan ternak khususnya ikan dan unggas yang semakin tinggi juga turut mempengaruhi harga jual dari ternak tersebut, selain itu penggunaan pakan berbahan dasar kimia atau non organik juga dapat berdampak bagi siapapun yang mengkonsumsinya</p>
+                        <h2>Pakan ternak organik, solusi ekonomis dan sehat</h2>
+                        <p>Magalodon hadir menghasilkan pakan organik, solusi sehat dan ekonomis untuk meningkatkan produktivitas ternak</p>
                     </div>
-                    <div className={styles.imageContainer}>
+                    <div className={styles.imageContainer1}>
                         <Image src={produk3} alt="produk3" className={styles.produk3} />
                     </div>
                 </div>  
+            </section>
+
+            <section className={styles.achieve}>
+                <div className={styles.kiri}>
+                    <h2>50</h2>
+                    <p>Penjual Maggot<br/>bekerjasama</p>
+                </div>
+                <div className={styles.kanan}>
+                    <h2>50 Kg</h2>
+                    <p>Sisa Pangan <br/> teratasi</p>
+                </div>
+                <div className={styles.kanan}>
+                    <h2>50</h2>
+                    <p>Partner <br/> bekerjasama</p>
+                </div>
+            </section>
+
+            <section className={styles.videoContainer}>
+                <VideoPlayer/>
             </section>
         </div>
         </AppShell>
