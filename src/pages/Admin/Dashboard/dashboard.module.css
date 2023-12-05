@@ -10,13 +10,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 2rem;
 }
 
 .judul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 13rem;
+    justify-content: center;
     color:#000;
     margin-bottom: 1rem;
     font-size: 0.94rem;
@@ -27,7 +28,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
 }
 
 .iconContainer{
@@ -108,7 +108,7 @@
     flex-direction: column;
     max-width: 1000px;
     min-width: 700px;
-    height: 300px;
+    height: 500px;
     justify-content: center;
 }
 

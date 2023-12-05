@@ -48,7 +48,6 @@ const Dashboard = () => {
                     </div>
                     <div className={styles.content2}>
                         <div className={styles.chart}>
-                            <h2>Statistika</h2>
                             <MyChart />
                         </div>
                         <div className={styles.activity}>
