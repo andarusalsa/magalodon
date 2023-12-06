@@ -24,10 +24,10 @@ ChartJS.register(
 const maggotData = [
  { month: "Jan", sales: 50 },
  { month: "Feb", sales: 100 },
- { month: "Mar", sales: 150 },
- { month: "Apr", sales: 200 },
- { month: "May", sales: 250 },
- { month: "Jun", sales: 300 },
+ { month: "Mar", sales: 80 },
+ { month: "Apr", sales: 100 },
+ { month: "May", sales: 150 },
+ { month: "Jun", sales: 200 },
 ];
 
 const sampahData = [

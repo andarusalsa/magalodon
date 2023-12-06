@@ -1,9 +1,8 @@
 .container {
     display: flex;
-    padding-left: 20px;
     flex-direction: column;
     min-height: 100vh;
-    min-width: 150vh;
+    width: 100%; /* Lebarkan container */
 }
 
 .content {
@@ -46,39 +45,39 @@
 }
 
 .card2{
-    margin-right: 50px;
-    margin-left: 50px;
     background-color: #4c4c9f;
-    padding: 20px;
     border-radius: 20px;
     padding: 20px;
-    width: 150px;
     box-shadow: 5px 10px 25px rgba(77, 75, 172, 0.5);
     color: #fff;
+    margin-right: 2rem; /* Gunakan unit relatif */
+    margin-left: 2rem; /* Gunakan unit relatif */
+    width: 100%; /* Lebarkan card */
+    min-height: 12rem;
 }
 
 .card3{
-    margin-right: 50px;
-    margin-left: 50px;
     background-color: #9799d6;
-    padding: 20px;
     border-radius: 20px;
     padding: 20px;
-    width: 150px;
     box-shadow: 5px 10px 25px rgba(151, 153, 214, 0.5);
     color: #fff;
+    margin-right: 2rem; /* Gunakan unit relatif */
+    margin-left: 2rem; /* Gunakan unit relatif */
+    width: 100%; /* Lebarkan card */
+    min-height: 12rem;
 }
 
 .card4{
-    margin-right: 50px;
-    margin-left: 50px;
     background-color: #ff7f8b;
-    padding: 20px;
     border-radius: 20px;
     padding: 20px;
-    width: 150px;
     box-shadow: 5px 10px 25px rgba(255, 128, 139, 0.5);
     color: #fff;
+    margin-right: 2rem; /* Gunakan unit relatif */
+    margin-left: 2rem; /* Gunakan unit relatif */
+    width: 100%; /* Lebarkan card */
+    min-height: 12rem;
 }
 
 .card h2{
@@ -101,6 +100,7 @@
     flex-direction: row;
     margin-top: 5rem;
     margin-bottom: 5rem;
+    justify-content: center;
 }
 
 .chart{
@@ -115,4 +115,131 @@
 .activity{
     border-left: #000 1px solid;
     padding: 20px;
+    max-height: 500px;
+}
+
+.circle{
+    color: #FF9500;
+    fill: #FF9500;
+    margin-right: 1rem;
+    width: 10px;
+    height: 10px;
+}
+
+.circle1{
+    color: #FF9500;
+    margin-right: 1rem;
+    width: 10px;
+    height: 10px;
+}
+
+.aktivitas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.keterangan{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ketAktivitas{
+    font-size: 15px;
+    width: 20rem;
+    align-items: center;
+}
+
+.ketWaktu{
+    font-size: 12px;
+    color: #848282;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        min-height: 100vh;
+        width: 50%; /* Lebarkan container */
+    }
+
+    .card2,
+    .card3,
+    .card4 {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .content2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chart {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .activity{
+        border: none;
+    }
+
+    .container {
+        padding: 0.5rem;
+    }
+
+    .judul {
+        font-size: 0.8rem;
+    }
+
+    .iconContainer {
+        width: 30px;
+        padding: 8px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .ketAktivitas {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .ketWaktu {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .judul {
+        font-size: 0.8rem;
+    }
+
+    .iconContainer {
+        width: 30px;
+        padding: 8px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .activity{
+        border: none;
+    }
+
+    .ketAktivitas {
+        font-size: 12px;
+        width: auto;
+    }
+
+    .ketWaktu {
+        font-size: 10px;
+    }
 }

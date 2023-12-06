@@ -12,7 +12,7 @@
     list-style: none;
     padding: 0px;
     margin-left: 0;
-    color: black;
+    color: #4e555e;
     text-decoration: none;
 }
 
@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.li:hover{
+.li a:hover{
     color: #FF9500;
 }
 
@@ -36,23 +36,27 @@
 
 .menuItem {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     font-family: 'Poppins';
     font-size: 15px;
-    padding-left: 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
     background-color: transparent;
+    color: #4e555e;
 }
 
 .menuItem:hover {
     color: #FF9500;
 }
 
+.menuItem.active{
+    color: #FF9500;
+}
+
 .dropdownItem {
-    padding: 10px 20px;
+    font-size: 12px;
+    padding: 10px 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
     list-style: none;
@@ -119,4 +123,10 @@
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.icon{
+    width: 15;
+    height: 15px;
+    margin-right: 1rem;
 }

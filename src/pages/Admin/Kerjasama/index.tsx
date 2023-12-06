@@ -11,55 +11,70 @@ import buktiTF from '@/components/elements/buktiTF.jpg'
 interface PembelianData {
     id: number;
     tanggalPengajuan: string;
+    tanggalTiba: string;
     nama: string;
-    notelp: string;
+    produk: string;
+    jumlah: number;
+    total: number;
+    norek: number;
+    bank: string;
+    alamat: string;
 }
 
-const KerjaSama = () => {
+const Kerjasama = () => {
     const [data, setData] = useState<PembelianData[]>([
         {
             id: 1234,
             tanggalPengajuan: '12/12/2021',
+            tanggalTiba: '17/12/2021',
             nama: 'salsa',
-            notelp: '089676445689'
+            produk: '5kg Limbah',
+            jumlah: 5,
+            total: 50000,
+            norek: 12345898765,
+            bank: 'mandiri',
+            alamat: 'Jl. Gunung Terang'
         },
         {
             id: 2234,
             tanggalPengajuan: '13/12/2021',
+            tanggalTiba: '17/12/2021',
             nama: 'andaru',
-            notelp: '09212873910'
+            produk: '10kg Limbah',
+            jumlah: 10,
+            total: 100000,
+            norek: 98767652,
+            bank: 'BRI',
+            alamat: 'Jl. Kemiling'
         },
     ]);
     
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredData = data.filter((item) => {
-        const date = item.tanggalPengajuan.toLowerCase()
-        const id = item.id.toString()
-        const nama = item.nama.toLowerCase()
-        const notelp = item.notelp.toLowerCase()
+        const productLowerCase = item.produk.toLowerCase();
+        const dateLowerCase = item.tanggalPengajuan.toLowerCase();
+        const id = item.id.toString();
+        const idLowerCase= id.toLowerCase();
+        const jumlah = item.jumlah.toString();
+        const total = item.total.toString();
+        const jumlahLowerCase = jumlah.toLowerCase();
+        const namaLowerCase = item.nama.toLowerCase();
+        const totalLowerCase = total.toLowerCase();
+        const searchTermLowerCase = searchTerm.toLowerCase();
 
-        const idLowerCase= id.toLowerCase()
-        const namaLowerCase = nama.toLowerCase()
-        const notelpLowerCase = notelp.toLowerCase()
-        const dateLowercase = date.toLowerCase()
-        const searchTermLowerCase = searchTerm.toLowerCase()
-
-        console.log('dateLowerCase:', dateLowercase)
-        console.log('idLowerCase:', idLowerCase)
-        console.log('namaLowerCase:', namaLowerCase)
-        console.log('notelpLowerCase:', notelpLowerCase)
-        console.log('searchTermLowerCase:', searchTermLowerCase)
-        console.log('Matching:', date.includes(searchTermLowerCase))
-        console.log('Matching:', id.includes(searchTermLowerCase))
-        console.log('Matching:', nama.includes(searchTermLowerCase))
-        console.log('Matching:', notelp.includes(searchTermLowerCase))
+        console.log('productLowerCase:', productLowerCase);
+        console.log('dateLowerCase:', dateLowerCase);
+        console.log('idLowerCase:', idLowerCase);
+        console.log('jumlahLowerCase:', jumlahLowerCase);
+        console.log('totalLowerCase:', totalLowerCase);
+        console.log('searchTermLowerCase:', searchTermLowerCase);
+        console.log('Matching:', productLowerCase.includes(searchTermLowerCase));
 
         return (
-            idLowerCase.includes(searchTermLowerCase) ||
-            dateLowercase.includes(searchTermLowerCase) ||
-            namaLowerCase.includes(searchTermLowerCase) ||
-            notelpLowerCase.includes(searchTermLowerCase)
+            productLowerCase.includes(searchTermLowerCase) ||
+            dateLowerCase.includes(searchTermLowerCase) ||
+            idLowerCase.includes(searchTermLowerCase)
         );
     });
 
@@ -88,54 +103,249 @@ const KerjaSama = () => {
         <AdminLayout>
             <div className={styles.container}>
                 <h1>Data Pembelian Limbah</h1>
-                    <div className={styles.containerTab}>
-                        <div className={styles.up}>
-                            <div className={styles.inputSearch1}>
-                                <Search className={styles.iconSearch}/>
-                                <input
-                                    type="text"
-                                    placeholder="Cari..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    className={styles.input}
-                                />
-                            </div>
-                            <button className={styles.download}> 
-                                <p>Download Excel</p>
-                                <Download className={styles.iconDownload}/>
-                            </button>
-                        </div>
-                        <table className={styles.table}>
-                            <thead>
-                                <tr className={styles.tr}>
-                                    <th className={styles.th1}>ID</th>
-                                    <th className={styles.th1}>Nama</th>
-                                    <th className={styles.th1}>Tanggal Pengajuan</th>
-                                    <th className={styles.th1}>Nomor Telepon</th>
-                                    <th className={styles.th1}> </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {filteredData.map((item, index) => (
-                                    <tr key={index} className={styles.tr}>
-                                        <td className={styles.td1}>{item.id}</td>
-                                        <td className={styles.td1}>{item.nama}</td>
-                                        <td className={styles.td1}>{item.tanggalPengajuan}</td>
-                                        <td className={styles.td1}>{item.notelp}</td>
-                                        <td className={styles.td1}>
-                                            <div className={styles.button}>
-                                                <button className={styles.buttonEdit}><Edit className={styles.iconEdit}/></button>
-                                                <button className={styles.buttonHapus}><Trash className={styles.iconHapus}/></button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                <div className={styles.containerTab}>
+                    <Tab.Group>
+                        <Tab.List className={styles.tabList}>
+                            <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Penjual Maggot</Tab>
+                            <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Penjual Limbah</Tab>
+                            <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Pemilik Usaha</Tab>
+                        </Tab.List>
+                        <Tab.Panels className={styles.tabPanels}>
+                            <Tab.Panel>
+                            <div className={styles.up}>
+                                    <div className={styles.inputSearch1}>
+                                        <Search className={styles.iconSearch}/>
+                                        <input
+                                            type="text"
+                                            placeholder="Cari..."
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                            className={styles.input}
+                                        />
+                                    </div>
+                                    <button className={styles.download}> 
+                                        <p>Download Excel</p>
+                                        <Download className={styles.iconDownload}/>
+                                    </button>
+                                </div>
+                                <table className={styles.table}>
+                                    <thead>
+                                        <tr className={styles.tr}>
+                                            <th className={styles.th1}>ID User</th>
+                                            <th className={styles.th1}>Nama</th>
+                                            <th className={styles.th1}>Alamat</th>
+                                            <th className={styles.th1}>Tanggal Pengajuan</th>
+                                            <th className={styles.th1}>Tanggal Tiba</th>
+                                            <th className={styles.th1}>Produk</th>
+                                            <th className={styles.th1}>Jumlah</th>
+                                            <th className={styles.th1}>Total</th>
+                                            <th className={styles.th1}>Bank</th>
+                                            <th className={styles.th1}>No. Rekening</th>
+                                            <th className={styles.th1}>Bukti Transfer</th>
+                                            <th className={styles.th1}> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {filteredData.map((item, index) => (
+                                            <tr key={index} className={styles.tr}>
+                                                <td className={styles.td1}>{item.id}</td>
+                                                <td className={styles.td1}>{item.nama}</td>
+                                                <td className={styles.td1}>{item.alamat}</td>
+                                                <td className={styles.td1}>{item.tanggalPengajuan}</td>
+                                                <td className={styles.td1}>{item.tanggalTiba}</td>
+                                                <td className={styles.td1}>{item.produk}</td>
+                                                <td className={styles.td1}>{item.jumlah}</td>
+                                                <td className={styles.td1}>{item.total}</td>
+                                                <td className={styles.td1}>{item.bank}</td>
+                                                <td className={styles.td1}>{item.norek}</td>
+                                                <td className={styles.td1}>
+                                                    <div className={styles.imageContainer}>
+                                                    <Image src={buktiTF} alt="Bukti Transfer" className={styles.buktiTF} />
+                                                    </div>
+                                                </td>
+                                                <td className={styles.td1}>
+                                                    <div className={styles.button}>
+                                                        <button className={styles.buttonEdit}><Edit className={styles.iconEdit}/></button>
+                                                        <button className={styles.buttonHapus}><Trash className={styles.iconHapus}/></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         ))}
-                            </tbody>
-                        </table>
-                    </div>
+                                    </tbody>
+                                </table>
+                            </Tab.Panel>
+
+                            <Tab.Panel>
+                            <div className={styles.inputSearch}>
+                                    <Search className={styles.iconSearch}/>
+                                    <input
+                                        type="text"
+                                        placeholder="Cari..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                        className={styles.input}
+                                    />
+                                </div>
+                                <table className={styles.table}>
+                                    <thead>
+                                        <tr className={styles.tr}>
+                                            <th className={styles.th}>ID</th>
+                                            <th className={styles.th}>Tanggal Pengajuan</th>
+                                            <th className={styles.th}>Produk</th>
+                                            <th className={styles.th}>Konfirmasi Pembayaran</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {filteredData.map((item, index) => (
+                                            <tr key={index} className={styles.tr}>
+                                                <td className={styles.td}>{item.id}</td>
+                                                <td className={styles.td}>{item.tanggalPengajuan}</td>
+                                                <td className={styles.td}>{item.produk}</td>
+                                                <td className={styles.td}>
+                                                    <div className={styles.button}>
+                                                        <button className={styles.buttonKonfirmasi1} onClick={handleDetailTiba}>Lihat Detail</button>
+                                                        <button className={styles.buttonKonfirmasi1} onClick={handleConfTiba}>Konfirmasi</button>
+                                                    </div>
+                                                    <Modal
+                                                        isOpen={modalDetailTiba}
+                                                        onRequestClose={() => setModalTiba(false)}
+                                                        className={styles.modalOverlay}
+                                                    >
+                                                        <div className={styles.modalContent}>
+                                                            <p className={styles.judulDetail}>Detail</p>
+                                                            <div className={styles.detail}>
+                                                                <div className={styles.subJudul}>
+                                                                    <p className={styles.modalDetail1}>ID</p>
+                                                                    <p className={styles.modalDetail1}>Nama</p>
+                                                                    <p className={styles.modalDetail1}>Alamat</p>
+                                                                    <p className={styles.modalDetail1}>Jumlah yang dijual</p>
+                                                                    <p className={styles.modalDetail1}>Bank</p>
+                                                                    <p className={styles.modalDetail1}>No. Rekening</p>
+                                                                    <p className={styles.modalDetail1}>Jumlah yang harus dibayar</p>
+                                                                    <p className={styles.modalDetail1}>Status Pengantaran</p>
+                                                                </div>
+                                                                <div className={styles.isi}>
+                                                                    <p className={styles.modalDetail2}>: 2234</p>
+                                                                    <p className={styles.modalDetail2}>: Salsa</p>
+                                                                    <p className={styles.modalDetail2}>: Jl. Melati</p>
+                                                                    <p className={styles.modalDetail2}>: 5 Kg</p>
+                                                                    <p className={styles.modalDetail2}>: BRI</p>
+                                                                    <p className={styles.modalDetail2}>: 1234872</p>
+                                                                    <p className={styles.modalDetail2}>: Rp. 50.000</p>
+                                                                    <p className={styles.modalDetail2}>: Sudah dikonfirmasi oleh penjual</p>
+                                                                </div>
+                                                            </div>
+                                                            <button className={styles.buttonTutup} onClick={() => setModalTiba(false)}>Tutup</button>
+                                                        </div>
+                                                    </Modal>
+                                                    <Modal
+                                                        isOpen={modalconfTiba}
+                                                        onRequestClose={() => setModalConfTiba(false)}
+                                                        className={styles.modalOverlay}
+                                                    >   
+                                                        <div className={styles.modalContent}>
+                                                            <p className={styles.judulDetail}>Konfirmasi Pembayaran</p>
+                                                            <p>Detail Produk</p>
+                                                            <div className={styles.isiModal}>
+                                                                <div className={styles.subJudul}>
+                                                                    <p>ID</p>
+                                                                    <p>Produk</p>
+                                                                    <p>No. Rekening</p>
+                                                                    <p>Bank Tujuan</p>
+                                                                </div>
+                                                                <div className={styles.isiSub}>
+                                                                    <p>: {item.id}</p>
+                                                                    <p>: {item.produk}</p>
+                                                                    <p>: {item.norek}</p>
+                                                                    <p>: {item.bank}</p>
+                                                                </div>
+                                                            </div>
+                                                            <p>Kirim bukti transfer lalu konfirmasi</p>
+                                                            <div className={styles.buttonModal}>
+                                                                <button className={styles.TF}>
+                                                                    <Upload className={styles.iconUp}/>
+                                                                    <p>Upload bukti Transfer</p>
+                                                                </button>
+                                                                <button className={styles.buttonKonfirmasi} onClick={() => setModalConfTiba(false)}>Konfirmasi</button>
+                                                            </div>
+                                                        </div>
+                                                    </Modal>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </Tab.Panel>
+
+                            <Tab.Panel>
+                                <div className={styles.up}>
+                                    <div className={styles.inputSearch1}>
+                                        <Search className={styles.iconSearch}/>
+                                        <input
+                                            type="text"
+                                            placeholder="Cari..."
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                            className={styles.input}
+                                        />
+                                    </div>
+                                    <button className={styles.download}> 
+                                        <p>Download Excel</p>
+                                        <Download className={styles.iconDownload}/>
+                                    </button>
+                                </div>
+                                <table className={styles.table}>
+                                    <thead>
+                                        <tr className={styles.tr}>
+                                            <th className={styles.th1}>ID</th>
+                                            <th className={styles.th1}>Nama</th>
+                                            <th className={styles.th1}>Alamat</th>
+                                            <th className={styles.th1}>Tanggal Pengajuan</th>
+                                            <th className={styles.th1}>Tanggal Tiba</th>
+                                            <th className={styles.th1}>Produk</th>
+                                            <th className={styles.th1}>Jumlah</th>
+                                            <th className={styles.th1}>Total</th>
+                                            <th className={styles.th1}>Bank</th>
+                                            <th className={styles.th1}>No. Rekening</th>
+                                            <th className={styles.th1}>Bukti Transfer</th>
+                                            <th className={styles.th1}> </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {filteredData.map((item, index) => (
+                                            <tr key={index} className={styles.tr}>
+                                                <td className={styles.td1}>{item.id}</td>
+                                                <td className={styles.td1}>{item.nama}</td>
+                                                <td className={styles.td1}>{item.alamat}</td>
+                                                <td className={styles.td1}>{item.tanggalPengajuan}</td>
+                                                <td className={styles.td1}>{item.tanggalTiba}</td>
+                                                <td className={styles.td1}>{item.produk}</td>
+                                                <td className={styles.td1}>{item.jumlah}</td>
+                                                <td className={styles.td1}>{item.total}</td>
+                                                <td className={styles.td1}>{item.bank}</td>
+                                                <td className={styles.td1}>{item.norek}</td>
+                                                <td className={styles.td1}>
+                                                    <div className={styles.imageContainer}>
+                                                    <Image src={buktiTF} alt="Bukti Transfer" className={styles.buktiTF} />
+                                                    </div>
+                                                </td>
+                                                <td className={styles.td1}>
+                                                    <div className={styles.button}>
+                                                        <button className={styles.buttonEdit}><Edit className={styles.iconEdit}/></button>
+                                                        <button className={styles.buttonHapus}><Trash className={styles.iconHapus}/></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </Tab.Panel>
+                        </Tab.Panels>
+                    </Tab.Group>
+                </div>
             </div>
         </AdminLayout>
     );
 }
 
-export default KerjaSama;
+export default Kerjasama;

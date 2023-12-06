@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from './AS.module.css'
 import Modal from 'react-modal'
+import { Home, FilePlus, FileMinus, FileText, MessageSquare, User, LogOut } from 'react-feather'
+
 
 const AdminSidebar = () => {
     const [openModal, setOpenModal] = useState(false)
@@ -22,14 +24,18 @@ const AdminSidebar = () => {
         <div className={styles.adminSidebar}>
             <ul className="ul">
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Dashboard') ? styles.active : ''}`}>
-                    <Link className={styles.link} href="/Admin/Dashboard">Dashboard</Link>
+                    <Link className={styles.link} href="/Admin/Dashboard">
+                        <Home className={styles.icon}/>
+                        Dashboard
+                    </Link>
                 </li>
                 <li className={`li ${styles.li} ${(isPembelianOpen) ? styles.active : ''}`}
                     onClick={() => setIsPembelianOpen(!isPembelianOpen)}>
                     <div 
                         onClick={() => setIsPembelianOpen(!isPembelianOpen)}
-                        className={`${styles.menuItem} ${isMenuActive('/Admin/PembelianMaggot') || isMenuActive('/Admin/PembelianLimbah') ? styles.active : ''}`}
+                        className={`${styles.menuItem} ${isMenuActive('/Admin/PembelianMaggot') || isMenuActive('/Admin/PembelianLimbah')  ? styles.active : ''}`}
                     >
+                        <FilePlus className={styles.icon}/>
                         Pembelian
                     </div>
                     {isPembelianOpen && (
@@ -39,17 +45,35 @@ const AdminSidebar = () => {
                         </ul>
                     )}
                 </li>
+                <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
+                    <Link href="/Admin/Penjualan">
+                        <FileMinus className={styles.icon}/>
+                        Penjualan
+                    </Link>
+                </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Kerjasama') ? styles.active : ''}`}>
-                    <Link href="/Admin/Kerjasama">Data Kerjasama</Link>
+                    <Link href="/Admin/Kerjasama">
+                        <FileText className={styles.icon}/>
+                        Data Kerjasama
+                    </Link>
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Komunitas') ? styles.active : ''}`}>
-                    <Link href="/Admin/Komunitas">Komunitas</Link>
+                    <Link href="/Admin/Komunitas">
+                        <MessageSquare className={styles.icon}/>
+                        Komunitas
+                    </Link>
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Profil') ? styles.active : ''}`}>
-                    <Link href="/Admin/Profil">Profil</Link>
+                    <Link href="/Admin/Profil">
+                        <User className={styles.icon}/>
+                        Profil
+                    </Link>
                 </li>
                 <li className={styles.li}>
-                    <Link href='#' onClick={handleModal}>Keluar</Link>
+                    <Link href='#' onClick={handleModal}>
+                        <LogOut className={styles.icon}/>
+                        Keluar
+                    </Link>
                 </li>
             </ul>
             <Modal

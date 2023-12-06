@@ -10,13 +10,33 @@
     align-items: center;
     justify-content: center;
     padding-top: 30px;
+}
+
+.tab{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border: none;
+    font-family: 'Poppins';
+    cursor: pointer;
+}
+
+.tabActive{
+    background-color: #F1F9F7;
+    color: #FF9500;
+    border: none;
+}
+
+
+.tabPanels{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-family: 'Poppins';
+    margin-bottom: auto;
+    margin-top: auto;
     padding: 30px;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    border-top: #f8f8f8 1px solid;
+    width: 850px;
 }
 
 .table {
@@ -38,10 +58,13 @@
 
 .inputSearch{
     display: flex; 
+    margin-right: 5px;
+    margin-left: auto;
     margin-bottom: 20px;
     padding: 5px 10px 5px 10px;
     border: #ccc 1px solid;
     width: 200px;
+    align-items: center;
 }
 
 .input{
@@ -130,11 +153,13 @@
     text-align: center;
     font-family: 'Poppins';
     font-size: 12px;
+    padding: 10px;
 }
 
 .judulDetail{
-    font-size: 18px;
-    color: #7A9791;
+    background-color: #ffe2c1;
+    font-size: 15px;
+    color: #FF4136;
 }
 
 .detail{
@@ -250,12 +275,9 @@
 .up{
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    margin-left: 50px;
-    margin-right: auto;
-
 }
 
 .inputSearch1{
@@ -290,4 +312,42 @@
 
 .download:hover{
     color: #FF9500;
+}
+
+.buttonModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.isiModal{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.subJudul{
+    margin-right: 20px;
+}
+
+.TF{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.iconUp{
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
 }

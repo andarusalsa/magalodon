@@ -29,3 +29,26 @@
     order: 2;
     flex:1;
 }
+
+@media only screen and (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 300px;
+    }
+
+    .content {
+        order: 1;
+        flex: 1;
+    }
+}
+
+/* Font size adjustments */
+@media only screen and (max-width: 480px) {
+    .adminLayout {
+        font-size: 12px;
+    }
+}
