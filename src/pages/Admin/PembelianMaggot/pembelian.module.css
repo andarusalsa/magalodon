@@ -1,5 +1,21 @@
+.cont {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f1f3f5;
+}
+
 .container{
-    margin-left: 50px;
+    background-color: #fff;
+    padding-bottom: 2rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.container h1{
+    margin-left: 2rem;
+    font-size: 1.5rem;
 }
 
 .containerTab{
@@ -9,7 +25,7 @@
     font-family: 'Poppins';
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 1rem;
 }
 
 .tab{

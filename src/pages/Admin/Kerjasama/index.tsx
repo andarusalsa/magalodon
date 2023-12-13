@@ -161,15 +161,21 @@ const Kerjasama = () => {
                             </Tab.Panel>
 
                             <Tab.Panel>
-                            <div className={styles.inputSearch}>
-                                    <Search className={styles.iconSearch}/>
-                                    <input
-                                        type="text"
-                                        placeholder="Cari..."
-                                        value={searchTerm}
-                                        onChange={(e) => setSearchTerm(e.target.value)}
-                                        className={styles.input}
-                                    />
+                            <div className={styles.up}>
+                                    <div className={styles.inputSearch1}>
+                                        <Search className={styles.iconSearch}/>
+                                        <input
+                                            type="text"
+                                            placeholder="Cari..."
+                                            value={searchTerm}
+                                            onChange={(e) => setSearchTerm(e.target.value)}
+                                            className={styles.input}
+                                        />
+                                    </div>
+                                    <button className={styles.download}> 
+                                        <p>Download Excel</p>
+                                        <Download className={styles.iconDownload}/>
+                                    </button>
                                 </div>
                                 <table className={styles.table}>
                                     <thead>

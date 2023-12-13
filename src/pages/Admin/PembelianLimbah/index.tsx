@@ -101,7 +101,9 @@ const PembelianLimbah = () => {
 
     return (
         <AdminLayout>
+            <div className={styles.cont}>
             <div className={styles.container}>
+                <div className={styles.content}>
                 <h1>Data Pembelian Limbah</h1>
                 <div className={styles.containerTab}>
                     <Tab.Group>
@@ -347,6 +349,8 @@ const PembelianLimbah = () => {
                         </Tab.Panels>
                     </Tab.Group>
                 </div>
+                </div>
+            </div>
             </div>
         </AdminLayout>
     );

@@ -101,6 +101,7 @@ const PembelianMaggot = () => {
 
     return (
         <AdminLayout>
+            <div className={styles.cont}>
             <div className={styles.container}>
                 <h1>Data Pembelian Maggot</h1>
                 <div className={styles.containerTab}>
@@ -346,6 +347,7 @@ const PembelianMaggot = () => {
                             </Tab.Panel>
                         </Tab.Panels>
                     </Tab.Group>
+                </div>
                 </div>
             </div>
         </AdminLayout>

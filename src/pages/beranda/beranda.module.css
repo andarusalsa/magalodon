@@ -167,7 +167,7 @@
 }
 
     
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .banner {
         padding: 3rem; 
         padding-left: 0;

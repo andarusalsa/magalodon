@@ -220,18 +220,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    background-color: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .ModalContent {
-    background-color: #fff; /* Warna latar belakang modal */
+    background-color: #fff; 
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-    max-width: 400px; /* Lebar maksimum modal */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    max-width: 400px; 
     width: 100%;
     text-align: center;
     font-family: 'Poppins';
@@ -252,7 +252,7 @@
 }
 
 .ModalContent button:last-child {
-    background-color: #FF9500; /* Warna latar belakang tombol Kembali ke Masuk */
+    background-color: #FF9500; 
     color:#fff;
     margin-left: 20px;
     border:none
@@ -292,37 +292,39 @@
     margin-right: 1rem;
 }
 
-/* Responsive Styles for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1152px) {
     .container{
         width: 100%;
     }
 
     .bannerSatu {
-        padding: 3rem; /* Adjust padding for smaller screens */
+        padding: 3rem; 
         padding-top: 5rem;
-        font-size: 12px; /* Adjust font size for smaller screens */
+        font-size: 12px; 
     }
 
     .tabContent {
-        flex-direction: column; /* Change flex-direction for smaller screens */
+        flex-direction: column;
     }
 
     .containerTab {
-            padding-top: 20px; /* Adjust padding-top for smaller screens */
+        padding-top: 20px; 
     }
+
     .tab {
-            padding: 10px;
-        }
+        padding: 10px;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
     
     .tabPanels {
-            padding: 20px; /* Adjust padding for smaller screens */
-            max-width: 90%; /* Adjust maximum width for smaller screens */
-        }
+        padding: 20px; 
+        max-width: 90%; 
+    }
 
     .tabContent1 {
-        margin-right: 0; /* Remove right margin for smaller screens */
-        margin-bottom: 20px; /* Add bottom margin for smaller screens */
+        margin-right: 0; 
+        margin-bottom: 20px; 
     }
 
     .produk{
@@ -330,12 +332,12 @@
     }
 
     .isiproduk {
-        margin-left: 0; /* Remove left margin for smaller screens */
+        margin-left: 0; 
         padding-top: 2px;
     }
 
     .isiprodukkal, .isiprodukkal2, .isiproduktem {
-        margin-left: 0; /* Remove left margin for smaller screens */
+        margin-left: 0; 
     }
 
     .isi{
@@ -372,4 +374,9 @@
     }
 }
 
+@media (max-width:768px){
+    .tab {
+        padding: 10px;
+    }
+}
 
