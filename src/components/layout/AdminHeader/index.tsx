@@ -3,7 +3,6 @@ import Image from 'next/image'
 import logo from '@/components/elements/logo.jpeg'
 import { useRouter } from 'next/router'; // Menggunakan useRouter dari next/router
 import Link from 'next/link'
-import { User } from "react-feather";
 
 const Header = () => {
     const router = useRouter();
@@ -26,5 +25,5 @@ const Header = () => {
         </div>
     );
 };
-
+ 
 export default Header;

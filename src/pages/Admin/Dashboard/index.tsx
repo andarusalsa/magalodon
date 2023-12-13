@@ -8,10 +8,11 @@ import partner from '@/components/elements/adminPartner.png'
 import { Circle } from 'react-feather'
 
 const Dashboard = () => {
-    return (
+    return ( 
         <AdminLayout>
             <div className={styles.container}>
                 <div className={styles.content}>
+                    <div className={styles.content1}>
                     <div className={styles.judul}>
                         <h2>Ringkasan</h2>
                     </div>
@@ -37,6 +38,7 @@ const Dashboard = () => {
                                 <p>100 Instansi telah bekerjasama</p>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div className={styles.content2}>
                         <div className={styles.chart}>

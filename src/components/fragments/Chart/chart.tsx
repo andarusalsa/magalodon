@@ -1,4 +1,5 @@
 import { Line } from "react-chartjs-2";
+import styles from './chart.module.css'
 import { useState } from 'react'
 import {
   Chart as ChartJS,
@@ -175,14 +176,7 @@ const data = {
            </button>
          ))}
        </div>
-       <div
-         style={{
-           width: "600px",
-           height: "400px",
-           marginLeft: "auto",
-           marginRight: "auto",
-         }}
-       >
+       <div className={styles.chart}>
          <Line options={options} data={data} />
        </div>
      </div>

@@ -16,37 +16,34 @@
     flex-direction: row;
     margin-top: 50px;
     width: 100%;
-}
+} 
 
 .sidebar{
-    order: 1;
-    width: 300px;
+    width: 15rem;
     color: #000;
-    background-color: #F1F9F7;
+    background-color: #fff;
 }
 
 .content{
-    order: 2;
     flex:1;
 }
 
-@media only screen and (max-width: 768px) {
+@media  (max-width: 768px) {
     .container {
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .sidebar {
-        width: 300px;
+        margin-top: 4rem;
     }
 
     .content {
         order: 1;
         flex: 1;
     }
+
+    .sidebar{
+        margin: 0;
+        width: 3rem;
+    }
 }
 
-/* Font size adjustments */
 @media only screen and (max-width: 480px) {
     .adminLayout {
         font-size: 12px;

@@ -22,11 +22,11 @@ const AdminSidebar = () => {
 
     return (
         <div className={styles.adminSidebar}>
-            <ul className="ul">
+            <ul className={styles.ul}>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Dashboard') ? styles.active : ''}`}>
                     <Link className={styles.link} href="/Admin/Dashboard">
                         <Home className={styles.icon}/>
-                        Dashboard
+                        <p className={styles.judulMenu}>Dashboard</p>
                     </Link>
                 </li>
                 <li className={`li ${styles.li} ${(isPembelianOpen) ? styles.active : ''}`}
@@ -36,7 +36,7 @@ const AdminSidebar = () => {
                         className={`${styles.menuItem} ${isMenuActive('/Admin/PembelianMaggot') || isMenuActive('/Admin/PembelianLimbah')  ? styles.active : ''}`}
                     >
                         <FilePlus className={styles.icon}/>
-                        Pembelian
+                        <p className={styles.judulMenu}>Pembelian</p>
                     </div>
                     {isPembelianOpen && (
                         <ul className={styles.dropdown}>
@@ -46,33 +46,33 @@ const AdminSidebar = () => {
                     )}
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Penjualan') ? styles.active : ''}`}>
-                    <Link href="/Admin/Penjualan">
+                    <Link className={styles.link} href="/Admin/Penjualan">
                         <FileMinus className={styles.icon}/>
-                        Penjualan
+                        <p className={styles.judulMenu}>Penjualan</p>
                     </Link>
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Kerjasama') ? styles.active : ''}`}>
-                    <Link href="/Admin/Kerjasama">
+                    <Link className={styles.link} href="/Admin/Kerjasama">
                         <FileText className={styles.icon}/>
-                        Data Kerjasama
+                        <p className={styles.judulMenu}>Data Kerjasama</p>
                     </Link>
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Komunitas') ? styles.active : ''}`}>
-                    <Link href="/Admin/Komunitas">
+                    <Link className={styles.link} href="/Admin/Komunitas">
                         <MessageSquare className={styles.icon}/>
-                        Komunitas
+                        <p className={styles.judulMenu}>Komunitas</p>
                     </Link>
                 </li>
                 <li className={`li ${styles.li} ${isMenuActive('/Admin/Profil') ? styles.active : ''}`}>
-                    <Link href="/Admin/Profil">
+                    <Link className={styles.link} href="/Admin/Profil">
                         <User className={styles.icon}/>
-                        Profil
+                        <p className={styles.judulMenu}>Profil</p>
                     </Link>
                 </li>
                 <li className={styles.li}>
-                    <Link href='#' onClick={handleModal}>
+                    <Link className={styles.link} href='#' onClick={handleModal}>
                         <LogOut className={styles.icon}/>
-                        Keluar
+                        <p className={styles.judulMenu}>Keluar</p>
                     </Link>
                 </li>
             </ul>

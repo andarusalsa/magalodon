@@ -5,7 +5,7 @@ import styles from './AL.module.css'
 
 type AdminLayoutProps = {
     children: React.ReactNode;
-};
+}; 
 
 const AdminLayout = ({ children }: AdminLayoutProps) => {
     return (
