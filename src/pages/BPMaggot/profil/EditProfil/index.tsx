@@ -17,6 +17,7 @@ const EditProfil = () => {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [showSuccessMessage, setShowSuccessMessage] = useState(false)
     const router = useRouter()
+    const [katasandi, setKataSandi] = useState("")
 
     const handleNamaChange = (newNama: string) => {
         setNama(newNama);
@@ -32,6 +33,10 @@ const EditProfil = () => {
 
     const handleNorekChange = (newNorek: string) => {
         setNorek(newNorek);
+    }
+
+    const handleKataSandiChange = (newSandi: string) => {
+        setKataSandi(newSandi);
     }
 
     const handleSimpanClick = () => {
@@ -111,6 +116,10 @@ const EditProfil = () => {
                         <div className={styles.form1}>
                             <p>Nomor Rekening</p>
                             <TextInput type="text" value={norek} placeholder="Masukkan Nama Lengkap" onInputChange={handleNorekChange}/>
+                        </div>
+                        <div className={styles.form1}>
+                            <p>Kata Sandi</p>
+                            <TextInput type="password" placeholder="Masukkan Kata Sandi" value={katasandi} onInputChange={handleKataSandiChange} />
                         </div>
                         <div className={styles.buttonSimpan}>
                             <button className={styles.buttonSave} onClick={handleSimpanClick}>

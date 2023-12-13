@@ -37,7 +37,6 @@ const AboutPage = () => {
                 </div>
             </section>
 
-
             <section className={styles.bannerTiga}>
                 <div className={styles.bannerContent}>
                     <div className={styles.text1}>
@@ -66,7 +65,7 @@ const AboutPage = () => {
             </section>
 
             <section className={styles.videoContainer}>
-                <VideoPlayer/>
+                <VideoPlayer />
             </section>
         </div>
         </AppShell>

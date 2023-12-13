@@ -7,6 +7,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ReactModal from 'react-modal'
 import AppShell from '@/components/layout/Appshell'
+import Image from 'next/image'
+import google from '@/components/elements/google.png'
+import whatsapp from '@/components/elements/whatsapp.png'
 
 
 const Produk = () => {
@@ -212,6 +215,17 @@ const Produk = () => {
                             </Link>
                           </p>
                         </div>
+                        <div className={styles.sm}>
+                          <p>atau</p>
+                          <button className={styles.smIcon}>
+                            <Image src={google} alt="google" className={styles.icon} />
+                            <p>Masuk dengan Google</p>
+                          </button>
+                          <button className={styles.smIcon}>
+                            <Image src={whatsapp} alt="whatsapp" className={styles.icon} />
+                            <p>Masuk dengan Whatsapp</p>
+                          </button>
+                        </div>
                         </>
                       ):(
                         <>
@@ -351,6 +365,17 @@ const Produk = () => {
                               {isLoginActive? 'Daftar' : 'Kembali ke Masuk'}
                             </Link>
                           </p>
+                        </div>
+                        <div className={styles.sm}>
+                          <p>atau</p>
+                          <button className={styles.smIcon}>
+                            <Image src={google} alt="google" className={styles.icon} />
+                            <p>Masuk dengan Google</p>
+                          </button>
+                          <button className={styles.smIcon}>
+                            <Image src={whatsapp} alt="whatsapp" className={styles.icon} />
+                            <p>Masuk dengan Whatsapp</p>
+                          </button>
                         </div>
                         </>
                       ):(

@@ -192,50 +192,218 @@
   font-size: 30px;
 }
 
-@media (max-width: 768px) {
-  .container {
-      align-items: center; 
-  }
-
+@media (max-width: 1160px){
   .bannerSatu {
-      padding: 3rem;
-      margin-top: 3rem; 
+    margin-top: 3rem;
   }
 
   .bannerSatu h2 {
-      font-size: 1rem;
-      max-width: 70%; 
+    font-size: 1.5rem;
+    max-width: 70%;
   }
 
   .bannerContent {
-      flex-direction: column; 
-      padding-top: 1.25rem; 
+    flex-direction: column;
+    padding-top: 1.25rem;
   }
 
-  .text p, .text1 {
-    padding: 0; 
-    text-align: center; 
-    font-size: 0.8rem;
+  .text,
+  .text1 {
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text1{
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .text p,
+  .text1 p {
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
   }
 
   .produk2,
-  .produk3{
-    position: relative;
+  .produk3 {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
     display: flex;
-    width: 20%;
-    height: 20%;
     align-items: center;
     justify-content: center;
+  }
+  
+
+  .bannerContent1{
+    background-color: #385C4E;
+    margin-top: 2rem;
+  }
+
+  .content{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    flex-direction: column;
+  }
+
+  .imageContainer,
+  .imageContainer1 {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .plateContainer{
+    width: 10rem;
+    height: 10rem;
+    margin-right: 50px;
+    align-items: center;
+  }
+  
+  .plate{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .caption{
+    font-size: 0.6rem;
+    align-items: center;
+    text-align: center;
+  
+  }
+  
+  .videoContainer {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  
+  .achieve{
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    align-items: center;
+  }
+
+  .bannerSatu {
+    padding: 3rem;
+    margin-top: 3rem;
+  }
+
+  .bannerSatu h2 {
+    font-size: 1rem;
+    max-width: 70%;
+  }
+
+  .bannerContent {
+    flex-direction: column;
+    padding-top: 1.25rem;
+  }
+
+  .text,
+  .text1 {
+    font-size: 0.7rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text1{
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .text p,
+  .text1 p {
+    padding: 0;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  .produk2{
+    width: 50%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .produk3{
+  .produk3 {
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 0;
   }
 
-  .imageContainer {
-    padding-left: 0;
-    padding-right: 0;
+  .bannerContent1{
+    background-color: #385C4E;
+    margin-top: 2rem;
+  }
+
+  .content{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    flex-direction: column;
+  }
+
+  .imageContainer,
+  .imageContainer1 {
+    padding: 0;
+  }
+
+  .plateContainer{
+    width: 10rem;
+    height: 10rem;
+    margin-right: 50px;
+    align-items: center;
+  }
+  
+  .plate{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .caption{
+    font-size: 0.6rem;
+    align-items: center;
+    text-align: center;
+  
+  }
+  
+  .videoContainer {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .achieve{
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  
+  .kanan h2, .kiri h2{
+    margin-bottom: 0;
+    color: #FF9500;
+    font-size: 1rem;
+  }
+
+  .kanan p, .kiri p{
+    margin-top: 0;
+    font-size: 0.8rem;
   }
 }

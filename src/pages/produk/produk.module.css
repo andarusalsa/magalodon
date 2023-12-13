@@ -258,6 +258,40 @@
     border:none
 }
 
+.sm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.smIcon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 20rem;
+    margin: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.sm p{
+    font-size: 12px;
+}
+
+.smIcon p{
+    font-size: 12px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+
 /* Responsive Styles for smaller screens */
 @media (max-width: 768px) {
     .container{
