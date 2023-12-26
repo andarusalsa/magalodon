@@ -54,22 +54,22 @@ const dataSet = [
     value: "pembelian maggot",
     label: "Pembelian Maggot",
     data: maggotData,
-    borderColor: "rgba(255, 99, 132, 1)", // Contoh warna merah
-    gradientColorStart: "rgba(255, 99, 132, 0.2)", // Contoh warna gradien merah
+    borderColor: "rgba(255, 99, 132, 1)", 
+    gradientColorStart: "rgba(255, 99, 132, 0.2)", 
   },
   {
     value: "pembelian limbah",
     label: "Pembelian Limbah Pangan",
     data: sampahData,
-    borderColor: "rgba(75, 192, 192, 1)", // Contoh warna hijau
-    gradientColorStart: "rgba(75, 192, 192, 0.2)", // Contoh warna gradien hijau
+    borderColor: "rgba(75, 192, 192, 1)", 
+    gradientColorStart: "rgba(75, 192, 192, 0.2)", 
   },
   {
     value: "penjualan",
     label: "Penjualan Pangan",
     data: dataPenjualan,
-    borderColor: "rgba(255, 205, 86, 1)", // Contoh warna kuning
-    gradientColorStart: "rgba(255, 205, 86, 0.2)", // Contoh warna gradien kuning
+    borderColor: "rgba(255, 205, 86, 1)", 
+    gradientColorStart: "rgba(255, 205, 86, 0.2)", 
   },
 ];
 
@@ -103,7 +103,7 @@ const data = {
       backgroundColor: (context: any) => {
         const ctx = context.chart.ctx;
         const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-        gradient.addColorStop(0, selectedData?.gradientColorStart || ''); // Ganti 'blue' dengan warna default yang diinginkan
+        gradient.addColorStop(0, selectedData?.gradientColorStart || ''); 
         gradient.addColorStop(1, "white");
         return gradient;
       },
@@ -161,13 +161,13 @@ const data = {
              onClick={() => handleMenuClick(option.value)}
              style={{ 
               marginRight: "10px",
-              padding: "8px 16px", // Menambahkan padding untuk kenyamanan
-              border: "none", // Menghapus border agar terlihat lebih bersih
-              cursor: "pointer", // Mengubah kursor saat dihover
+              padding: "8px 16px", 
+              border: "none", 
+              cursor: "pointer", 
               backgroundColor:
-              selectedMenu === option.value ? "lightblue" : "white", // Warna latar belakang saat aktif
-              color: selectedMenu === option.value ? "black" : "gray", // Warna teks saat aktif
-              borderRadius: "4px", // Mengubah sudut tombol
+              selectedMenu === option.value ? "lightblue" : "white", 
+              color: selectedMenu === option.value ? "black" : "gray", 
+              borderRadius: "4px", 
               transition: "background-color 0.3s, color 0.3s",
               fontFamily: "Poppins, sans-serif"
             }}

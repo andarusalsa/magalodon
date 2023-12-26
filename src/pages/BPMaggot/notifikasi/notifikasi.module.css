@@ -43,6 +43,13 @@
     text-decoration: none;
 }
 
+.profil{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
 .kanan{
     margin-left: auto;
     margin-right: 0px;

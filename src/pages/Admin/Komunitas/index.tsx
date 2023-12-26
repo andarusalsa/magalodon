@@ -10,6 +10,7 @@ const Komunitas = () => {
     return (
         <AdminLayout>
             <div className={styles.container}>
+                <div className={styles.content}>
                 <div className={styles.containerTab}>
                     <Tab.Group>
                         <Tab.List className={styles.tabList}>
@@ -17,15 +18,16 @@ const Komunitas = () => {
                             <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>TemanDaur</Tab>
                         </Tab.List>
                         <Tab.Panels className={styles.tabPanels}>
-                            <Tab.Panel>
+                            <Tab.Panel className={styles.tabPanel}>
                                 <TabContentMaggot/>
                             </Tab.Panel>
 
-                            <Tab.Panel>
+                            <Tab.Panel className={styles.tabPanel}>
                                 <TabContentLimbah/>
                             </Tab.Panel>
                         </Tab.Panels>
                     </Tab.Group>
+                </div>
                 </div>
             </div>
         </AdminLayout>

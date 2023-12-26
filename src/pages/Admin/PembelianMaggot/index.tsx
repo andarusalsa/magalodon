@@ -22,7 +22,7 @@ interface PembelianData {
 }
 
 const PembelianMaggot = () => {
-    const [data, setData] = useState<PembelianData[]>([
+    const [data] = useState<PembelianData[]>([
         {
             id: 1234,
             tanggalPengajuan: '12/12/2021',
@@ -78,17 +78,13 @@ const PembelianMaggot = () => {
         );
     });
 
-    const [modalDetailAju, setModalDetailAju] = useState(false);
-    const [modalConfAju, setModalConfAju] = useState(false);
-    const [modalDetailTiba, setModalTiba] = useState(false);
-    const [modalconfTiba, setModalConfTiba] = useState(false);
+    const [modalDetailAju, setModalDetailAju] = useState(false)
+    const [modalDetailTiba, setModalTiba] = useState(false)
+    const [modalconfTiba, setModalConfTiba] = useState(false)
+    const [unduh, setUnduh] = useState(false)
 
     const handleDetailAju = () => {
         setModalDetailAju(true);
-    }
-
-    const handleConfAju = () => {
-        setModalConfAju(true);
     }
 
     const handleDetailTiba = () => {
@@ -97,6 +93,15 @@ const PembelianMaggot = () => {
 
     const handleConfTiba = () => {
         setModalConfTiba(true);
+    }
+
+    const handleUnduh = () => {
+        setUnduh(!unduh)
+    }
+
+    const handleDropdown = (item:string) => {
+        console.log(`Selected:${item}`)
+        setUnduh(false)
     }
 
     return (
@@ -294,8 +299,8 @@ const PembelianMaggot = () => {
                                             className={styles.input}
                                         />
                                     </div>
-                                    <button className={styles.download}> 
-                                        <p>Download Excel</p>
+                                    <button className={styles.download} onClick={handleUnduh}> 
+                                        <p>Unduh Excel</p>
                                         <Download className={styles.iconDownload}/>
                                     </button>
                                 </div>

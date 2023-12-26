@@ -28,14 +28,14 @@ const Dashboard = () => {
                             <h2>100 Kg</h2>
                             <p className={styles.p1}>Penjualan</p>
                             <div className={styles.p2}>
-                                <p>50kg Maggot <br/>50kg Limbah</p>
+                                <p>50kg Pakan ternak terjual</p>
                             </div>
                         </div>
                         <div className={styles.card4}>
                             <h2>100</h2>
                             <p className={styles.p1}>Kerjasama</p>
                             <div className={styles.p2}>
-                                <p>100 Instansi telah bekerjasama</p>
+                                <p>100 pihak telah bekerjasama</p>
                             </div>
                         </div>
                     </div>

@@ -84,7 +84,7 @@ const AdminSidebar = () => {
                 <div className={styles.modalContent}>
                     <p>Anda yakin ingin keluar?</p>
                     <div className={styles.button}>
-                        <button className={styles.buttonTutup} onClick={() => setOpenModal(false)}>Tutup</button>
+                        <button className={styles.buttonTutup} onClick={() => setOpenModal(false)}>Batal</button>
                         <button className={styles.buttonKonfirmasi} onClick={handleLogout}>Ya</button>
                     </div>
                 </div>

@@ -98,14 +98,15 @@ const Kerjasama = () => {
 
     return (
         <AdminLayout>
+            <div className={styles.cont}>
             <div className={styles.container}>
-                <h1>Data Pembelian Limbah</h1>
+                <h1>Data Kerjasama</h1>
                 <div className={styles.containerTab}>
                     <Tab.Group>
                         <Tab.List className={styles.tabList}>
                             <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Penjual Maggot</Tab>
                             <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Penjual Limbah</Tab>
-                            <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Pemilik Usaha</Tab>
+                            <Tab className={({selected})=>classNames(styles.tab, selected && styles.tabActive)}>Partner</Tab>
                         </Tab.List>
                         <Tab.Panels className={styles.tabPanels}>
                             <Tab.Panel>
@@ -234,6 +235,7 @@ const Kerjasama = () => {
                                         <tr className={styles.tr}>
                                             <th className={styles.th1}>ID User</th>
                                             <th className={styles.th1}>Email</th>
+                                            <th className={styles.th1}>Nama</th>
                                             <th className={styles.th1}>Nomor Whatsapp</th>
                                             <th className={styles.th1}></th>
                                         </tr>
@@ -243,6 +245,7 @@ const Kerjasama = () => {
                                             <tr key={index} className={styles.tr}>
                                                 <td className={styles.td1}>{item.id}</td>
                                                 <td className={styles.td1}>{item.email}</td>
+                                                <td className={styles.td1}>{item.nama}</td>
                                                 <td className={styles.td1}>{item.nohp}</td>
                                                 <td className={styles.td1}>
                                                     <div className={styles.button}>
@@ -258,6 +261,7 @@ const Kerjasama = () => {
                         </Tab.Panels>
                     </Tab.Group>
                 </div>
+            </div>
             </div>
         </AdminLayout>
     );

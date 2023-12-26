@@ -460,6 +460,12 @@ const Produk = () => {
                       <div className={styles.Login}>Daftar</div>
                       {error && <div className={styles.error}>{error}</div>}
                         <div className={styles.isian1}>
+                          <h2>Masukkan Nama</h2>
+                          <div className={styles.form}>
+                            <TextInput placeholder="Masukkan Nama" value={nama} onInputChange={handleNamaChange} />
+                          </div>
+                        </div>
+                        <div className={styles.isian1}>
                           <h2>Masukkan Email</h2>
                           <div className={styles.form}>
                             <TextInput placeholder="Masukkan Email" value={email} onInputChange={handleEmailChange} />
